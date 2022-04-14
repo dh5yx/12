@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-01-20 10:13:58
  * @LastEditors: dh
- * @LastEditTime: 2022-01-24 10:03:55
+ * @LastEditTime: 2022-04-14 12:02:37
  */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -41,5 +41,14 @@ export default defineConfig({
             },
         },
         chunkSizeWarningLimit: 1500, // chunk 大小警告的限制（以 kbs 为单位）
+    },
+    css: {
+        preprocessorOptions: {
+            // 添加公共样式
+            scss: {
+                // additionalData: '@import "./src/style/style.scss";',
+                // additionalData: '$primary: #993300'
+            },
+        },
     },
 });
