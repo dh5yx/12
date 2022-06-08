@@ -8,9 +8,28 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path'; // 如果编辑器提示 path 模块找不到，则可以安装一下 @types/node -> npm i @types/node -D
+// import styleImport from 'vite-plugin-style-import';
 
 export default defineConfig({
-    plugins: [vue()],
+    plugins: [
+        vue(),
+        // styleImport({
+        //     libs: [
+        //         {
+        //             libraryName: 'element-plus',
+        //             esModule: true,
+        //             resolveStyle: (name) => {
+        //                 // 解决引入element-plus中文css不存在问题
+        //                 // if (name === 'locale') {
+        //                 //     return 'element-plus/lib/theme-chalk/el-option.css';
+        //                 // }
+        //                 return `element-plus/lib/theme-chalk/${name}.css`;
+        //             },
+        //             ensureStyleFile: true // 忽略文件是否存在, 导入不存在的CSS文件时防止错误。
+        //         }
+        //     ]
+        // }
+    ],
     resolve: {
         alias: {
             '@': resolve(__dirname, 'src'), // 设置 `@` 指向 `src` 目录
