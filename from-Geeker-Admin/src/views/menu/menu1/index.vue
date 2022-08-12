@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-25 17:10:44
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 16:13:50
+ * @LastEditTime: 2022-08-12 16:34:59
 -->
 <template>
 	<div>
@@ -14,8 +14,9 @@
 </template>
 
 <script setup lang="ts" name="Menu1">
-import { ref } from "vue";
+import { ref, getCurrentInstance } from "vue";
 const value = ref<string>();
+console.log(getCurrentInstance());
 </script>
 
 <style scoped></style>

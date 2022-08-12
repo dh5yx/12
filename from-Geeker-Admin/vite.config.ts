@@ -3,17 +3,18 @@
  * @Author: dh
  * @Date: 2022-07-20 16:45:32
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 16:11:57
+ * @LastEditTime: 2022-08-12 16:36:28
  */
 // import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import type { ConfigEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+// script 上可以写name属性 , 官网说的会自动添加，目前不要使用，他是根据组件的文件名字命名的，会出现很多重复项
 import VueSetupExtend from "vite-plugin-vue-setup-extend";
 import { resolve } from "path";
-// https://vitejs.dev/config/
 
+// https://vitejs.dev/config/
 export default function (config: ConfigEnv) {
 	const { mode } = config;
 	return defineConfig({
