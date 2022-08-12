@@ -1,0 +1,126 @@
+.dataScreen-container {
+	width: 100%;
+	height: 100%;
+	color: #29fcff;
+	background: url("./images/bg.png") no-repeat;
+	background-size: 100% 100%;
+}
+.header {
+	display: flex;
+	height: 38px;
+	.header-left {
+		flex: 0 0 567px;
+		background: url(./images/dataScreen-header-left-bg.png) no-repeat;
+		text-align: right;
+		.header-screening {
+			cursor: pointer;
+			display: inline-block;
+			width: 136px;
+			height: 100%;
+			text-align: center;
+			line-height: 38px;
+			background: url(./images/dataScreen-header-btn-bg-l.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	}
+	.header-center {
+		flex: 1;
+		text-align: center;
+		position: relative;
+		.header-center-title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			letter-spacing: 12px;
+			height: 80px;
+			width: 100%;
+			font-size: 24px;
+			line-height: 2.5;
+			font-weight: 600;
+			background: url("./images/dataScreen-header-center-bg.png") no-repeat;
+		}
+		.header-center-warning {
+			color: var(--el-text-color-primary);
+			position: absolute;
+			left: 50%;
+			letter-spacing: 5px;
+			width: 662px;
+			height: 44px;
+			bottom: -80px;
+			font-size: 12px;
+			font-weight: 600;
+			line-height: 44px;
+			background: url("./images/dataScreen-header-warn-bg.png") no-repeat;
+			transform: translateX(-50%);
+		}
+	}
+	.header-right {
+		flex: 0 0 567px;
+		background: url(./images/dataScreen-header-right-bg.png) no-repeat;
+		.header-download {
+			display: inline-block;
+			width: 136px;
+			height: 100%;
+			text-align: center;
+			line-height: 38px;
+			background: url(./images/dataScreen-header-btn-bg-r.png) no-repeat;
+			background-size: 100% 100%;
+		}
+		.header-time {
+			margin-left: 100px;
+		}
+	}
+}
+.main {
+	padding: 12px 42px 10px;
+	height: calc(100% - 38px);
+	box-sizing: border-box;
+	display: flex;
+	.main-left,
+	.main-right {
+		height: 100%;
+		width: 394px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.main-center {
+		flex: 1;
+		width: 0;
+		margin: 0 30px;
+		display: flex;
+		flex-direction: column;
+		.main-center-top {
+			flex: 1;
+			padding-top: 100px;
+		}
+		.main-center-bottom {
+			height: 252px;
+		}
+	}
+	.bg {
+		background: url("./images/dataScreen-main-lt.png") no-repeat;
+		background-size: 100% 100%;
+	}
+	.main-left-top {
+		height: 37%;
+	}
+	.main-left-middle {
+		flex: 1;
+		margin: 30px 0;
+	}
+	.main-left-bottom {
+		height: 27%;
+	}
+	.main-right-top {
+		height: 37%;
+	}
+	.main-right-middle {
+		flex: 1;
+		margin: 30px 0;
+	}
+	.main-right-bottom {
+		height: 27%;
+	}
+}

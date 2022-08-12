@@ -1,0 +1,46 @@
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #dddee0;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 white;
+}
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
+  .text {
+    margin: 30px 0;
+    font-size: 23px;
+    font-weight: bold;
+    color: rgb(88 88 88);
+  }
+}
+
+/* error */
+.page-error {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-right: 120px;
+  }
+  .title {
+    font-size: 60px;
+    color: #434e59;
+    font-weight: 600;
+  }
+  .detail {
+    font-size: 19px;
+    color: #848587;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+}
