@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-06-28 09:40:58
  * @LastEditors: dh
- * @LastEditTime: 2022-07-20 11:48:07
+ * @LastEditTime: 2022-08-15 10:03:08
  */
 import axios, { AxiosRequestConfig, Canceler } from 'axios';
 import qs from 'qs';
@@ -51,7 +51,7 @@ export class AxiosCanceler {
     /**
      * @description: 清空所有pending
      */
-    static removeAllPending() {
+    removeAllPending() {
         pendingMap.forEach((cancel) => {
             cancel && typeof cancel === 'function' && cancel();
         });

@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-01-20 10:13:58
  * @LastEditors: dh
- * @LastEditTime: 2022-07-21 16:11:00
+ * @LastEditTime: 2022-08-15 11:27:10
 -->
 <script setup lang="ts">
     import SetUp from 'views/setup.vue';
@@ -11,7 +11,7 @@
 </script>
 
 <template>
-    <div>
+    <el-config-provider size="small" :z-index="3000">
         <router-link to="/">
             <el-button type="primary">home</el-button>
         </router-link>
@@ -25,7 +25,7 @@
         <router-view></router-view>
         <SetUp />
         <SetUp2 />
-    </div>
+    </el-config-provider>
 </template>
 
 <style></style>

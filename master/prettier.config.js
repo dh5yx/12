@@ -3,11 +3,11 @@
  * @Author: dh
  * @Date: 2022-06-08 16:47:43
  * @LastEditors: dh
- * @LastEditTime: 2022-06-27 16:42:31
+ * @LastEditTime: 2022-08-15 14:10:41
  */
 module.exports = {
     printWidth: 100,
-    tabWidth: 4,
+    tabWidth: 2,
     useTabs: false,
     semi: true,
     vueIndentScriptAndStyle: true,
@@ -24,7 +24,6 @@ module.exports = {
     htmlWhitespaceSensitivity: 'strict',
     endOfLine: 'auto',
 };
-
 
 // "prettier.printWidth": 100, // 超过最大值换行
 
