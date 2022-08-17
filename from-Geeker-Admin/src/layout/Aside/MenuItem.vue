@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 15:49:31
  * @LastEditors: dh
- * @LastEditTime: 2022-08-11 14:22:31
+ * @LastEditTime: 2022-08-16 13:41:59
 -->
 <template>
 	<template v-for="item in menuList" :key="item.path">
@@ -25,7 +25,7 @@
 	</template>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" name="MenuItem">
 import { useRouter } from "vue-router";
 defineProps<{ menuList: Array<Menu.MenuOptions> }>();
 

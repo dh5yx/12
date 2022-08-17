@@ -32,15 +32,15 @@ import MenuItem from "./MenuItem.vue";
 import api from "@/api/index";
 import { onMounted } from "vue";
 import { computed } from "vue";
-import { GlobalStore } from "@/stores/index";
+import { useGlobalStore } from "@/stores/index";
 import { useRoute } from "vue-router";
 import { handleRouter } from "@/utils/util";
-import { AuthStore } from "@/stores/modules/auth";
+import { useAuthStore } from "@/stores/modules/auth";
 
 const route = useRoute();
 
-const globalStore = GlobalStore();
-const authStore = AuthStore();
+const globalStore = useGlobalStore();
+const authStore = useAuthStore();
 
 const menuList = computed(() => globalStore.menuList);
 const isCollapse = computed((): boolean => globalStore.isCollapse);

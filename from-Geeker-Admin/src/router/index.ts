@@ -9,8 +9,8 @@ import NProgress from "@/config/nprogress";
 import routes from "./routes";
 import axiosCancel from "@/utils/http/axiosCancel";
 import { createRouter, createWebHistory } from "vue-router";
-import { GlobalStore } from "@/stores/index";
-import { AuthStore } from "@/stores/modules/auth";
+import { useGlobalStore } from "@/stores/index";
+import { useAuthStore } from "@/stores/modules/auth";
 // 白名单列表，也可以在路由表里添加字段来表示不需要权限的，然后过滤出来
 const whiteList = <Array<string>>["/login"];
 
@@ -21,8 +21,8 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	const globalStore = GlobalStore();
-	const authStore = AuthStore();
+	const globalStore = useGlobalStore();
+	const authStore = useAuthStore();
 
 	// * 开启路由进度条
 	NProgress.start();

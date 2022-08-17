@@ -24,9 +24,9 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { ElementStore } from "@/stores/modules/element";
+import { useElementStore } from "@/stores/modules/element";
 
-const elementStore = ElementStore();
+const elementStore = useElementStore();
 
 const command = function (e: ElementSize): void {
 	elementStore.changeSize(e);

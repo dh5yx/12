@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { reactive, computed } from "vue";
-import { ElementStore } from "@/stores/modules/element";
+import { useElementStore } from "@/stores/modules/element";
 import zh from "element-plus/dist/locale/zh-cn.mjs";
 import en from "element-plus/dist/locale/en.mjs";
 
@@ -21,7 +21,7 @@ const config = reactive({
 	autoInsertSpace: true,
 });
 
-const elementStore = ElementStore();
+const elementStore = useElementStore();
 const locale = computed(() => (elementStore.locale === "zh" ? zh : en));
 const size = computed(() => elementStore.size);
 </script>

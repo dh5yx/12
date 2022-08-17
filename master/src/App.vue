@@ -3,11 +3,11 @@
  * @Author: dh
  * @Date: 2022-01-20 10:13:58
  * @LastEditors: dh
- * @LastEditTime: 2022-08-15 11:27:10
+ * @LastEditTime: 2022-08-16 17:18:43
 -->
 <script setup lang="ts">
-    import SetUp from 'views/setup.vue';
-    import SetUp2 from 'views/setup2.vue';
+import SetUp from 'views/setup.vue';
+import SetUp2 from 'views/setup2.vue';
 </script>
 
 <template>

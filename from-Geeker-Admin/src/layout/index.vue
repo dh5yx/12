@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 13:45:00
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 16:13:29
+ * @LastEditTime: 2022-08-17 14:25:13
 -->
 <template>
 	<el-container>
@@ -39,14 +39,14 @@ import Header from "./Header/index.vue";
 import Footer from "./Footer/index.vue";
 import Tabs from "./Tabs/index.vue";
 import api from "@/api/index";
-import { AuthStore } from "@/stores/modules/auth";
+import { useAuthStore } from "@/stores/modules/auth";
 import { onMounted, computed } from "vue";
-import { ConfigStore } from "@/stores/modules/config";
+import { useConfigStore } from "@/stores/modules/config";
 import { routerArray } from "@/router/routes";
 import type { RouteRecordRaw, RouteRecordName } from "vue-router";
 
-const authStore = AuthStore();
-const configStore = ConfigStore();
+const authStore = useAuthStore();
+const configStore = useConfigStore();
 
 const cacheRouter: any[] = [];
 const showFooter = computed(() => configStore.showFooter);

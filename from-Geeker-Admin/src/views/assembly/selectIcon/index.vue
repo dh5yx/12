@@ -3,13 +3,13 @@
  * @Author: dh
  * @Date: 2022-07-27 10:50:38
  * @LastEditors: dh
- * @LastEditTime: 2022-07-27 16:18:30
+ * @LastEditTime: 2022-08-17 14:35:31
 -->
 <template>
-  <div class="content-box">
-    <span class="text">icon选择 🍇🍇🍇🍓🍓🍓</span>
-    <SelectIcon v-model:iconValue="iconValue"></SelectIcon>
-  </div>
+	<div class="content-box">
+		<span class="text">icon选择 🍇🍇🍇🍓🍓🍓</span>
+		<SelectIcon v-model:iconValue="iconValue"></SelectIcon>
+	</div>
 </template>
 
 <script setup lang="ts">

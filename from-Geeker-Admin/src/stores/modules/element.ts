@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-25 10:42:28
  * @LastEditors: dh
- * @LastEditTime: 2022-08-10 16:21:49
+ * @LastEditTime: 2022-08-17 14:01:14
  */
 import { defineStore } from "pinia";
 
@@ -12,8 +12,8 @@ type storeType = {
 	locale: string;
 };
 
-export const ElementStore = defineStore({
-	id: "ElementStore",
+export const useElementStore = defineStore({
+	id: "useElementStore",
 	state: (): storeType => ({
 		size: "default",
 		locale: "",

@@ -46,12 +46,12 @@ import md5 from "js-md5";
 import api from "@/api/index";
 import { ref, reactive } from "vue";
 import { User, Lock } from "@element-plus/icons-vue";
-import { GlobalStore } from "@/stores";
+import { useGlobalStore } from "@/stores";
 import { useRouter } from "vue-router";
 import type { LoginType } from "@/types/login";
 import type { ElForm } from "element-plus";
 
-const globalStore = GlobalStore();
+const globalStore = useGlobalStore();
 const router = useRouter();
 
 type FormInstance = InstanceType<typeof ElForm>;

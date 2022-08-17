@@ -31,9 +31,9 @@ import Theme from "./components/Theme.vue";
 import Fullscreen from "./components/Fullscreen.vue";
 import Avatar from "./components/Avatar.vue";
 import { computed } from "vue";
-import { ConfigStore } from "@/stores/modules/config";
+import { useConfigStore } from "@/stores/modules/config";
 
-const configStore = ConfigStore();
+const configStore = useConfigStore();
 const showBreadcrumb = computed(() => configStore.showBreadcrumb);
 </script>
 <style lang="scss" scoped>

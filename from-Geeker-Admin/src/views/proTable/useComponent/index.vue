@@ -3,42 +3,44 @@
  * @Author: dh
  * @Date: 2022-08-05 14:15:04
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:01:39
+ * @LastEditTime: 2022-08-17 14:25:52
 -->
 <template>
-	<TableView ref="tableView" :columns="columns" :api="api.userList">
-		<template #handle="scope">
-			<el-button type="primary" icon="circlePlus" @click="openDrawer()" v-if="BUTTONS.add">新增用户</el-button>
-			<el-button type="primary" icon="upload" plain @click="batchAdd" v-if="BUTTONS.batchAdd">批量添加用户</el-button>
-			<el-button type="primary" icon="download" plain @click="downloadFile" v-if="BUTTONS.export">导出用户数据</el-button>
-			<el-button
-				type="danger"
-				icon="delete"
-				:disabled="!scope.selectedListIds.length"
-				@click="batchDelete(scope.selectedListIds)"
-				v-if="BUTTONS.batchDelete"
-			>
-				批量删除用户
-			</el-button>
-		</template>
-		<template #gender="scope">
-			<span>{{ scope.row.gender == "1" ? "男" : "女" }}</span>
-		</template>
-		<template #status="scope">
-			<!-- 如果插槽的值为 el-switch，第一次加载会默认触发 switch 的 @change 方法，所有在外层包一个盒子，点击触发盒子 click 方法（暂时只能这样解决） -->
-			<div v-if="BUTTONS.status" @click="changeStatus(scope.row)">
-				<el-switch :value="scope.row.status" :active-text="scope.row.status === 1 ? '启用' : '禁用'" :active-value="1" :inactive-value="0" />
-			</div>
-			<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else> {{ scope.row.status === 1 ? "启用" : "禁用" }}</el-tag>
-		</template>
-		<template #operation="scope">
-			<el-button type="primary" link icon="view" @click="openDrawer(scope.row)">查看</el-button>
-			<el-button type="primary" link icon="refresh" @click="resetPass(scope.row)">重置密码</el-button>
-			<el-button type="primary" link icon="delete" @click="deleteAccount(scope.row)">删除</el-button>
-		</template>
-	</TableView>
+	<div style="height: 100%; display: flex; flex-direction: column">
+		<TableView ref="tableView" :columns="columns" :api="api.userList">
+			<template #handle="scope">
+				<el-button type="primary" icon="circlePlus" @click="openDrawer()" v-if="BUTTONS.add">新增用户</el-button>
+				<el-button type="primary" icon="upload" plain @click="batchAdd" v-if="BUTTONS.batchAdd">批量添加用户</el-button>
+				<el-button type="primary" icon="download" plain @click="downloadFile" v-if="BUTTONS.export">导出用户数据</el-button>
+				<el-button
+					type="danger"
+					icon="delete"
+					:disabled="!scope.selectedListIds.length"
+					@click="batchDelete(scope.selectedListIds)"
+					v-if="BUTTONS.batchDelete"
+				>
+					批量删除用户
+				</el-button>
+			</template>
+			<template #gender="scope">
+				<span>{{ scope.row.gender == "1" ? "男" : "女" }}</span>
+			</template>
+			<template #status="scope">
+				<!-- 如果插槽的值为 el-switch，第一次加载会默认触发 switch 的 @change 方法，所有在外层包一个盒子，点击触发盒子 click 方法（暂时只能这样解决） -->
+				<div v-if="BUTTONS.status" @click="changeStatus(scope.row)">
+					<el-switch :value="scope.row.status" :active-text="scope.row.status === 1 ? '启用' : '禁用'" :active-value="1" :inactive-value="0" />
+				</div>
+				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else> {{ scope.row.status === 1 ? "启用" : "禁用" }}</el-tag>
+			</template>
+			<template #operation="scope">
+				<el-button type="primary" link icon="view" @click="openDrawer(scope.row)">查看</el-button>
+				<el-button type="primary" link icon="refresh" @click="resetPass(scope.row)">重置密码</el-button>
+				<el-button type="primary" link icon="delete" @click="deleteAccount(scope.row)">删除</el-button>
+			</template>
+		</TableView>
 
-	<EditDrawer ref="editDrawerRef" @change="tableView.refresh()"></EditDrawer>
+		<EditDrawer ref="editDrawerRef" @change="tableView.refresh()"></EditDrawer>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -48,7 +50,7 @@ import EditDrawer from "../components/editDrawer.vue";
 import TableView from "@/components/TableView/index.vue";
 import { ref, computed } from "vue";
 import { UserGender } from "@/dict/index";
-import { AuthStore } from "@/stores/modules/auth";
+import { useAuthStore } from "@/stores/modules/auth";
 
 // 表格配置项
 const columns: Partial<ColumnProps>[] = [
@@ -76,7 +78,7 @@ const columns: Partial<ColumnProps>[] = [
 
 const tableView = ref();
 
-const authStore = AuthStore();
+const authStore = useAuthStore();
 
 const editDrawerRef = ref<DrawerExpose>();
 

@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-10 14:41:46
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:48:48
+ * @LastEditTime: 2022-08-17 14:01:02
  */
 import { defineStore } from "pinia";
 
@@ -17,8 +17,8 @@ interface ConfigState {
 	showFooter?: boolean;
 }
 
-export const ConfigStore = defineStore({
-	id: "ConfigStore",
+export const useConfigStore = defineStore({
+	id: "useConfigStore",
 	state: (): ConfigState => ({
 		primary: "#ff6ff6",
 		isDark: false,

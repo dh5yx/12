@@ -57,13 +57,13 @@
 </template>
 
 <script setup lang="ts">
-import { GlobalStore } from "@/stores/index";
-import { ConfigStore } from "@/stores/modules/config";
+import { useGlobalStore } from "@/stores/index";
+import { useConfigStore } from "@/stores/modules/config";
 import { ref, computed } from "vue";
 import useTheme from "@/hooks/useTheme";
 
-const globalStore = GlobalStore();
-const configStore = ConfigStore();
+const globalStore = useGlobalStore();
+const configStore = useConfigStore();
 
 let drawerVisible = ref<boolean>(false);
 

@@ -3,12 +3,16 @@
  * @Author: dh
  * @Date: 2022-01-21 13:41:19
  * @LastEditors: dh
- * @LastEditTime: 2022-01-24 09:21:27
+ * @LastEditTime: 2022-08-16 17:24:12
  */
 import { createStore } from 'vuex';
 import user from './models/user';
 
-export default createStore({
+interface State {
+    age: number;
+}
+
+export default createStore<State>({
     state: {
         age: 20,
     },

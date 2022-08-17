@@ -3,14 +3,14 @@
  * @Author: dh
  * @Date: 2022-06-08 16:47:43
  * @LastEditors: dh
- * @LastEditTime: 2022-08-15 14:10:41
+ * @LastEditTime: 2022-08-15 15:39:47
  */
 module.exports = {
     printWidth: 100,
-    tabWidth: 2,
+    tabWidth: 4,
     useTabs: false,
     semi: true,
-    vueIndentScriptAndStyle: true,
+    // vueIndentScriptAndStyle: true,
     singleQuote: true, // 单引号
     quoteProps: 'as-needed',
     bracketSpacing: true,
@@ -32,6 +32,8 @@ module.exports = {
 // "prettier.useTabs": false, // 缩进不使用tab，使用空格
 
 // "prettier.semi": false, // 在语句末尾添加分号
+
+// "prettier.vueIndentScriptAndStyle" : false // 是否缩进 Vue 文件中的代码<script>和<style>标签
 
 // "prettier.singleQuote": true, // 使用单引号代替双引号
 

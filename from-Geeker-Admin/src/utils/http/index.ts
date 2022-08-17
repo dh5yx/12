@@ -9,7 +9,7 @@ import axios from "axios";
 import httpConfig from "@/config/http";
 import axiosCancel from "./axiosCancel";
 import { showFullScreenLoading, tryHideFullScreenLoading } from "@/config/serviceLoading";
-import { GlobalStore } from "@/stores/index";
+import { useGlobalStore } from "@/stores/index";
 import { TOKEN_KEY } from "@/config";
 import { ElMessage } from "element-plus";
 import { checkStatus } from "./checkStatus";
@@ -30,7 +30,7 @@ service.interceptors.request.use(
 		axiosCancel.addPendingAxios(config);
 
 		// 获取token
-		const globalStore = GlobalStore();
+		const globalStore = useGlobalStore();
 
 		return { ...config, headers: { [TOKEN_KEY]: globalStore.token } };
 	},

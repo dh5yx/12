@@ -23,12 +23,12 @@
 
 <script setup lang="ts">
 import { computed, onBeforeMount } from "vue";
-import { ElementStore } from "@/stores/modules/element";
+import { useElementStore } from "@/stores/modules/element";
 import { useI18n } from "vue-i18n";
 import { getBrowserLang } from "@/utils/util";
 
 const i18n = useI18n();
-const elementStore = ElementStore();
+const elementStore = useElementStore();
 
 const command = function (lang: string): void {
 	i18n.locale.value = lang;

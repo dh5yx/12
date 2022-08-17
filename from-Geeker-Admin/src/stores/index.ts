@@ -16,8 +16,8 @@ interface GlobalStoreType {
 	tabs: Array<tabsItemType>;
 }
 
-export const GlobalStore = defineStore({
-	id: "GlobalStore",
+export const useGlobalStore = defineStore({
+	id: "useGlobalStore",
 	state: (): GlobalStoreType => ({
 		token: "",
 		isCollapse: false,

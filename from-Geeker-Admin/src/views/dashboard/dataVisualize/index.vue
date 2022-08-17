@@ -75,11 +75,11 @@ const pie = ref();
 const curve = ref();
 const data = reactive({
 	activeName: 1,
-	bookSum: "848.132w"
+	bookSum: "848.132w",
 });
 const dataScreen: { [key: string]: ECharts | null } = reactive({
 	chart1: null,
-	chart2: null
+	chart2: null,
 });
 
 const handleClick = (): void => {};
@@ -89,11 +89,11 @@ let tab = [
 	{ label: "近一月", name: 3 },
 	{ label: "近三月", name: 4 },
 	{ label: "近半年", name: 5 },
-	{ label: "近一年", name: 6 }
+	{ label: "近一年", name: 6 },
 ];
 let pieData = [
 	{ value: 5000, name: "Gitee 访问量" },
-	{ value: 5000, name: "GitHub 访问量" }
+	{ value: 5000, name: "GitHub 访问量" },
 ];
 let curveData = [
 	{ value: 30, spotName: "掘金" },
@@ -104,7 +104,7 @@ let curveData = [
 	{ value: 60, spotName: "MyBlog" },
 	{ value: 55, spotName: "简书" },
 	{ value: 80, spotName: "StackOverFlow" },
-	{ value: 50, spotName: "博客园" }
+	{ value: 50, spotName: "博客园" },
 ];
 
 const resize = () => {

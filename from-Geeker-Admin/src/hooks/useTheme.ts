@@ -13,14 +13,14 @@
  * @LastEditTime: 2022-08-12 14:01:30
  */
 import { onBeforeMount } from "vue";
-import { ConfigStore } from "@/stores/modules/config";
+import { useConfigStore } from "@/stores/modules/config";
 import { DEFAULT_PRIMARY } from "@/config";
 import { ElMessage } from "element-plus";
 import { getLightColor, getDarkColor } from "@/utils/theme/tool";
 
 export default function useTheme() {
 	// 切换 反转色彩模式
-	const configStore = ConfigStore();
+	const configStore = useConfigStore();
 
 	const weakChange = () => {
 		const body = document.body;
