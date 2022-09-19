@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-03 15:47:15
  * @LastEditors: dh
- * @LastEditTime: 2022-08-08 10:03:43
+ * @LastEditTime: 2022-08-30 09:45:19
 -->
 <template>
 	<el-drawer v-model="drawerVisible" :destroy-on-close="true" :title="(isEdit ? '编辑' : '新增') + '用户'" size="600px">
@@ -54,7 +54,7 @@ const rules = reactive({
 	gender: [{ required: true, message: "请选择性别", trigger: "change" }],
 	idCard: [{ required: true, message: "请填写身份证号", trigger: "change" }],
 	email: [{ required: true, message: "请填写邮箱", trigger: "change" }],
-	address: [{ required: true, message: "请填写居住地址", trigger: "change" }]
+	address: [{ required: true, message: "请填写居住地址", trigger: "change" }],
 });
 const formData = ref<User.UserInfo>({ username: "" });
 const isEdit = ref<boolean>(false);

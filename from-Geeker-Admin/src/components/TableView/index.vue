@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-05 14:10:10
  * @LastEditors: dh
- * @LastEditTime: 2022-08-08 10:37:58
+ * @LastEditTime: 2022-08-30 09:22:20
 -->
 <template>
 	<div class="table-component">
@@ -56,7 +56,7 @@ interface ProTableProps {
 }
 
 const props = withDefaults(defineProps<ProTableProps>(), {
-	columns: () => []
+	columns: () => [],
 });
 
 const tableRef = ref<InstanceType<typeof ElTable>>();
@@ -65,7 +65,7 @@ const searchColumns = props.columns.filter(v => v.search);
 const initParams = searchColumns.reduce((a: any, b: any) => ((a[b.prop] = b.searchInitParam), a), {});
 const { searchParam, search, reset, tableData, pageable, handleSizeChange, handleCurrentChange, getTableList } = useTable({
 	api: props.api,
-	initParams
+	initParams,
 });
 const { selectionChange, getRowKeys, selectedListIds } = useSelection({ el: tableRef, id: "id" });
 
@@ -78,8 +78,7 @@ defineExpose({ refresh: getTableList });
 	display: flex;
 	flex-direction: column;
 }
-.search-box {
-}
+
 .table-box {
 	flex: 1;
 	height: 0;
@@ -87,7 +86,5 @@ defineExpose({ refresh: getTableList });
 	.table {
 		height: 100%;
 	}
-}
-.pagination-box {
 }
 </style>

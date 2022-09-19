@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-28 09:23:14
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 13:59:55
+ * @LastEditTime: 2022-08-30 15:41:09
 -->
 <template>
 	<div style="border: 1px solid #ccc">
@@ -18,13 +18,13 @@ import { onBeforeUnmount, shallowRef, computed } from "vue";
 import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 
 interface PropsType {
-	editorValue: string;
+	modelValue: string;
 }
 
-const emit = defineEmits(["update:editorValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
 const props = withDefaults(defineProps<PropsType>(), {
-	editorValue: "请输入",
+	modelValue: "请输入",
 });
 
 // 编辑器实例，必须用 shallowRef
@@ -34,10 +34,10 @@ const editorConfig = { placeholder: "请输入内容..." };
 
 const valueHtml = computed({
 	get() {
-		return props.editorValue;
+		return props.modelValue;
 	},
 	set(val: string) {
-		emit("update:editorValue", val);
+		emit("update:modelValue", val);
 	},
 });
 

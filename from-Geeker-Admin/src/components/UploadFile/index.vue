@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-27 16:34:59
  * @LastEditors: dh
- * @LastEditTime: 2022-08-08 17:20:40
+ * @LastEditTime: 2022-08-30 09:22:37
 -->
 <template>
 	<el-upload
@@ -36,7 +36,7 @@ interface PropsType {
 }
 
 const props = withDefaults(defineProps<PropsType>(), {
-	accept: () => ["*"]
+	accept: () => ["*"],
 });
 
 const handleHttpUpload = async function (e: UploadRequestOptions) {
@@ -53,7 +53,7 @@ const beforeUpload = function (file: File) {
 		ElNotification({
 			title: "温馨提示",
 			message: `上传文件只能是 ${props.accept.join(",")} 格式！`,
-			type: "warning"
+			type: "warning",
 		});
 		return false;
 	}
@@ -62,7 +62,7 @@ const beforeUpload = function (file: File) {
 		ElNotification({
 			title: "温馨提示",
 			message: "上传文件大小不能超过 5MB！",
-			type: "warning"
+			type: "warning",
 		});
 		return false;
 	}
@@ -74,7 +74,7 @@ const uploadSuccess = (): void => {
 	ElNotification({
 		title: "温馨提示",
 		message: "上传成功！",
-		type: "success"
+		type: "success",
 	});
 };
 
@@ -82,7 +82,7 @@ const uploadError = (): void => {
 	ElNotification({
 		title: "温馨提示",
 		message: "图片上传失败，请您重新上传！",
-		type: "error"
+		type: "error",
 	});
 };
 </script>

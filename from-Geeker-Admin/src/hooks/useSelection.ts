@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-03 15:16:54
  * @LastEditors: dh
- * @LastEditTime: 2022-08-08 09:35:21
+ * @LastEditTime: 2022-08-30 09:23:53
  */
 import { ref, computed } from "vue";
 
@@ -34,6 +34,6 @@ export default function useSelection({ el, id = "id" }: configType) {
 		getRowKeys,
 		selectionChange,
 		selectedListIds,
-		clearSelection
+		clearSelection,
 	};
 }

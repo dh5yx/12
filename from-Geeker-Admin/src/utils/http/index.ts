@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 09:17:15
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:14:01
+ * @LastEditTime: 2022-08-30 09:50:13
  */
 import axios from "axios";
 import httpConfig from "@/config/http";
@@ -69,13 +69,13 @@ service.interceptors.response.use(
 );
 
 export default {
-	get: (url: string, params?: object, config?: object) => service.get(url, { params, ...config }),
+	get: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> => service.get(url, { params, ...config }),
 
-	delete: (url: string, params?: object, config?: object) => service.delete(url, { params, ...config }),
+	delete: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> => service.delete(url, { params, ...config }),
 
-	post: (url: string, data?: object, config?: object) => service.post(url, data, config),
+	post: <T = any>(url: string, data?: object, config?: object): Promise<AxiosResponseType<T>> => service.post(url, data, config),
 
-	put: (url: string, data?: object, config?: object) => service.put(url, data, config),
+	put: <T = any>(url: string, data?: object, config?: object): Promise<AxiosResponseType<T>> => service.put(url, data, config),
 
-	request: (config: Object) => service.request(config),
+	request: <T = any>(config: Object): Promise<AxiosResponseType<T>> => service.request(config),
 };

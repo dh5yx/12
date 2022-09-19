@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-03 15:16:54
  * @LastEditors: dh
- * @LastEditTime: 2022-08-09 11:35:58
+ * @LastEditTime: 2022-08-30 09:23:46
  */
 import { ElMessageBox, ElMessage } from "element-plus";
 
@@ -30,7 +30,7 @@ export default <HandleDataType>async function useHandleData(api, params, message
 			confirmButtonText: "确定",
 			cancelButtonText: "取消",
 			draggable: true,
-			type: confirmType
+			type: confirmType,
 		}).then(async () => {
 			const res = await api(params);
 			if (!res) return reject(false);

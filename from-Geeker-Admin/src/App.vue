@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 16:45:32
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:01:27
+ * @LastEditTime: 2022-08-26 08:15:45
 -->
 <template>
 	<el-config-provider :button="config" :size="size" :locale="locale">

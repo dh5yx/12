@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-05 15:18:23
  * @LastEditors: dh
- * @LastEditTime: 2022-08-08 10:20:31
+ * @LastEditTime: 2022-08-30 09:21:55
 -->
 <template>
 	<el-form :model="searchParam" label-suffix="：" label-width="100px">
@@ -31,7 +31,7 @@ interface SearchFormPropsType {
 
 withDefaults(defineProps<SearchFormPropsType>(), {
 	columns: () => [],
-	searchParam: () => ({})
+	searchParam: () => ({}),
 });
 </script>
 

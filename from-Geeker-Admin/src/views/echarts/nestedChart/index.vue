@@ -3,10 +3,10 @@
  * @Author: dh
  * @Date: 2022-07-28 16:32:16
  * @LastEditors: dh
- * @LastEditTime: 2022-08-01 13:47:10
+ * @LastEditTime: 2022-08-30 09:30:05
 -->
 <template>
-  <div ref="echartsRef" class="echarts"></div>
+	<div ref="echartsRef" class="echarts"></div>
 </template>
 
 <script setup lang="ts">
@@ -18,14 +18,14 @@ import { option } from "./options";
 const echartsRef = ref<HTMLElement>();
 
 onMounted(() => {
-  const myChart = echarts.init(echartsRef.value as HTMLElement);
-  const options: echarts.EChartsCoreOption = option;
-  useEcharts(myChart, options);
+	const myChart = echarts.init(echartsRef.value as HTMLElement);
+	const options: echarts.EChartsCoreOption = option;
+	useEcharts(myChart, options);
 });
 </script>
 
 <style scoped>
 .echarts {
-  height: 100%;
+	height: 100%;
 }
 </style>

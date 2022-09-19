@@ -9,7 +9,7 @@
 	<div class="icon-box">
 		<el-input placeholder="请选择图标" @focus="openDialog" readonly ref="inputRef">
 			<template #append>
-				<el-button :icon="customIcons[iconValue]" />
+				<el-button :icon="customIcons[modelValue]" />
 			</template>
 		</el-input>
 		<el-dialog v-model="dialogVisible" title="请选择图标" top="50px" width="1280px">
@@ -25,9 +25,9 @@
 import { ref } from "vue";
 import * as Icons from "@element-plus/icons-vue";
 
-defineProps<{ iconValue: string }>();
+defineProps<{ modelValue: string }>();
 
-const emit = defineEmits(["update:iconValue"]);
+const emit = defineEmits(["update:modelValue"]);
 const dialogVisible = ref(false);
 const customIcons: { [key: string]: any } = Icons;
 
@@ -37,7 +37,7 @@ const openDialog = (e: any) => {
 };
 const selectIcon = (item: any) => {
 	dialogVisible.value = false;
-	emit("update:iconValue", item.name);
+	emit("update:modelValue", item.name);
 };
 </script>
 
