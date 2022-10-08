@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-01-20 10:13:58
  * @LastEditors: dh
- * @LastEditTime: 2022-08-16 17:19:51
+ * @LastEditTime: 2022-08-26 08:43:54
  */
 import { defineConfig, ConfigEnv, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -14,6 +14,7 @@ import { resolve } from 'path'; // 如果编辑器提示 path 模块找不到，
 // import styleImport from 'vite-plugin-style-import';
 export default defineConfig((config: ConfigEnv) => {
     const { mode, command } = config;
+    // 获取环境变量
     const env = loadEnv(mode, process.cwd());
     console.log(env, command);
     if (command === 'serve') {
