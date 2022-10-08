@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 16:28:30
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:08:26
+ * @LastEditTime: 2022-09-30 15:56:57
  */
 
 // 环境配置
@@ -85,11 +85,6 @@ declare namespace User {
 		genderLabel: string;
 		genderValue: number;
 	}
-}
-
-// 打开 drawer(新增、查看、编辑)
-declare interface DrawerExpose {
-	open: (params?: any) => void;
 }
 
 // 表格

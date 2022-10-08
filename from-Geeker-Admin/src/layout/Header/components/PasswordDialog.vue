@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-25 09:28:35
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:24:48
+ * @LastEditTime: 2022-09-30 15:49:05
 -->
 <template>
 	<el-dialog v-model="dialogVisible" title="修改密码" width="30%">
@@ -24,8 +24,9 @@ const dialogVisible = ref<boolean>(false);
 const openDialog = function () {
 	dialogVisible.value = !dialogVisible.value;
 };
+const test = () => {};
 
-defineExpose({ openDialog });
+defineExpose({ openDialog, test });
 </script>
 
 <style scoped></style>

@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 15:01:17
  * @LastEditors: dh
- * @LastEditTime: 2022-08-11 15:33:25
+ * @LastEditTime: 2022-09-30 15:51:08
 -->
 <template>
 	<el-dropdown trigger="click" @command="command">
@@ -29,13 +29,9 @@ import UserInfoDialog from "./UserInfoDialog.vue";
 import { useRouter } from "vue-router";
 import { ElMessageBox, ElMessage } from "element-plus";
 
-interface DialogExpose {
-	openDialog: () => void;
-}
-
 const router = useRouter();
-const passwordRef = ref<DialogExpose | null>(null);
-const userInfoRef = ref<DialogExpose | null>(null);
+const passwordRef = ref<InstanceType<typeof PasswordDialog> | null>(null);
+const userInfoRef = ref<InstanceType<typeof UserInfoDialog> | null>(null);
 
 const logout = function (): void {
 	ElMessageBox.confirm("您是否确认退出登录?", "温馨提示", {

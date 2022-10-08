@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-05 14:15:04
  * @LastEditors: dh
- * @LastEditTime: 2022-08-17 14:25:52
+ * @LastEditTime: 2022-09-30 15:57:46
 -->
 <template>
 	<div style="height: 100%; display: flex; flex-direction: column">
@@ -80,13 +80,13 @@ const tableView = ref();
 
 const authStore = useAuthStore();
 
-const editDrawerRef = ref<DrawerExpose>();
+const editDrawerRef = ref<InstanceType<typeof EditDrawer> | null>(null);
 
 const BUTTONS = computed(() => authStore.authButtons.useHooks);
 
 // 打开用户抽屉
 const openDrawer = (row?: User.UserInfo) => {
-	editDrawerRef.value && editDrawerRef.value.open(row);
+	editDrawerRef.value?.open(row);
 };
 
 const batchAdd = () => {};
