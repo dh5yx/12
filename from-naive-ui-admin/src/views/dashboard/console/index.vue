@@ -1,7 +1,15 @@
 <template>
-  <div>控制台</div>
+	<n-space vertical :size="10">
+		<TopCard />
+		<IconList />
+		<VisitTab />
+	</n-space>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TopCard from "./components/top-card/index.vue";
+import IconList from "./components/icon-list/index.vue";
+import VisitTab from "./components/visit-tab/visit-tab.vue";
+</script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

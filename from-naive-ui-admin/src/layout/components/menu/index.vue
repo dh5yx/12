@@ -1,64 +1,94 @@
 <template>
-  <n-menu
-    :collapsed-width="64"
-    :collapsed-icon-size="22"
-    :options="menuOptions"
-    :inverted="true"
-    :indent="30"
-    :value="selectedKeys"
-    :on-update:value="changeMenu"
-  />
+	<n-menu
+		:accordion="true"
+		:inverted="inverted"
+		:value="selectedKeys"
+		:options="menuOptions"
+		:collapsed="isCollapse"
+		:collapsed-width="64"
+		:collapsed-icon-size="22"
+		:indent="24"
+		:expanded-keys="openKeys"
+		:on-update:value="changeMenu"
+		:on-update:expanded-keys="expandedMenu"
+	/>
 </template>
 <script setup lang="ts">
-// import { AccountBookFilled } from "@vicons/antd";
-import { NButton, NIcon } from "naive-ui";
 import routerArray from "@/router/routes";
+import { ref, computed, onMounted, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
-import { ref, computed, h, resolveComponent } from "vue";
+import { useGlobalStore } from "@/stores/index";
+import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
+
+import { renderIcon } from "@/utils/index";
 import type { RouteRecordRaw } from "vue-router";
 import type { MenuOption } from "naive-ui";
 
 const route = useRoute();
 const router = useRouter();
+const globalStore = useGlobalStore();
+const layoutSetting = useLayoutSettingStore();
 
 const menuOptions = ref<MenuOption[]>([]);
-const selectedKeys = computed(() => route.fullPath);
+const openKeys = ref(route.matched.map(v => v.name));
 
-function renderIcon(icon: string) {
-  // 方式一 h(组件)
-  // return () => h(NIcon, null, { default: () => h(icon) });
+const selectedKeys = computed(() => {
+	// 处理隐藏菜单激活问题
+	const activeMenu = route.meta?.activeMenu || "";
+	return activeMenu ? activeMenu : route.name;
+});
+const isCollapse = computed(() => globalStore.isCollapse);
+const inverted = computed(() => ["dark", "header-dark"].includes(layoutSetting.navTheme));
 
-  // 方式二 h(resolveComponent(组件名))
-  return () => h(resolveComponent(icon || ""));
-}
+watch(
+	() => route.fullPath,
+	() => {
+		openKeys.value = route.matched.map(v => v.name);
+	}
+);
 
 // * 根据路由过滤为菜单
 const filterMenu = (route: Array<RouteRecordRaw & RouteItem>): any => {
-  return route.map((v) => {
-    if (v.children && v.children.length) {
-      if (!v.meta!.root) {
-        v.children = filterMenu(v.children);
-      } else {
-        v.meta = v.children[0].meta;
-        delete v.children;
-      }
-    }
-    return {
-      label: v.meta && v.meta.title,
-      // icon: v.meta?.icon,
-      icon: v.meta?.icon ? renderIcon(v.meta?.icon as string) : null,
-      key: v.path,
-      children: v.children as any,
-    };
-  });
+	// 过滤需要隐藏的菜单
+	const menuOptions = route.filter(v => !v.meta?.hidden);
+	return menuOptions.map(v => {
+		if (v.children && v.children.length) {
+			if (!v.meta?.root) {
+				v.children = filterMenu(v.children);
+			} else {
+				v.meta = v.children[0].meta;
+				delete v.children;
+			}
+		}
+		return {
+			label: v.meta && v.meta.title,
+			// icon: v.meta?.icon,
+			icon: v.meta?.icon ? renderIcon(v.meta?.icon as string) : null,
+			key: v.name,
+			children: v.children as any,
+		};
+	});
 };
 
-// * 点击惨淡跳转路由
-const changeMenu = (path: string) => {
-  router.push(path);
+// * 点击跳转路由
+const changeMenu = (name: string) => {
+	router.push({ name });
 };
 
-menuOptions.value = filterMenu(routerArray);
+// * 展开菜单
+const expandedMenu = (keys: string[]) => {
+	openKeys.value = keys;
+};
+
+const watchWidth = () => {
+	const width = document.body.offsetWidth;
+	globalStore.$patch({ isCollapse: width < 900 });
+};
+
+onMounted(() => {
+	menuOptions.value = filterMenu(JSON.parse(JSON.stringify(routerArray)));
+	window.addEventListener("resize", watchWidth);
+});
 </script>
 
 <style scoped></style>

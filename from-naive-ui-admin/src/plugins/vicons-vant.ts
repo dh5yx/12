@@ -7,9 +7,9 @@ import * as antd from "@vicons/antd";
 // const antd = { AccountBookFilled };
 
 export default {
-  install(app: App) {
-    Object.values(antd).map((item) => {
-      app.component(item.name, item);
-    });
-  },
+	install(app: App) {
+		Object.values(antd).map(item => {
+			app.component(item.name, item);
+		});
+	},
 };

@@ -7,9 +7,9 @@ import * as ionicons5 from "@vicons/ionicons5";
 // const ionicons5 = { Accessibility };
 
 export default {
-  install(app: App) {
-    Object.values(ionicons5).map((item) => {
-      app.component(item.name, item);
-    });
-  },
+	install(app: App) {
+		Object.values(ionicons5).map(item => {
+			app.component(item.name, item);
+		});
+	},
 };

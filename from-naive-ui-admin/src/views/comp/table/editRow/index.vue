@@ -1,5 +1,5 @@
 <template>
-  <div>整行编辑</div>
+	<div>整行编辑</div>
 </template>
 
 <script>
