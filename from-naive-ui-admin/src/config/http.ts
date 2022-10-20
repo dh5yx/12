@@ -10,19 +10,19 @@
 export const MODE = import.meta.env.MODE;
 
 // * 后端微服务端口名
-export const PORT1 = "/api";
+export const PORT1 = '/api';
 
 // * token
-export const TOKEN_KEY = "token_key";
+export const TOKEN_KEY = 'token_key';
 
 // * axios
 const config: DevConfigType = {
 	development: {
-		baseURL: "",
+		baseURL: '',
 		timeout: 30000,
 	},
 	production: {
-		baseURL: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e",
+		baseURL: 'https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e',
 		timeout: 30000,
 	},
 };

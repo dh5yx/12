@@ -56,17 +56,17 @@
 </template>
 
 <script setup lang="ts">
-import { useMessage } from "naive-ui";
-import type { FormInst } from "naive-ui";
-import { ref } from "vue";
-import { doctorList, matterList, rules } from "./config";
+import { useMessage } from 'naive-ui';
+import type { FormInst } from 'naive-ui';
+import { ref } from 'vue';
+import { doctorList, matterList, rules } from './config';
 
 const message = useMessage();
 
 const defaultValueRef = {
-	name: "",
-	mobile: "",
-	remark: "",
+	name: '',
+	mobile: '',
+	remark: '',
 	sex: 1,
 	matter: null,
 	doctor: null,
@@ -83,9 +83,9 @@ const formRef = ref<FormInst | null>(null);
 const formSubmit = () => {
 	formRef.value?.validate((err: any) => {
 		if (!err) {
-			message.success("验证成功");
+			message.success('验证成功');
 		} else {
-			message.error("验证失败，请填写完整信息");
+			message.error('验证失败，请填写完整信息');
 		}
 	});
 };

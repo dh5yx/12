@@ -1,9 +1,9 @@
-import { fileURLToPath, URL } from "node:url";
-import pkg from "./package.json";
-import { format } from "date-fns";
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
+import { fileURLToPath, URL } from 'node:url';
+import pkg from './package.json';
+import { format } from 'date-fns';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 const { dependencies, devDependencies, name, version } = pkg;
 
@@ -12,7 +12,7 @@ export default defineConfig({
 	plugins: [vue(), vueJsx()],
 	resolve: {
 		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
+			'@': fileURLToPath(new URL('./src', import.meta.url)),
 		},
 	},
 	css: {
@@ -26,7 +26,7 @@ export default defineConfig({
 	define: {
 		__APP_INFO__: JSON.stringify({
 			pkg: { dependencies, devDependencies, name, version },
-			lastBuildTime: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
+			lastBuildTime: format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
 		}),
 	},
 });

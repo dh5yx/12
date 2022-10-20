@@ -25,28 +25,28 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, defineEmits } from "vue";
-import { useMessage } from "naive-ui";
+import { ref, defineEmits } from 'vue';
+import { useMessage } from 'naive-ui';
 const form2Ref: any = ref(null);
 const message = useMessage();
 const loading = ref(false);
 
 const formValue = ref({
-	password: "086611",
+	password: '086611',
 });
 
 const rules = {
 	password: {
 		required: true,
-		message: "请输入支付密码",
-		trigger: "blur",
+		message: '请输入支付密码',
+		trigger: 'blur',
 	},
 };
 
-const emit = defineEmits(["prevStep", "nextStep"]);
+const emit = defineEmits(['prevStep', 'nextStep']);
 
 function prevStep() {
-	emit("prevStep");
+	emit('prevStep');
 }
 
 function formSubmit() {
@@ -55,10 +55,10 @@ function formSubmit() {
 		if (!errors) {
 			setTimeout(() => {
 				loading.value = false;
-				emit("nextStep");
+				emit('nextStep');
 			}, 1500);
 		} else {
-			message.error("验证失败，请填写完整信息");
+			message.error('验证失败，请填写完整信息');
 			loading.value = false;
 		}
 	});

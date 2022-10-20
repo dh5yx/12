@@ -56,7 +56,7 @@
 										<UpOutlined />
 									</n-icon>
 								</template>
-								{{ overflow ? "展开" : "收起" }}
+								{{ overflow ? '展开' : '收起' }}
 							</n-button>
 						</n-space>
 					</n-form-item>
@@ -67,8 +67,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import type { FormInst } from "naive-ui";
+import { ref } from 'vue';
+import type { FormInst } from 'naive-ui';
 
 interface FormDataType {
 	name?: string;
@@ -82,7 +82,7 @@ interface FormDataType {
 }
 
 const rules = {
-	name: { required: true, message: "请输入姓名", trigger: "blur" },
+	name: { required: true, message: '请输入姓名', trigger: 'blur' },
 };
 
 const formRef = ref<FormInst | null>();
@@ -101,14 +101,14 @@ function handelReset() {
 }
 function defaultValue() {
 	return {
-		name: "",
-		mobile: "",
-		type: "",
+		name: '',
+		mobile: '',
+		type: '',
 		makeDate: null,
 		makeTime: null,
-		status: "",
-		makeSource: "",
-		makeProject: "",
+		status: '',
+		makeSource: '',
+		makeProject: '',
 	};
 }
 </script>

@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import Charts1 from "./charts1.vue";
-import Charts2 from "./charts2.vue";
+import Charts1 from './charts1.vue';
+import Charts2 from './charts2.vue';
 </script>
 
 <style scoped></style>

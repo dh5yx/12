@@ -1,4 +1,4 @@
-import layoutSetting from "@/config/layoutSetting";
+import layoutSetting from '@/config/layoutSetting';
 
 export default function () {
 	return {

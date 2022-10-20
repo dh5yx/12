@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 const handleUpdateShow = () => {
-	window.open("https://github.com/jekip/naive-ui-admin");
+	window.open('https://github.com/jekip/naive-ui-admin');
 };
 </script>
 

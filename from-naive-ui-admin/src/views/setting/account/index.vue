@@ -23,14 +23,14 @@
 	</n-grid>
 </template>
 <script lang="ts" setup>
-import BasicSetting from "./BasicSetting.vue";
-import SafetySetting from "./SafetySetting.vue";
-import { ref, computed } from "vue";
-import { useThemeVars } from "naive-ui";
+import BasicSetting from './BasicSetting.vue';
+import SafetySetting from './SafetySetting.vue';
+import { ref, computed } from 'vue';
+import { useThemeVars } from 'naive-ui';
 
 const typeTabList = [
-	{ name: "基本设置", desc: "个人账户信息设置", key: 1 },
-	{ name: "安全设置", desc: "密码，邮箱等设置", key: 2 },
+	{ name: '基本设置', desc: '个人账户信息设置', key: 1 },
+	{ name: '安全设置', desc: '密码，邮箱等设置', key: 2 },
 ];
 
 const themeVars = useThemeVars();

@@ -24,15 +24,15 @@
 	</n-grid>
 </template>
 <script lang="ts">
-import BasicSetting from "./BasicSetting.vue";
-import RevealSetting from "./RevealSetting.vue";
-import EmailSetting from "./EmailSetting.vue";
-import { defineComponent, reactive, toRefs, computed } from "vue";
-import { useThemeVars } from "naive-ui";
+import BasicSetting from './BasicSetting.vue';
+import RevealSetting from './RevealSetting.vue';
+import EmailSetting from './EmailSetting.vue';
+import { defineComponent, reactive, toRefs, computed } from 'vue';
+import { useThemeVars } from 'naive-ui';
 const typeTabList = [
-	{ name: "基本设置", desc: "系统常规设置", key: 1 },
-	{ name: "显示设置", desc: "系统显示设置", key: 2 },
-	{ name: "邮件设置", desc: "系统邮件设置", key: 3 },
+	{ name: '基本设置', desc: '系统常规设置', key: 1 },
+	{ name: '显示设置', desc: '系统显示设置', key: 2 },
+	{ name: '邮件设置', desc: '系统邮件设置', key: 3 },
 ];
 export default defineComponent({
 	components: { BasicSetting, RevealSetting, EmailSetting },
@@ -41,7 +41,7 @@ export default defineComponent({
 
 		const state = reactive({
 			type: 1,
-			typeTitle: "基本设置",
+			typeTitle: '基本设置',
 		});
 
 		function switchType(e: any) {

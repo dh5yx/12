@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import useRefresh from "@/hook/useRefresh";
+import useRefresh from '@/hook/useRefresh';
 const refresh = useRefresh();
 </script>
 

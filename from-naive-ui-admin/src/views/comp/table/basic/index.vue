@@ -6,10 +6,10 @@
 </template>
 
 <script lang="ts" setup>
-import BasicTable from "@/components/BasicTable/index.vue";
-import api from "@/api";
-import { ref } from "vue";
-import { columns } from "./column";
+import BasicTable from '@/components/BasicTable/index.vue';
+import api from '@/api';
+import { ref } from 'vue';
+import { columns } from './column';
 
 const tableData = ref([]);
 const pagination = ref<PaginationType>({});

@@ -33,9 +33,9 @@
 	</n-card>
 </template>
 <script lang="ts" setup>
-import { computed } from "vue";
-import { useThemeVars } from "naive-ui";
-import { useRouter } from "vue-router";
+import { computed } from 'vue';
+import { useThemeVars } from 'naive-ui';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const themeVars = useThemeVars();
@@ -45,7 +45,7 @@ const getTableHeaderColor = computed(() => {
 });
 
 function goHome() {
-	router.push("/");
+	router.push('/');
 }
 </script>
 <style lang="scss" scoped>

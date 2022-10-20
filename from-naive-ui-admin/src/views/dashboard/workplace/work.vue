@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import schoolboy from "@/assets/images/schoolboy.png";
+import schoolboy from '@/assets/images/schoolboy.png';
 </script>
 
 <style lang="scss" scoped>

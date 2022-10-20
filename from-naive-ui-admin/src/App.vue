@@ -13,12 +13,12 @@
 	</div>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
-import { useGlobalStore } from "@/stores/index";
-import { darkTheme } from "naive-ui";
-import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
-import { NDialogProvider } from "naive-ui";
-import type { GlobalThemeOverrides } from "naive-ui";
+import { computed } from 'vue';
+import { useGlobalStore } from '@/stores/index';
+import { darkTheme } from 'naive-ui';
+import { useLayoutSettingStore } from '@/stores/modules/layoutSetting';
+import { NDialogProvider } from 'naive-ui';
+import type { GlobalThemeOverrides } from 'naive-ui';
 
 const globalStore = useGlobalStore();
 const layoutSettingStore = useLayoutSettingStore();
@@ -57,7 +57,7 @@ function addLight(color: string, amount: number) {
  * @returns {string} The processed color represented as HEX
  */
 function lighten(color: string, amount: number) {
-	color = color.indexOf("#") >= 0 ? color.substring(1, color.length) : color;
+	color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color;
 	amount = Math.trunc((255 * amount) / 100);
 	return `#${addLight(color.substring(0, 2), amount)}${addLight(color.substring(2, 4), amount)}${addLight(color.substring(4, 6), amount)}`;
 }

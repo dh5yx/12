@@ -14,15 +14,15 @@
 	/>
 </template>
 <script setup lang="ts">
-import routerArray from "@/router/routes";
-import { ref, computed, onMounted, watch } from "vue";
-import { useRouter, useRoute } from "vue-router";
-import { useGlobalStore } from "@/stores/index";
-import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
+import routerArray from '@/router/routes';
+import { ref, computed, onMounted, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
+import { useGlobalStore } from '@/stores/index';
+import { useLayoutSettingStore } from '@/stores/modules/layoutSetting';
 
-import { renderIcon } from "@/utils/index";
-import type { RouteRecordRaw } from "vue-router";
-import type { MenuOption } from "naive-ui";
+import { renderIcon } from '@/utils/index';
+import type { RouteRecordRaw } from 'vue-router';
+import type { MenuOption } from 'naive-ui';
 
 const route = useRoute();
 const router = useRouter();
@@ -34,11 +34,11 @@ const openKeys = ref(route.matched.map(v => v.name));
 
 const selectedKeys = computed(() => {
 	// 处理隐藏菜单激活问题
-	const activeMenu = route.meta?.activeMenu || "";
+	const activeMenu = route.meta?.activeMenu || '';
 	return activeMenu ? activeMenu : route.name;
 });
 const isCollapse = computed(() => globalStore.isCollapse);
-const inverted = computed(() => ["dark", "header-dark"].includes(layoutSetting.navTheme));
+const inverted = computed(() => ['dark', 'header-dark'].includes(layoutSetting.navTheme));
 
 watch(
 	() => route.fullPath,
@@ -87,7 +87,7 @@ const watchWidth = () => {
 
 onMounted(() => {
 	menuOptions.value = filterMenu(JSON.parse(JSON.stringify(routerArray)));
-	window.addEventListener("resize", watchWidth);
+	window.addEventListener('resize', watchWidth);
 });
 </script>
 

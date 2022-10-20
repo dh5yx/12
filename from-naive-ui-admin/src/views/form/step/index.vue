@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import step1 from "./Step1.vue";
-import step2 from "./Step2.vue";
-import step3 from "./Step3.vue";
+import { ref } from 'vue';
+import step1 from './Step1.vue';
+import step2 from './Step2.vue';
+import step3 from './Step3.vue';
 
 const currentTab = ref(1);
 

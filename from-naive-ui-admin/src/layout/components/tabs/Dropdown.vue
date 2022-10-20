@@ -7,36 +7,36 @@
 </template>
 
 <script lang="ts" setup>
-import useRefresh from "@/hook/useRefresh";
-import { useRoute } from "vue-router";
-import { useGlobalStore } from "@/stores/index";
-import { renderIcon } from "@/utils/index";
-import { ReloadOutlined, CloseOutlined, ColumnWidthOutlined, MinusOutlined } from "@vicons/antd";
+import useRefresh from '@/hook/useRefresh';
+import { useRoute } from 'vue-router';
+import { useGlobalStore } from '@/stores/index';
+import { renderIcon } from '@/utils/index';
+import { ReloadOutlined, CloseOutlined, ColumnWidthOutlined, MinusOutlined } from '@vicons/antd';
 const refresh = useRefresh();
 const route = useRoute();
 const globalStore = useGlobalStore();
 
 const options = [
 	{
-		label: "刷新当前",
-		key: "1",
+		label: '刷新当前',
+		key: '1',
 		icon: renderIcon(ReloadOutlined),
 	},
 	{
 		label: `关闭当前`,
-		key: "2",
+		key: '2',
 		// disabled: unref(isCurrent) || isDisabled,
 		icon: renderIcon(CloseOutlined),
 	},
 	{
-		label: "关闭其他",
-		key: "3",
+		label: '关闭其他',
+		key: '3',
 		// disabled: isDisabled,
 		icon: renderIcon(ColumnWidthOutlined),
 	},
 	{
-		label: "关闭全部",
-		key: "4",
+		label: '关闭全部',
+		key: '4',
 		// disabled: isDisabled,
 		icon: renderIcon(MinusOutlined),
 	},
@@ -44,16 +44,16 @@ const options = [
 
 const handleSelect = (key: any) => {
 	switch (key) {
-		case "1":
+		case '1':
 			refresh();
 			break;
-		case "2":
+		case '2':
 			globalStore.removeTabs(route.path, route.path);
 			break;
-		case "3":
+		case '3':
 			globalStore.removeOtherTabs(route.path);
 			break;
-		case "4":
+		case '4':
 			globalStore.removeALlTabs();
 			break;
 	}

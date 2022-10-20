@@ -26,28 +26,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, unref } from "vue";
+import { ref, onMounted, unref } from 'vue';
 interface ControlType {
 	selection: boolean;
 	checkColumns: Array<any>;
 }
 const props = defineProps<ControlType>();
-const emit = defineEmits(["update:selection", "update:checkColumns"]);
+const emit = defineEmits(['update:selection', 'update:checkColumns']);
 
 const checkList = ref<Array<any>>([]);
 const columns = ref<Array<any>>([]);
 
 function init() {
 	checkList.value = columns.value.map(v => v.key);
-	emit("update:checkColumns", columns.value);
+	emit('update:checkColumns', columns.value);
 }
 function changeSelection(val: boolean) {
-	emit("update:selection", val);
+	emit('update:selection', val);
 }
 function changeCheckList(value: any) {
 	checkList.value = value;
 	const res = unref(columns).filter(v => checkList.value.includes(v.key));
-	emit("update:checkColumns", res);
+	emit('update:checkColumns', res);
 }
 
 onMounted(() => {

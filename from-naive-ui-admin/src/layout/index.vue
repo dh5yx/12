@@ -26,15 +26,15 @@
 	</n-layout>
 </template>
 <script setup lang="ts">
-import Logo from "./components/logo/index.vue";
-import Menu from "./components/menu/index.vue";
-import Header from "./components/header/index.vue";
-import Tabs from "./components/tabs/index.vue";
+import Logo from './components/logo/index.vue';
+import Menu from './components/menu/index.vue';
+import Header from './components/header/index.vue';
+import Tabs from './components/tabs/index.vue';
 // import useLayoutSetting from "@/hook/useLayoutSetting";
-import { useLoadingBar, useMessage } from "naive-ui";
-import { computed, unref } from "vue";
-import { useGlobalStore } from "@/stores/index";
-import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
+import { useLoadingBar, useMessage } from 'naive-ui';
+import { computed, unref } from 'vue';
+import { useGlobalStore } from '@/stores/index';
+import { useLayoutSettingStore } from '@/stores/modules/layoutSetting';
 
 window.$message = useMessage();
 window.$loading = useLoadingBar();
@@ -47,10 +47,10 @@ const leftMenuWidth = computed(() => {
 	return globalStore.isCollapse ? minMenuWidth : menuWidth;
 });
 const isDarkTheme = computed(() => layoutSettingStore.isDarkTheme);
-const invertedSide = computed(() => ["dark", "header-dark"].includes(layoutSettingStore.navTheme));
-const invertedHeader = computed(() => ["header-dark"].includes(layoutSettingStore.navTheme));
+const invertedSide = computed(() => ['dark', 'header-dark'].includes(layoutSettingStore.navTheme));
+const invertedHeader = computed(() => ['header-dark'].includes(layoutSettingStore.navTheme));
 const showTabs = computed(() => layoutSettingStore.multiTabsSetting.show);
-const fixedHeader = computed(() => (layoutSettingStore.headerSetting.fixed ? "absolute" : "static"));
+const fixedHeader = computed(() => (layoutSettingStore.headerSetting.fixed ? 'absolute' : 'static'));
 </script>
 
 <style lang="scss" scoped>

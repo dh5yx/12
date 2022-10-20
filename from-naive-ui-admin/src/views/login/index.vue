@@ -49,12 +49,12 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from "vue";
-import { useRouter } from "vue-router";
-import { useMessage } from "naive-ui";
-import { useLoadingBar } from "naive-ui";
-import api from "@/api/index";
-import type { FormInst } from "naive-ui";
+import { reactive, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useMessage } from 'naive-ui';
+import { useLoadingBar } from 'naive-ui';
+import api from '@/api/index';
+import type { FormInst } from 'naive-ui';
 
 window.$loading = useLoadingBar();
 
@@ -65,26 +65,26 @@ const loading = ref(false);
 const autoLogin = ref(true);
 const formRef = ref<FormInst>();
 const formInline = reactive<LoginForm>({
-	username: "admin",
-	password: "123456",
+	username: 'admin',
+	password: '123456',
 });
 
 const rules = {
-	username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
-	password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+	username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+	password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 };
 
 const handleSubmit = () => {
 	formRef.value?.validate(async (valid: any) => {
 		if (valid) return;
-		message.loading("登录中...");
+		message.loading('登录中...');
 		loading.value = true;
 		try {
 			const { code } = await api.login(formInline);
 			message.destroyAll();
 			if (code === 200) {
-				message.success("登录成功，即将进入系统");
-				router.replace("/");
+				message.success('登录成功，即将进入系统');
+				router.replace('/');
 			}
 		} finally {
 			loading.value = false;

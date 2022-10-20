@@ -1,6 +1,6 @@
-import type { App } from "vue";
+import type { App } from 'vue';
 // * 全部注册
-import * as antd from "@vicons/antd";
+import * as antd from '@vicons/antd';
 
 // * 局部注册
 // import { AccountBookFilled } from "@vicons/antd";

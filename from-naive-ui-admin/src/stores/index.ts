@@ -1,7 +1,7 @@
-import { defineStore, createPinia } from "pinia";
-import piniaPluginPersistedState from "pinia-plugin-persistedstate";
-import router from "@/router/index";
-import { HOME_PATH } from "@/config/index";
+import { defineStore, createPinia } from 'pinia';
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
+import router from '@/router/index';
+import { HOME_PATH } from '@/config/index';
 interface GlobalStore {
 	panels: Array<TabsItem>;
 	isCollapse: boolean;
@@ -11,12 +11,12 @@ interface GlobalStore {
 	isShowSetting: boolean;
 }
 export const useGlobalStore = defineStore({
-	id: "useGlobalStore",
+	id: 'useGlobalStore',
 	state: (): GlobalStore => ({
-		panels: [{ name: "控制台", path: HOME_PATH, close: false }],
+		panels: [{ name: '控制台', path: HOME_PATH, close: false }],
 		isCollapse: false,
 		isFullscreen: false,
-		token: "",
+		token: '',
 		loading: false,
 		isShowSetting: false,
 	}),

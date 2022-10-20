@@ -25,12 +25,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, toRefs } from "vue";
-import { useMessage } from "naive-ui";
-import type { FormInst } from "naive-ui";
+import { defineComponent, reactive, ref, toRefs } from 'vue';
+import { useMessage } from 'naive-ui';
+import type { FormInst } from 'naive-ui';
 
 const rules = {
-	originator: { required: true, message: "请输入发件人邮箱", trigger: "blur" },
+	originator: { required: true, message: '请输入发件人邮箱', trigger: 'blur' },
 };
 
 export default defineComponent({
@@ -40,16 +40,16 @@ export default defineComponent({
 		const formRef: any = ref<FormInst | null>(null);
 		const state = reactive({
 			formValue: {
-				originator: "",
+				originator: '',
 			},
 		});
 
 		function formSubmit() {
 			formRef.value?.validate((errors: any) => {
 				if (!errors) {
-					message.success("验证成功");
+					message.success('验证成功');
 				} else {
-					message.error("验证失败，请填写完整信息");
+					message.error('验证失败，请填写完整信息');
 				}
 			});
 		}

@@ -5,9 +5,9 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-12 14:24:16
  */
-import axios from "axios";
-import { isFunction } from "@/utils/is/index";
-import type { Canceler, AxiosRequestConfig } from "axios";
+import axios from 'axios';
+import { isFunction } from '@/utils/is/index';
+import type { Canceler, AxiosRequestConfig } from 'axios';
 
 const CancelToken = axios.CancelToken;
 
@@ -16,7 +16,7 @@ export const pendingAxios = new Map<string, Canceler>();
 
 // * 序列化参数,这里不完美，axios 请求时 参数为json，响应回来的config里面变为json的字符串了
 export const getPendingUrl = (config: AxiosRequestConfig) =>
-	[config.method, config.url, JSON.stringify(config.data), JSON.stringify(config.params)].join("&");
+	[config.method, config.url, JSON.stringify(config.data), JSON.stringify(config.params)].join('&');
 
 export default {
 	// 添加单个请求

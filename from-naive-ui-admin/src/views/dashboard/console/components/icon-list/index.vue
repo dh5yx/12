@@ -12,76 +12,76 @@
 </template>
 
 <script setup lang="ts">
-import { renderIcon } from "@/utils/index";
+import { renderIcon } from '@/utils/index';
 const iconList = [
 	{
-		icon: renderIcon("UsergroupAddOutlined"),
-		size: "32",
-		title: "用户",
-		color: "#69c0ff",
+		icon: renderIcon('UsergroupAddOutlined'),
+		size: '32',
+		title: '用户',
+		color: '#69c0ff',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("BarChartOutlined"),
-		size: "32",
-		title: "分析",
-		color: "#69c0ff",
+		icon: renderIcon('BarChartOutlined'),
+		size: '32',
+		title: '分析',
+		color: '#69c0ff',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("ShoppingCartOutlined"),
-		size: "32",
-		title: "商品",
-		color: "#ff9c6e",
+		icon: renderIcon('ShoppingCartOutlined'),
+		size: '32',
+		title: '商品',
+		color: '#ff9c6e',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("AccountBookOutlined"),
-		size: "32",
-		title: "订单",
-		color: "#b37feb",
+		icon: renderIcon('AccountBookOutlined'),
+		size: '32',
+		title: '订单',
+		color: '#b37feb',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("CreditCardOutlined"),
-		size: "32",
-		title: "票据",
-		color: "#ffd666",
+		icon: renderIcon('CreditCardOutlined'),
+		size: '32',
+		title: '票据',
+		color: '#ffd666',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("MailOutlined"),
-		size: "32",
-		title: "消息",
-		color: "#5cdbd3",
+		icon: renderIcon('MailOutlined'),
+		size: '32',
+		title: '消息',
+		color: '#5cdbd3',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("TagsOutlined"),
-		size: "32",
-		title: "标签",
-		color: "#ff85c0",
+		icon: renderIcon('TagsOutlined'),
+		size: '32',
+		title: '标签',
+		color: '#ff85c0',
 		eventObject: {
 			click: () => {},
 		},
 	},
 	{
-		icon: renderIcon("SettingOutlined"),
-		size: "32",
-		title: "配置",
-		color: "#ffc069",
+		icon: renderIcon('SettingOutlined'),
+		size: '32',
+		title: '配置',
+		color: '#ffc069',
 		eventObject: {
 			click: () => {},
 		},

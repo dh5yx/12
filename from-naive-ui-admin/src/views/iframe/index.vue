@@ -6,8 +6,8 @@
 	</n-spin>
 </template>
 <script lang="ts" setup>
-import { ref, computed, onMounted, unref } from "vue";
-import { useRoute } from "vue-router";
+import { ref, computed, onMounted, unref } from 'vue';
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
 

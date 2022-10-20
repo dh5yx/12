@@ -16,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import { renderIcon } from "@/utils/index";
-import { ref } from "vue";
-import type { Component } from "vue";
+import { renderIcon } from '@/utils/index';
+import { ref } from 'vue';
+import type { Component } from 'vue';
 
 interface ListItem {
 	name: string;
@@ -27,33 +27,33 @@ interface ListItem {
 }
 const list = ref<Array<ListItem>>([
 	{
-		name: "主控台",
-		icon: renderIcon("DashboardOutlined"),
-		color: "#68c755",
+		name: '主控台',
+		icon: renderIcon('DashboardOutlined'),
+		color: '#68c755',
 	},
 	{
-		name: "列表",
-		icon: renderIcon("ProfileOutlined"),
-		color: "#fab251",
+		name: '列表',
+		icon: renderIcon('ProfileOutlined'),
+		color: '#fab251',
 	},
 	{
-		name: "表单",
-		icon: renderIcon("FileProtectOutlined"),
-		color: "#1890ff",
+		name: '表单',
+		icon: renderIcon('FileProtectOutlined'),
+		color: '#1890ff',
 	},
 	{
-		name: "权限管理",
-		icon: renderIcon("ApartmentOutlined"),
-		color: "#f06b96",
+		name: '权限管理',
+		icon: renderIcon('ApartmentOutlined'),
+		color: '#f06b96',
 	},
 	{
-		name: "系统管理",
-		icon: renderIcon("SettingOutlined"),
-		color: "#7238d1",
+		name: '系统管理',
+		icon: renderIcon('SettingOutlined'),
+		color: '#7238d1',
 	},
 	{
-		name: "主控台",
-		icon: renderIcon("DashboardOutlined"),
+		name: '主控台',
+		icon: renderIcon('DashboardOutlined'),
 	},
 ]);
 </script>

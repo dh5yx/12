@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { HOME_PATH } from "@/config/index";
-import routes from "./routes";
+import { createRouter, createWebHistory } from 'vue-router';
+import { HOME_PATH } from '@/config/index';
+import routes from './routes';
 
 // import Layout from "@/layout/index.vue";
 
@@ -8,23 +8,23 @@ const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	routes: [
 		{
-			path: "/",
+			path: '/',
 			redirect: HOME_PATH,
 		},
 		{
-			path: "/login",
-			name: "Login",
-			component: () => import("@/views/login/index.vue"),
+			path: '/login',
+			name: 'Login',
+			component: () => import('@/views/login/index.vue'),
 		},
 		{
-			path: "/redirect/:pathMatch(.*)*",
-			name: "Redirect",
-			component: () => import("@/views/redirect/index.vue"),
+			path: '/redirect/:pathMatch(.*)*',
+			name: 'Redirect',
+			component: () => import('@/views/redirect/index.vue'),
 		},
 		...routes,
 		{
-			path: "/:pathMatch(.*)*",
-			component: () => import("@/views/error/404.vue"),
+			path: '/:pathMatch(.*)*',
+			component: () => import('@/views/error/404.vue'),
 		},
 	],
 });
@@ -39,7 +39,7 @@ router.afterEach(() => {
 });
 
 router.onError(error => {
-	console.log(error, "路由错误");
+	console.log(error, '路由错误');
 });
 
 export default router;

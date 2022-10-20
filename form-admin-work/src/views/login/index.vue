@@ -1,7 +1,21 @@
 <template>
-    <div>登录</div>
+    <div class="login">
+
+    </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts" >
+const obj = {
+  a: '123'
+}
+var a = 10
+// console.log(obj)
 
-<style scoped></style>
+</script>
+
+<style lang="scss" scoped>
+.login{
+  height: 100vh;
+  width: 100%;
+}
+</style>

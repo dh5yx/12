@@ -3,10 +3,10 @@
  * @Author: dh
  * @Date: 2022-08-05 13:53:09
  * @LastEditors: dh
- * @LastEditTime: 2022-08-31 17:22:52
+ * @LastEditTime: 2022-10-20 15:31:24
  */
 
-import { useGlobalStore } from "@/stores/index";
+import { useGlobalStore } from '@/stores/index';
 
 const globalStore = useGlobalStore();
 

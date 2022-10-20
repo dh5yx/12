@@ -1,4 +1,4 @@
-import Mock from "mockjs";
+import Mock from 'mockjs';
 
 // 获取 mock.Random 对象
 const Random = Mock.Random;
@@ -17,123 +17,123 @@ const produceNewsData = function () {
 	return newsList;
 };
 // 请求该url，就可以返回newsList
-Mock.mock("/mock/news", produceNewsData); // 后面讲这个api的使用细节
+Mock.mock('/mock/news', produceNewsData); // 后面讲这个api的使用细节
 
-Mock.mock("/api/login", () => ({
+Mock.mock('/api/login', () => ({
 	code: 200,
-	data: Random.string("upper", 32, 32),
-	message: "ok",
-	type: "success",
+	data: Random.string('upper', 32, 32),
+	message: 'ok',
+	type: 'success',
 }));
 
-Mock.mock("/dashboard/console", () => ({
+Mock.mock('/dashboard/console', () => ({
 	code: 200,
 	data: {
 		visits: {
-			title: "访问量",
+			title: '访问量',
 			number: Random.float(10000, 99999, 2, 2),
 			rise: Random.float(10, 99, 2, 2),
 			decline: Random.float(10, 99, 2, 2),
 			amount: Random.float(9999, 99999, 3, 2),
 		},
 		saleroom: {
-			title: "销售额",
+			title: '销售额',
 			number: Random.float(10000, 99999, 2, 2),
 			amount: Random.float(9999, 99999, 2, 2),
 			degree: Random.float(10, 99, 2, 2),
 		},
 		orderLarge: {
-			title: "订单量",
+			title: '订单量',
 			number: Random.float(10000, 99999, 2, 2),
 			rise: Random.float(10, 99, 2, 2),
 			decline: Random.float(10, 99, 2, 2),
 			amount: Random.float(9999, 99999, 2, 2),
 		},
 		volume: {
-			title: "成交额度",
+			title: '成交额度',
 			number: Random.float(10000, 99999, 2, 2),
 			rise: Random.float(10, 99, 2, 2),
 			decline: Random.float(10, 99, 2, 2),
 			amount: Random.float(9999, 99999, 2, 2),
 		},
 	},
-	message: "ok",
-	type: "success",
+	message: 'ok',
+	type: 'success',
 }));
 
-Mock.mock("/menu/list", () => ({
+Mock.mock('/menu/list', () => ({
 	code: 200,
 	data: [
 		{
-			label: "Dashboard",
-			key: "dashboard",
+			label: 'Dashboard',
+			key: 'dashboard',
 			type: 1,
-			subtitle: "dashboard",
+			subtitle: 'dashboard',
 			openType: 1,
-			auth: "dashboard",
-			path: "/dashboard",
+			auth: 'dashboard',
+			path: '/dashboard',
 			children: [
 				{
-					label: "主控台",
-					key: "console",
+					label: '主控台',
+					key: 'console',
 					type: 1,
-					subtitle: "console",
+					subtitle: 'console',
 					openType: 1,
-					auth: "console",
-					path: "/dashboard/console",
+					auth: 'console',
+					path: '/dashboard/console',
 				},
 				{
-					label: "工作台",
-					key: "workplace",
+					label: '工作台',
+					key: 'workplace',
 					type: 1,
-					subtitle: "workplace",
+					subtitle: 'workplace',
 					openType: 1,
-					auth: "workplace",
-					path: "/dashboard/workplace",
+					auth: 'workplace',
+					path: '/dashboard/workplace',
 				},
 			],
 		},
 		{
-			label: "表单管理",
-			key: "form",
+			label: '表单管理',
+			key: 'form',
 			type: 1,
-			subtitle: "form",
+			subtitle: 'form',
 			openType: 1,
-			auth: "form",
-			path: "/form",
+			auth: 'form',
+			path: '/form',
 			children: [
 				{
-					label: "基础表单",
-					key: "basic-form",
+					label: '基础表单',
+					key: 'basic-form',
 					type: 1,
-					subtitle: "basic-form",
+					subtitle: 'basic-form',
 					openType: 1,
-					auth: "basic-form",
-					path: "/form/basic-form",
+					auth: 'basic-form',
+					path: '/form/basic-form',
 				},
 				{
-					label: "分步表单",
-					key: "step-form",
+					label: '分步表单',
+					key: 'step-form',
 					type: 1,
-					subtitle: "step-form",
+					subtitle: 'step-form',
 					openType: 1,
-					auth: "step-form",
-					path: "/form/step-form",
+					auth: 'step-form',
+					path: '/form/step-form',
 				},
 				{
-					label: "表单详情",
-					key: "detail",
+					label: '表单详情',
+					key: 'detail',
 					type: 1,
-					subtitle: "detail",
+					subtitle: 'detail',
 					openType: 1,
-					auth: "detail",
-					path: "/form/detail",
+					auth: 'detail',
+					path: '/form/detail',
 				},
 			],
 		},
 	],
-	message: "ok",
-	type: "success",
+	message: 'ok',
+	type: 'success',
 }));
 
 function doCustomTimes(times: number, callback: any) {
@@ -143,46 +143,46 @@ function doCustomTimes(times: number, callback: any) {
 	}
 }
 function getMenuKeys() {
-	const keys = ["dashboard", "console", "workplace", "basic-form", "step-form", "detail"];
+	const keys = ['dashboard', 'console', 'workplace', 'basic-form', 'step-form', 'detail'];
 	const newKeys: any = [];
-	doCustomTimes(parseInt(Math.random() * 6 + ""), () => {
+	doCustomTimes(parseInt(Math.random() * 6 + ''), () => {
 		const key = keys[Math.floor(Math.random() * keys.length)];
 		newKeys.push(key);
 	});
 	return Array.from(new Set(newKeys));
 }
-Mock.mock("/role/list", {
+Mock.mock('/role/list', {
 	code: 200,
-	"data|10": [
+	'data|10': [
 		{
-			id: "@integer(10,100)",
-			name: "@cname()",
-			explain: "@cname()",
-			isDefault: "@boolean()",
+			id: '@integer(10,100)',
+			name: '@cname()',
+			explain: '@cname()',
+			isDefault: '@boolean()',
 			menu_keys: getMenuKeys(),
 			create_date: `@date('yyyy-MM-dd hh:mm:ss')`,
-			"status|1": ["normal", "enable", "disable"],
+			'status|1': ['normal', 'enable', 'disable'],
 		},
 	],
-	message: "ok",
-	type: "success",
+	message: 'ok',
+	type: 'success',
 });
-Mock.mock("/table/list", {
+Mock.mock('/table/list', {
 	code: 200,
-	"data|10": [
+	'data|10': [
 		{
-			id: "@integer(10,100)",
-			beginTime: "@datetime",
-			endTime: "@datetime",
-			address: "@city()",
-			name: "@cname()",
+			id: '@integer(10,100)',
+			beginTime: '@datetime',
+			endTime: '@datetime',
+			address: '@city()',
+			name: '@cname()',
 			avatar: '@image("400x400", @color(), color(),first())',
 			date: `@date('yyyy-MM-dd')`,
 			time: `@time('HH:mm')`,
-			"no|100000-10000000": 100000,
-			"status|1": [true, false],
+			'no|100000-10000000': 100000,
+			'status|1': [true, false],
 		},
 	],
-	message: "ok",
-	type: "success",
+	message: 'ok',
+	type: 'success',
 });

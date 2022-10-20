@@ -19,10 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from "vue-router";
-import { computed, onMounted } from "vue";
-import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
-import type { RouteRecordRawItem } from "@/router/routes";
+import { useRoute, useRouter } from 'vue-router';
+import { computed, onMounted } from 'vue';
+import { useLayoutSettingStore } from '@/stores/modules/layoutSetting';
+import type { RouteRecordRawItem } from '@/router/routes';
 
 const route = useRoute();
 const router = useRouter();
@@ -35,7 +35,7 @@ const generator = (routerMap: any) => {
 			...item,
 			title: item.meta.title,
 			key: item.path,
-			disabled: item.path === "/",
+			disabled: item.path === '/',
 		};
 		if (item.children && item.children.length > 0) {
 			currentMenu.children = generator(item.children);

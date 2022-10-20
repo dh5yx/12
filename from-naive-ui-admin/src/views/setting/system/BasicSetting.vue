@@ -33,13 +33,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, toRefs } from "vue";
-import { useDialog, useMessage } from "naive-ui";
-import type { FormInst } from "naive-ui";
+import { defineComponent, reactive, ref, toRefs } from 'vue';
+import { useDialog, useMessage } from 'naive-ui';
+import type { FormInst } from 'naive-ui';
 
 const rules = {
-	name: { required: true, message: "请输入网站名称", trigger: "blur" },
-	mobile: { required: true, message: "请输入联系电话", trigger: "input" },
+	name: { required: true, message: '请输入网站名称', trigger: 'blur' },
+	mobile: { required: true, message: '请输入联系电话', trigger: 'input' },
 };
 
 export default defineComponent({
@@ -50,12 +50,12 @@ export default defineComponent({
 
 		const state = reactive({
 			formValue: {
-				name: "",
-				mobile: "",
-				icpCode: "",
-				address: "",
+				name: '',
+				mobile: '',
+				icpCode: '',
+				address: '',
 				loginCode: 0,
-				closeText: "网站维护中，暂时无法访问！本网站正在进行系统维护和技术升级，网站暂时无法访问，敬请谅解！",
+				closeText: '网站维护中，暂时无法访问！本网站正在进行系统维护和技术升级，网站暂时无法访问，敬请谅解！',
 				systemOpen: true,
 			},
 		});
@@ -63,12 +63,12 @@ export default defineComponent({
 		function systemOpenChange(value: any) {
 			if (!value) {
 				dialog.warning({
-					title: "提示",
-					content: "您确定要关闭系统访问吗？该操作立马生效，请慎重操作！",
-					positiveText: "确定",
-					negativeText: "取消",
+					title: '提示',
+					content: '您确定要关闭系统访问吗？该操作立马生效，请慎重操作！',
+					positiveText: '确定',
+					negativeText: '取消',
 					onPositiveClick: () => {
-						message.success("操作成功");
+						message.success('操作成功');
 					},
 					onNegativeClick: () => {
 						state.formValue.systemOpen = true;
@@ -80,9 +80,9 @@ export default defineComponent({
 		function formSubmit() {
 			formRef.value?.validate((errors: any) => {
 				if (!errors) {
-					message.success("验证成功");
+					message.success('验证成功');
 				} else {
-					message.error("验证失败，请填写完整信息");
+					message.error('验证失败，请填写完整信息');
 				}
 			});
 		}

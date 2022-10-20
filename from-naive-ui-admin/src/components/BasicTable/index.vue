@@ -70,9 +70,9 @@
 </template>
 
 <script setup lang="ts">
-import Control from "./components/control.vue";
-import { onMounted, ref, computed } from "vue";
-import { useDialog, useMessage } from "naive-ui";
+import Control from './components/control.vue';
+import { onMounted, ref, computed } from 'vue';
+import { useDialog, useMessage } from 'naive-ui';
 
 interface TableProps {
 	columns: Array<any>;
@@ -93,23 +93,23 @@ const props = withDefaults(defineProps<TableProps>(), {
 	data: () => [],
 	pagination: () => ({}),
 	request: () => {},
-	rowKey: "id",
+	rowKey: 'id',
 });
 
 const densityOptions = [
-	{ type: "menu", label: "紧凑", key: "small" },
-	{ type: "menu", label: "默认", key: "medium" },
-	{ type: "menu", label: "宽松", key: "large" },
+	{ type: 'menu', label: '紧凑', key: 'small' },
+	{ type: 'menu', label: '默认', key: 'medium' },
+	{ type: 'menu', label: '宽松', key: 'large' },
 ];
 
 const isStriped = ref<boolean>(false);
-const tableSize = ref<string>("medium");
+const tableSize = ref<string>('medium');
 const isSelection = ref<boolean>(true);
 const selectedROwID = ref<Array<any>>([]);
 const checkColumns = ref<Array<any>>([...props.columns]);
 
 const columnsFilter = computed(() => {
-	return isSelection.value ? [{ type: "selection" }, ...checkColumns.value] : [...checkColumns.value];
+	return isSelection.value ? [{ type: 'selection' }, ...checkColumns.value] : [...checkColumns.value];
 });
 
 //组装表格信息
@@ -129,16 +129,16 @@ function handelReload() {
 function handelDelete() {
 	if (!selectedROwID.value.length) return;
 	dialog.warning({
-		title: "警告",
+		title: '警告',
 		content: `你确定删除选中的${selectedROwID.value}？`,
-		positiveText: "确定",
-		negativeText: "取消",
+		positiveText: '确定',
+		negativeText: '取消',
 		onPositiveClick: () => {
-			message.success("删除成功");
+			message.success('删除成功');
 			props.request();
 		},
 		onNegativeClick: () => {
-			message.error("取消");
+			message.error('取消');
 		},
 	});
 	console.log(selectedROwID.value);

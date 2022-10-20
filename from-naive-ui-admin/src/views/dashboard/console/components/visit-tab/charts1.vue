@@ -3,10 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import { option1 } from "./config";
-import useEcharts from "@/hook/useEcharts";
-import * as echarts from "echarts";
+import { ref, onMounted } from 'vue';
+import { option1 } from './config';
+import useEcharts from '@/hook/useEcharts';
+import * as echarts from 'echarts';
 
 const chartRef1 = ref<HTMLDivElement>();
 

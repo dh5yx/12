@@ -32,15 +32,15 @@
 </template>
 
 <script lang="ts" setup>
-import { defineEmits } from "vue";
+import { defineEmits } from 'vue';
 
-const emit = defineEmits(["finish", "prevStep"]);
+const emit = defineEmits(['finish', 'prevStep']);
 function prevStep() {
-	emit("prevStep");
+	emit('prevStep');
 }
 
 function finish() {
-	emit("finish");
+	emit('finish');
 }
 </script>
 
@@ -63,7 +63,7 @@ function finish() {
 	}
 
 	.money {
-		font-family: "Helvetica Neue", sans-serif;
+		font-family: 'Helvetica Neue', sans-serif;
 		font-weight: 500;
 		font-size: 20px;
 		line-height: 14px;

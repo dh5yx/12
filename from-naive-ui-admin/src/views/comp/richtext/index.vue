@@ -26,49 +26,49 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from "vue";
-import { QuillEditor } from "@vueup/vue-quill";
-import "@vueup/vue-quill/dist/vue-quill.snow.css";
+import { ref, reactive } from 'vue';
+import { QuillEditor } from '@vueup/vue-quill';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
 
 const quillEditor = ref();
-const myContent = ref("<h4>Naive Ui Admin 是一个基于 vue3,vite2,TypeScript 的中后台解决方案</h4>");
-const myContentHtml = ref("<h4>Naive Ui Admin 是一个基于 vue3,vite2,TypeScript 的中后台解决方案</h4>");
+const myContent = ref('<h4>Naive Ui Admin 是一个基于 vue3,vite2,TypeScript 的中后台解决方案</h4>');
+const myContentHtml = ref('<h4>Naive Ui Admin 是一个基于 vue3,vite2,TypeScript 的中后台解决方案</h4>');
 const options = reactive({
 	modules: {
 		toolbar: [
-			["bold", "italic", "underline", "strike"], // toggled buttons
-			["blockquote", "code-block"],
+			['bold', 'italic', 'underline', 'strike'], // toggled buttons
+			['blockquote', 'code-block'],
 
 			[{ header: 1 }, { header: 2 }], // custom button values
-			[{ list: "ordered" }, { list: "bullet" }],
-			[{ script: "sub" }, { script: "super" }], // superscript/subscript
-			[{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-			[{ direction: "rtl" }], // text direction
+			[{ list: 'ordered' }, { list: 'bullet' }],
+			[{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+			[{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+			[{ direction: 'rtl' }], // text direction
 
-			[{ size: ["small", false, "large", "huge"] }], // custom dropdown
+			[{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
 			[{ header: [1, 2, 3, 4, 5, 6, false] }],
 
 			[{ color: [] }, { background: [] }], // dropdown with defaults from theme
 			[{ font: [] }],
 			[{ align: [] }],
-			["clean"],
-			["image"],
+			['clean'],
+			['image'],
 		],
 	},
-	contentType: "html",
-	theme: "snow",
-	placeholder: "输入您喜欢的内容吧！",
+	contentType: 'html',
+	theme: 'snow',
+	placeholder: '输入您喜欢的内容吧！',
 });
 
 function readyQuill() {
-	console.log("Quill准备好了");
-	myContent.value = "<h4>Naive Ui Admin 是一个基于 vue3,vite2,TypeScript 的中后台解决方案</h4>";
+	console.log('Quill准备好了');
+	myContent.value = '<h4>Naive Ui Admin 是一个基于 vue3,vite2,TypeScript 的中后台解决方案</h4>';
 }
 function getHtml() {
 	myContentHtml.value = getHtmlVal();
 }
 function addText() {
-	const html = getHtmlVal() + "新增加的内容";
+	const html = getHtmlVal() + '新增加的内容';
 	quillEditor.value.setHTML(html);
 }
 function addImg() {

@@ -20,12 +20,12 @@
 </template>
 
 <script setup lang="ts">
-import Dropdown from "./Dropdown.vue";
-import { watch, computed, unref } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { useGlobalStore } from "@/stores/index";
-import { TABS_BLACK_LIST } from "@/config/index";
-import { useThemeVars } from "naive-ui";
+import Dropdown from './Dropdown.vue';
+import { watch, computed, unref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useGlobalStore } from '@/stores/index';
+import { TABS_BLACK_LIST } from '@/config/index';
+import { useThemeVars } from 'naive-ui';
 
 const route = useRoute();
 const router = useRouter();
@@ -54,7 +54,7 @@ watch(route, to => {
 	globalStore.addPanels({
 		name: to.meta.title as string,
 		path: to.path,
-		close: typeof isClose === "boolean" ? isClose : true,
+		close: typeof isClose === 'boolean' ? isClose : true,
 	});
 });
 </script>

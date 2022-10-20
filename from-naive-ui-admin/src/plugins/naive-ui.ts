@@ -58,7 +58,7 @@ import {
 	NCheckboxGroup,
 	NModal,
 	NBadge,
-} from "naive-ui";
+} from 'naive-ui';
 
 const naive = create({
 	components: [

@@ -1,10 +1,10 @@
-import { defineStore } from "pinia";
-import layoutSetting from "@/config/layoutSetting";
+import { defineStore } from 'pinia';
+import layoutSetting from '@/config/layoutSetting';
 
 type useLayoutSettingStore = typeof layoutSetting;
 
 export const useLayoutSettingStore = defineStore({
-	id: "useSetting",
+	id: 'useSetting',
 	state: (): useLayoutSettingStore => layoutSetting,
 	getters: {},
 	actions: {},

@@ -1,28 +1,28 @@
 export default {
-	path: "/setting",
-	name: "Setting",
-	redirect: "/setting/account",
-	component: () => import("@/layout/index.vue"),
+	path: '/setting',
+	name: 'Setting',
+	redirect: '/setting/account',
+	component: () => import('@/layout/index.vue'),
 	meta: {
 		sort: 7,
-		title: "设置页面",
-		icon: "SettingOutlined",
+		title: '设置页面',
+		icon: 'SettingOutlined',
 	},
 	children: [
 		{
-			path: "/setting/account",
-			name: "settingAccount",
-			component: () => import("@/views/setting/account/index.vue"),
+			path: '/setting/account',
+			name: 'settingAccount',
+			component: () => import('@/views/setting/account/index.vue'),
 			meta: {
-				title: "个人设置",
+				title: '个人设置',
 			},
 		},
 		{
-			path: "/setting/system",
-			name: "settingSystem",
-			component: () => import("@/views/setting/system/index.vue"),
+			path: '/setting/system',
+			name: 'settingSystem',
+			component: () => import('@/views/setting/system/index.vue'),
 			meta: {
-				title: "系统设置",
+				title: '系统设置',
 			},
 		},
 	],

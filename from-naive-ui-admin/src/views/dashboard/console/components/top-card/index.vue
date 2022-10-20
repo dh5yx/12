@@ -10,13 +10,13 @@
 					<div class="percentage">
 						<div v-if="item.tip1" class="flex-box">
 							<div>
-								<span>{{ item.tip1 + " " + item.rise }}</span>
+								<span>{{ item.tip1 + ' ' + item.rise }}</span>
 								<n-icon size="12" color="#00ff6f">
 									<CaretUpOutlined />
 								</n-icon>
 							</div>
 							<div>
-								<span>{{ item.tip2 + " " + item.decline }}</span>
+								<span>{{ item.tip2 + ' ' + item.decline }}</span>
 								<n-icon size="12" color="#ffde66">
 									<CaretDownOutlined />
 								</n-icon>
@@ -37,14 +37,14 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive } from "vue";
-import api from "@/api/index";
+import { onMounted, reactive } from 'vue';
+import api from '@/api/index';
 
 const consoleInfo = reactive<any>({
-	visits: { tip1: "日同比", tip2: "周同比", msg: "总访问量", uni: "", cycle: "日", showProgress: false, type: "success" },
-	saleroom: { tip1: "", tip2: "", msg: "总销售额", uni: "￥", cycle: "周", showProgress: true, type: "info" },
-	orderLarge: { tip1: "日同比", tip2: "周同比", msg: "转化率", uni: "", cycle: "周", showProgress: false, type: "warning" },
-	volume: { tip1: "月同比", tip2: "月同比", msg: "总成交额", uni: "￥", cycle: "月", showProgress: false, type: "error" },
+	visits: { tip1: '日同比', tip2: '周同比', msg: '总访问量', uni: '', cycle: '日', showProgress: false, type: 'success' },
+	saleroom: { tip1: '', tip2: '', msg: '总销售额', uni: '￥', cycle: '周', showProgress: true, type: 'info' },
+	orderLarge: { tip1: '日同比', tip2: '周同比', msg: '转化率', uni: '', cycle: '周', showProgress: false, type: 'warning' },
+	volume: { tip1: '月同比', tip2: '月同比', msg: '总成交额', uni: '￥', cycle: '月', showProgress: false, type: 'error' },
 });
 
 onMounted(async () => {

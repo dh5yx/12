@@ -3,7 +3,7 @@
 		<n-drawer-content :title="'新增' + (addType === 'home' ? '顶栏菜单' : '子菜单')" closable>
 			<n-form :model="formData" :rules="rules" ref="formRef" label-placement="left" :label-width="100">
 				<n-form-item label="类型" path="type">
-					<span>{{ formData.type === 1 ? "侧边栏菜单" : "" }}</span>
+					<span>{{ formData.type === 1 ? '侧边栏菜单' : '' }}</span>
 				</n-form-item>
 				<n-form-item label="标题" path="label">
 					<n-input placeholder="请输入标题" v-model:value="formData.label" />
@@ -41,10 +41,10 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref, nextTick } from "vue";
-import { useMessage } from "naive-ui";
+import { reactive, ref, nextTick } from 'vue';
+import { useMessage } from 'naive-ui';
 
-type AddType = "home" | "son";
+type AddType = 'home' | 'son';
 
 const message = useMessage();
 
@@ -53,28 +53,28 @@ const addType = ref<AddType>();
 const isDrawer = ref(false);
 const formData = ref<any>({});
 const rules = reactive<any>({
-	label: { required: true, message: "请输入标题", trigger: "blur" },
-	path: { required: true, message: "请输入路径", trigger: "blur" },
+	label: { required: true, message: '请输入标题', trigger: 'blur' },
+	path: { required: true, message: '请输入路径', trigger: 'blur' },
 });
 
 function formSubmit() {
 	formRef.value.validate((err: any) => {
 		if (!err) {
-			message.success("添加成功");
+			message.success('添加成功');
 			close();
 		} else {
-			message.error("请填写完整信息");
+			message.error('请填写完整信息');
 		}
 	});
 }
 function defaultValueRef() {
 	return {
-		label: "",
+		label: '',
 		type: 1,
-		subtitle: "",
+		subtitle: '',
 		openType: 1,
-		auth: "",
-		path: "",
+		auth: '',
+		path: '',
 		hidden: false,
 	};
 }

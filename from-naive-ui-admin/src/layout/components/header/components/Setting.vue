@@ -28,7 +28,7 @@
 								</template>
 							</n-switch>
 						</template>
-						<span>{{ isDarkTheme ? "深" : "浅" }}色主题</span>
+						<span>{{ isDarkTheme ? '深' : '浅' }}色主题</span>
 					</n-tooltip>
 				</div>
 			</div>
@@ -118,28 +118,28 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
-import { useGlobalStore } from "@/stores/index";
-import verticalImg from "@/assets/images/nav-theme-dark.svg";
-import horizontalImg from "@/assets/images/nav-horizontal.svg";
-import horizontalMixImg from "@/assets/images/nav-horizontal-mix.svg";
-import lightImg from "@/assets/images/nav-theme-light.svg";
-import darkImg from "@/assets/images/nav-theme-dark.svg";
-import headerDarkImg from "@/assets/images/header-theme-dark.svg";
+import { computed } from 'vue';
+import { useLayoutSettingStore } from '@/stores/modules/layoutSetting';
+import { useGlobalStore } from '@/stores/index';
+import verticalImg from '@/assets/images/nav-theme-dark.svg';
+import horizontalImg from '@/assets/images/nav-horizontal.svg';
+import horizontalMixImg from '@/assets/images/nav-horizontal-mix.svg';
+import lightImg from '@/assets/images/nav-theme-light.svg';
+import darkImg from '@/assets/images/nav-theme-dark.svg';
+import headerDarkImg from '@/assets/images/header-theme-dark.svg';
 
 const globalStore = useGlobalStore();
 const layoutSettingStore = useLayoutSettingStore();
 
 const navModes = [
-	{ title: "左侧菜单模式", img: verticalImg, type: "vertical" },
-	{ title: "顶部菜单模式", img: horizontalImg, type: "horizontal" },
-	{ title: "顶部菜单混合模式", img: horizontalMixImg, type: "horizontal-mix" },
+	{ title: '左侧菜单模式', img: verticalImg, type: 'vertical' },
+	{ title: '顶部菜单模式', img: horizontalImg, type: 'horizontal' },
+	{ title: '顶部菜单混合模式', img: horizontalMixImg, type: 'horizontal-mix' },
 ];
 const navThemes = [
-	{ title: "暗色侧边栏", img: darkImg, type: "dark" },
-	{ title: "白色侧边栏", img: lightImg, type: "light" },
-	{ title: "暗色顶栏", img: headerDarkImg, type: "header-dark" },
+	{ title: '暗色侧边栏', img: darkImg, type: 'dark' },
+	{ title: '白色侧边栏', img: lightImg, type: 'light' },
+	{ title: '暗色顶栏', img: headerDarkImg, type: 'header-dark' },
 ];
 
 const showDrawer = computed({

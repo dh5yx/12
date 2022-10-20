@@ -43,29 +43,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, toRefs } from "vue";
-import { useDialog, useMessage } from "naive-ui";
+import { defineComponent, reactive, ref, toRefs } from 'vue';
+import { useDialog, useMessage } from 'naive-ui';
 
 const rules = {
-	name: { required: true, message: "请输入网站名称", trigger: "blur" },
-	mobile: { required: true, message: "请输入联系电话", trigger: "input" },
+	name: { required: true, message: '请输入网站名称', trigger: 'blur' },
+	mobile: { required: true, message: '请输入联系电话', trigger: 'input' },
 };
 const watermarkPlaceList = [
-	{ label: "左上", value: 1 },
-	{ label: "右上", value: 2 },
-	{ label: "居中", value: 3 },
-	{ label: "右下", value: 4 },
+	{ label: '左上', value: 1 },
+	{ label: '右上', value: 2 },
+	{ label: '居中', value: 3 },
+	{ label: '右下', value: 4 },
 ];
 
 const pricePreciseNumList = [
-	{ label: "2位", value: 1 },
-	{ label: "3位", value: 2 },
-	{ label: "4位", value: 3 },
+	{ label: '2位', value: 1 },
+	{ label: '3位', value: 2 },
+	{ label: '4位', value: 3 },
 ];
 const pricePreciseList = [
-	{ label: "四舍五入", value: 1 },
-	{ label: "向上取整", value: 2 },
-	{ label: "向下取整", value: 3 },
+	{ label: '四舍五入', value: 1 },
+	{ label: '向上取整', value: 2 },
+	{ label: '向下取整', value: 3 },
 ];
 
 export default defineComponent({
@@ -76,28 +76,28 @@ export default defineComponent({
 
 		const state = reactive({
 			formValue: {
-				bigWidth: "",
-				bigHeight: "",
-				smallWidth: "",
-				smallHeight: "",
+				bigWidth: '',
+				bigHeight: '',
+				smallWidth: '',
+				smallHeight: '',
 				watermarkClarity: null,
 				pricePrecise: 1,
 				isMarketPrice: true,
 				pricePreciseNum: null,
 				systemOpen: false,
-				watermarkPlace: "",
+				watermarkPlace: '',
 			},
 		});
 
 		function systemOpenChange(value: any) {
 			if (!value) {
 				dialog.warning({
-					title: "提示",
-					content: "您确定要关闭系统访问吗？该操作立马生效，请慎重操作！",
-					positiveText: "确定",
-					negativeText: "取消",
+					title: '提示',
+					content: '您确定要关闭系统访问吗？该操作立马生效，请慎重操作！',
+					positiveText: '确定',
+					negativeText: '取消',
 					onPositiveClick: () => {
-						message.success("操作成功");
+						message.success('操作成功');
 					},
 					onNegativeClick: () => {
 						state.formValue.systemOpen = true;
@@ -109,9 +109,9 @@ export default defineComponent({
 		function formSubmit() {
 			formRef.value?.validate((errors: any) => {
 				if (!errors) {
-					message.success("验证成功");
+					message.success('验证成功');
 				} else {
-					message.error("验证失败，请填写完整信息");
+					message.error('验证失败，请填写完整信息');
 				}
 			});
 		}

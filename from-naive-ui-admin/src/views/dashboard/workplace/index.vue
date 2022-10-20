@@ -27,11 +27,11 @@
 </template>
 
 <script setup lang="ts">
-import Work from "./work.vue";
-import Project from "./project.vue";
-import Quick from "./quick.vue";
-import Dynamic from "./dynamic.vue";
-import Business from "./business.vue";
+import Work from './work.vue';
+import Project from './project.vue';
+import Quick from './quick.vue';
+import Dynamic from './dynamic.vue';
+import Business from './business.vue';
 </script>
 
 <style lang="scss" scoped></style>

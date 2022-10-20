@@ -22,24 +22,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-import type { FormInst } from "naive-ui";
+import { ref, reactive } from 'vue';
+import type { FormInst } from 'naive-ui';
 interface FormDataType {
 	name?: string;
 	address?: String;
 	date?: number | null;
 }
 
-const emits = defineEmits(["refresh"]);
+const emits = defineEmits(['refresh']);
 
 const rules = {
-	name: { required: true, message: "请输入姓名", trigger: "blur" },
-	address: { required: true, message: "请输入地址", trigger: "blur" },
+	name: { required: true, message: '请输入姓名', trigger: 'blur' },
+	address: { required: true, message: '请输入地址', trigger: 'blur' },
 	date: {
-		type: "number", // 必须要type，否者验证失效
+		type: 'number', // 必须要type，否者验证失效
 		required: true,
-		trigger: ["blur", "change"],
-		message: "请选择日期",
+		trigger: ['blur', 'change'],
+		message: '请选择日期',
 	},
 };
 
@@ -55,7 +55,7 @@ function confirmForm() {
 		setTimeout(() => {
 			formBtnLoading.value = false;
 			showModal.value = false;
-			emits("refresh");
+			emits('refresh');
 		}, 1000);
 	});
 }

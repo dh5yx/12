@@ -27,17 +27,17 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import Collapse from "./components/Collapse.vue";
-import Refresh from "./components/Refresh.vue";
-import Breadcrumb from "./components/Breadcrumb.vue";
-import Search from "./components/Search.vue";
-import Github from "./components/Github.vue";
-import Lock from "./components/Lock.vue";
-import FullScreen from "./components/FullScreen.vue";
-import User from "./components/User.vue";
-import Setting from "./components/Setting.vue";
-import { useLayoutSettingStore } from "@/stores/modules/layoutSetting";
+import { computed } from 'vue';
+import Collapse from './components/Collapse.vue';
+import Refresh from './components/Refresh.vue';
+import Breadcrumb from './components/Breadcrumb.vue';
+import Search from './components/Search.vue';
+import Github from './components/Github.vue';
+import Lock from './components/Lock.vue';
+import FullScreen from './components/FullScreen.vue';
+import User from './components/User.vue';
+import Setting from './components/Setting.vue';
+import { useLayoutSettingStore } from '@/stores/modules/layoutSetting';
 
 const layoutSettingStore = useLayoutSettingStore();
 

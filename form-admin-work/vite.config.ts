@@ -6,12 +6,14 @@ import Components from "unplugin-vue-components/vite";
 import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
 import alias from "@rollup/plugin-alias";
 import resolve from "@rollup/plugin-node-resolve";
+import VueSetupExtend from "vite-plugin-vue-setup-extend";
 
 const projectRootDir = path.resolve(__dirname);
 
 export default defineConfig({
     plugins: [
         vue(),
+        VueSetupExtend(),
         AutoImport({
             imports: ["vue", { "naive-ui": ["useDialog", "useMessage", "useNotification", "useLoadingBar"] }],
         }),
@@ -23,4 +25,11 @@ export default defineConfig({
         }),
         resolve(),
     ],
+    css:{
+        preprocessorOptions:{
+          scss:{
+            additionalData:'@import "./src/styles/variables.scss";'
+          }
+        }
+    },
 });

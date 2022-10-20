@@ -1,4 +1,4 @@
-import type { RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from 'vue-router';
 
 // 继承路由类型
 export type RouteRecordRawItem = RouteRecordRaw & {
@@ -11,7 +11,7 @@ export type RouteRecordRawItem = RouteRecordRaw & {
 export type RouterArray = Array<RouteRecordRawItem>;
 
 // * 路由模块集合
-const modules: any = import.meta.globEager("./modules/*.ts");
+const modules: any = import.meta.globEager('./modules/*.ts');
 
 // * 路由模块集合
 const routerArray: RouterArray = Object.keys(modules)

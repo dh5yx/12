@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import { useGlobalStore } from "@/stores/index";
-import { computed } from "vue";
+import { useGlobalStore } from '@/stores/index';
+import { computed } from 'vue';
 
 const globalStore = useGlobalStore();
 

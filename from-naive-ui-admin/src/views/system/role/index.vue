@@ -17,38 +17,38 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/api/index";
-import BasicTable from "@/components/BasicTable/index.vue";
-import { ref, reactive } from "vue";
-import { h, resolveComponent } from "vue";
-import { useRouter } from "vue-router";
+import api from '@/api/index';
+import BasicTable from '@/components/BasicTable/index.vue';
+import { ref, reactive } from 'vue';
+import { h, resolveComponent } from 'vue';
+import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
 const columns = [
-	{ title: "id", key: "id" },
-	{ title: "角色名称", key: "name" },
-	{ title: "说明", key: "explain" },
+	{ title: 'id', key: 'id' },
+	{ title: '角色名称', key: 'name' },
+	{ title: '说明', key: 'explain' },
 	{
-		title: "是否默认角色",
-		key: "isDefault",
+		title: '是否默认角色',
+		key: 'isDefault',
 		render(row: any) {
-			return h(h(resolveComponent("NTag")), { type: row.isDefault ? "success" : "error" }, { default: () => (row.isDefault ? "是" : "否") });
+			return h(h(resolveComponent('NTag')), { type: row.isDefault ? 'success' : 'error' }, { default: () => (row.isDefault ? '是' : '否') });
 		},
 	},
-	{ title: "创建时间", key: "create_date" },
+	{ title: '创建时间', key: 'create_date' },
 	{
-		title: "操作",
-		key: "actions",
+		title: '操作',
+		key: 'actions',
 		render(row: any) {
 			return h(
-				h(resolveComponent("NSpace")),
-				{ size: "small" },
+				h(resolveComponent('NSpace')),
+				{ size: 'small' },
 				{
 					default: () => [
-						h(h(resolveComponent("NButton")), { size: "small" }, { default: () => "菜单权限" }),
-						h(h(resolveComponent("NButton")), { size: "small", onclick: handleEdit.bind(null, row) }, { default: () => "编辑" }),
-						h(h(resolveComponent("NButton")), { size: "small" }, { default: () => "删除" }),
+						h(h(resolveComponent('NButton')), { size: 'small' }, { default: () => '菜单权限' }),
+						h(h(resolveComponent('NButton')), { size: 'small', onclick: handleEdit.bind(null, row) }, { default: () => '编辑' }),
+						h(h(resolveComponent('NButton')), { size: 'small' }, { default: () => '删除' }),
 					],
 				}
 			);
@@ -60,8 +60,8 @@ const tableData = ref<Array<typeof columns[0]>>([]);
 const pagination = reactive<PaginationType>({});
 
 function handleEdit(row: any) {
-	console.log("点击了编辑", row);
-	router.push({ name: "basic-info", params: { id: row.id } });
+	console.log('点击了编辑', row);
+	router.push({ name: 'basic-info', params: { id: row.id } });
 }
 
 async function loadDataTable() {
