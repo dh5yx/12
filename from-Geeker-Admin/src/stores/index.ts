@@ -5,10 +5,10 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-10 16:42:55
  */
-import { defineStore, createPinia } from "pinia";
-import piniaPluginPersistedState from "pinia-plugin-persistedstate";
-import router from "@/router/index";
-import type { TabPanelName } from "element-plus";
+import { defineStore, createPinia } from 'pinia';
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
+import router from '@/router/index';
+import type { TabPanelName } from 'element-plus';
 interface GlobalStoreType {
 	token: string;
 	isCollapse: boolean;
@@ -17,12 +17,12 @@ interface GlobalStoreType {
 }
 
 export const useGlobalStore = defineStore({
-	id: "useGlobalStore",
+	id: 'useGlobalStore',
 	state: (): GlobalStoreType => ({
-		token: "",
+		token: '',
 		isCollapse: false,
 		menuList: [],
-		tabs: [{ title: "首页", path: "/home/index", close: false, icon: "home-filled" }],
+		tabs: [{ title: '首页', path: '/home/index', close: false, icon: 'home-filled' }],
 	}),
 	getters: {},
 	actions: {

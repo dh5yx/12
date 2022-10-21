@@ -23,15 +23,15 @@
 </template>
 
 <script setup lang="ts">
-import CollapseIcon from "./components/CollapseIcon.vue";
-import Breadcrumb from "./components/Breadcrumb.vue";
-import Size from "./components/Size.vue";
-import Language from "./components/Language.vue";
-import Theme from "./components/Theme.vue";
-import Fullscreen from "./components/Fullscreen.vue";
-import Avatar from "./components/Avatar.vue";
-import { computed } from "vue";
-import { useConfigStore } from "@/stores/modules/config";
+import CollapseIcon from './components/CollapseIcon.vue';
+import Breadcrumb from './components/Breadcrumb.vue';
+import Size from './components/Size.vue';
+import Language from './components/Language.vue';
+import Theme from './components/Theme.vue';
+import Fullscreen from './components/Fullscreen.vue';
+import Avatar from './components/Avatar.vue';
+import { computed } from 'vue';
+import { useConfigStore } from '@/stores/modules/config';
 
 const configStore = useConfigStore();
 const showBreadcrumb = computed(() => configStore.showBreadcrumb);

@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, unref, reactive } from 'vue';
+import { ref, reactive } from 'vue';
 import { useMessage } from 'naive-ui';
 // import { BasicUpload } from "@/components/Upload";
 // import { useGlobSetting } from "@/hooks/setting";
@@ -58,11 +58,11 @@ const formValue = reactive({
 	images: ['https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'],
 });
 
-const uploadHeaders = reactive({
-	platform: 'miniPrograms',
-	timestamp: new Date().getTime(),
-	token: 'Q6fFCuhc1vkKn5JNFWaCLf6gRAc5n0LQHd08dSnG4qo=',
-});
+// const uploadHeaders = reactive({
+// 	platform: 'miniPrograms',
+// 	timestamp: new Date().getTime(),
+// 	token: 'Q6fFCuhc1vkKn5JNFWaCLf6gRAc5n0LQHd08dSnG4qo=',
+// });
 
 function handelSubmit() {
 	formRef.value.validate((errors: any) => {
@@ -78,7 +78,7 @@ function handelResetForm() {
 	formRef.value.restoreValidation();
 }
 
-function uploadChange(list: string[]) {
-	formValue.images = unref(list);
-}
+// function uploadChange(list: string[]) {
+// 	formValue.images = unref(list);
+// }
 </script>

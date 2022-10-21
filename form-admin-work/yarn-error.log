@@ -1,0 +1,71 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add @vitejs/plugin-vue -D
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\99133\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\微信web开发者工具\dll;C:\Pro;ram Files\TortoiseGit\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;D:\Program Files\微信web开发者工具\dll;C:\Users\99133\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\99133\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\99133\AppData\Local\Yarn\bin;
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  14.19.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\99133\AppData\Local\Yarn\Cache\v6\npm-estraverse-4.3.0-398ad3f3c5a24948be7725e83d11a7de28cdbd1d-integrity\node_modules\estraverse\.jshintrc' -> 'D:\01-DH\vite-vue3\form-admin-work\node_modules\@typescript-eslint\utils\node_modules\estraverse\.jshintrc'
+
+npm manifest: 
+  {
+  	"name": "vite-project",
+  	"version": "0.0.0",
+  	"scripts": {
+  		"dev": "vite",
+  		"test": "vite --mode test",
+  		"prod": "vite --mode production",
+  		"build": "vue-tsc --noEmit && vite build",
+  		"build:test": "vue-tsc --noEmit && vite build --mode test",
+  		"prettier": "prettier --write .",
+  		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  	},
+  	"dependencies": {
+  		"@vue/runtime-core": "^3.2.37",
+  		"axios": "^0.25.0",
+  		"element-plus": "^2.2.13",
+  		"qs": "^6.11.0",
+  		"vue": "^3.2.25",
+  		"vue-router": "4",
+  		"vuex": "^4.0.2"
+  	},
+  	"devDependencies": {
+  		"@rollup/plugin-alias": "^4.0.0",
+  		"@rollup/plugin-node-resolve": "^15.0.0",
+      "@typescript-eslint/eslint-plugin": "^5.40.1",
+      "@typescript-eslint/parser": "^5.40.1",
+      "@vitejs/plugin-vue": "^3.1.0",
+      "autoprefixer": "^10.4.12",
+      "eslint": "^8.25.0",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-prettier": "^4.2.1",
+      "eslint-plugin-vue": "^9.6.0",
+      "naive-ui": "^2.33.4",
+      "postcss": "^8.4.18",
+      "prettier": "^2.7.1",
+      "sass": "^1.55.0",
+      "sass-loader": "^12.6.0",
+      "tailwindcss": "^3.2.0",
+      "typescript": "*",
+      "unplugin-auto-import": "^0.11.2",
+      "unplugin-vue-components": "^0.22.8",
+      "vite": "^3.1.0",
+      "vite-plugin-vue-setup-extend": "^0.4.0",
+      "vue-tsc": "^0.40.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -17,9 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import { ElMessage } from "element-plus";
+import { ElMessage } from 'element-plus';
 const longpress = () => {
-	ElMessage.success("长按事件触发成功 🎉🎉🎉");
+	ElMessage.success('长按事件触发成功 🎉🎉🎉');
 };
 </script>
 

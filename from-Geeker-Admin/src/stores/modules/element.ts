@@ -5,7 +5,7 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-17 14:01:14
  */
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
 type storeType = {
 	size: ElementSize;
@@ -13,10 +13,10 @@ type storeType = {
 };
 
 export const useElementStore = defineStore({
-	id: "useElementStore",
+	id: 'useElementStore',
 	state: (): storeType => ({
-		size: "default",
-		locale: "",
+		size: 'default',
+		locale: '',
 	}),
 	getters: {},
 	actions: {

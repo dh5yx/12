@@ -5,16 +5,16 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-30 09:50:13
  */
-import axios from "axios";
-import httpConfig from "@/config/http";
-import axiosCancel from "./axiosCancel";
-import { showFullScreenLoading, tryHideFullScreenLoading } from "@/config/serviceLoading";
-import { useGlobalStore } from "@/stores/index";
-import { TOKEN_KEY } from "@/config";
-import { ElMessage } from "element-plus";
-import { checkStatus } from "./checkStatus";
-import router from "@/router/index";
-import type { AxiosResponse, AxiosRequestConfig, AxiosError } from "axios";
+import axios from 'axios';
+import httpConfig from '@/config/http';
+import axiosCancel from './axiosCancel';
+import { showFullScreenLoading, tryHideFullScreenLoading } from '@/config/serviceLoading';
+import { useGlobalStore } from '@/stores/index';
+import { TOKEN_KEY } from '@/config';
+import { ElMessage } from 'element-plus';
+import { checkStatus } from './checkStatus';
+import router from '@/router/index';
+import type { AxiosResponse, AxiosRequestConfig, AxiosError } from 'axios';
 
 axios.defaults.baseURL = httpConfig.baseURL as string;
 axios.defaults.timeout = httpConfig.timeout as number;
@@ -59,11 +59,11 @@ service.interceptors.response.use(
 		// 关闭全局loading
 		tryHideFullScreenLoading();
 		// 请求超时单独判断，因为请求超时没有 response
-		if (error.message.indexOf("timeout") !== -1) ElMessage.error("请求超时！请您稍后重试");
+		if (error.message.indexOf('timeout') !== -1) ElMessage.error('请求超时！请您稍后重试');
 		// 根据响应的错误状态码，做不同的处理
 		if (response) checkStatus(response.status);
 		// 服务器结果都没有返回(可能服务器错误可能客户端断网)，断网处理:可以跳转到断网页面
-		if (!window.navigator.onLine) router.replace({ path: "/500" });
+		if (!window.navigator.onLine) router.replace({ path: '/500' });
 		return Promise.reject(error);
 	}
 );

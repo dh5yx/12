@@ -22,12 +22,12 @@
 </template>
 
 <script setup lang="ts" name="selectIcon">
-import { ref } from "vue";
-import * as Icons from "@element-plus/icons-vue";
+import { ref } from 'vue';
+import * as Icons from '@element-plus/icons-vue';
 
 defineProps<{ modelValue: string }>();
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 const dialogVisible = ref(false);
 const customIcons: { [key: string]: any } = Icons;
 
@@ -37,7 +37,7 @@ const openDialog = (e: any) => {
 };
 const selectIcon = (item: any) => {
 	dialogVisible.value = false;
-	emit("update:modelValue", item.name);
+	emit('update:modelValue', item.name);
 };
 </script>
 

@@ -5,14 +5,14 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-12 15:11:43
  */
-import NProgress from "@/config/nprogress";
-import routes from "./routes";
-import axiosCancel from "@/utils/http/axiosCancel";
-import { createRouter, createWebHistory } from "vue-router";
-import { useGlobalStore } from "@/stores/index";
-import { useAuthStore } from "@/stores/modules/auth";
+import NProgress from '@/config/nprogress';
+import routes from './routes';
+import axiosCancel from '@/utils/http/axiosCancel';
+import { createRouter, createWebHistory } from 'vue-router';
+import { useGlobalStore } from '@/stores/index';
+import { useAuthStore } from '@/stores/modules/auth';
 // 白名单列表，也可以在路由表里添加字段来表示不需要权限的，然后过滤出来
-const whiteList = <Array<string>>["/login"];
+const whiteList = <Array<string>>['/login'];
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +31,7 @@ router.beforeEach((to, from, next) => {
 
 	if (!globalStore.token) {
 		if (whiteList.indexOf(to.path) !== -1) next();
-		else next("/login");
+		else next('/login');
 		return;
 	}
 
@@ -39,13 +39,13 @@ router.beforeEach((to, from, next) => {
 	const dynamicRouter = authStore.dynamicRouter;
 
 	// * Static Router(静态路由，必须配置首页地址，否则不能进首页获取菜单、按钮权限等数据)，获取数据的时候会loading，所有配置首页地址也没问题
-	const staticRouter = ["/", "/home/index", "/403"];
+	const staticRouter = ['/', '/home/index', '/403'];
 
 	// * 所有可访问路由集合
 	const routerList = [...dynamicRouter, ...staticRouter];
 
 	if (routerList.indexOf(to.path) !== -1) next();
-	else next({ path: "/403" });
+	else next({ path: '/403' });
 });
 
 router.afterEach(() => {

@@ -6,13 +6,13 @@
  * @LastEditTime: 2022-08-12 16:36:28
  */
 // import { fileURLToPath, URL } from "node:url";
-import { defineConfig } from "vite";
-import type { ConfigEnv } from "vite";
-import vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
+import { defineConfig } from 'vite';
+import type { ConfigEnv } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 // script 上可以写name属性 , 官网说的会自动添加，目前不要使用，他是根据组件的文件名字命名的，会出现很多重复项
-import VueSetupExtend from "vite-plugin-vue-setup-extend";
-import { resolve } from "path";
+import VueSetupExtend from 'vite-plugin-vue-setup-extend';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default function (config: ConfigEnv) {
@@ -22,16 +22,16 @@ export default function (config: ConfigEnv) {
 		resolve: {
 			alias: {
 				// "@": fileURLToPath(new URL("./src", import.meta.url)),
-				"@": resolve(__dirname, "./src"),
-				"vue-i18n": "vue-i18n/dist/vue-i18n.cjs.js",
+				'@': resolve(__dirname, './src'),
+				'vue-i18n': 'vue-i18n/dist/vue-i18n.cjs.js',
 			},
 		},
 		server: {
 			proxy: {
-				"/api": {
-					target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e",
+				'/api': {
+					target: 'https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e',
 					changeOrigin: true,
-					rewrite: path => path.replace(/^\/api/, ""),
+					rewrite: path => path.replace(/^\/api/, ''),
 				},
 			},
 		},
@@ -44,18 +44,18 @@ export default function (config: ConfigEnv) {
 		},
 		//  打包去除 console.log && debugger
 		esbuild: {
-			pure: mode === "production" ? ["console.log", "debugger"] : [],
+			pure: mode === 'production' ? ['console.log', 'debugger'] : [],
 		},
 		build: {
-			outDir: "dist",
+			outDir: 'dist',
 			// esbuild 打包更快，但是不能去除 console.log，terser打包慢，但能去除 console.log
-			minify: "esbuild",
+			minify: 'esbuild',
 			rollupOptions: {
 				output: {
 					// Static resource classification and packaging
-					chunkFileNames: "assets/js/[name]-[hash].js",
-					entryFileNames: "assets/js/[name]-[hash].js",
-					assetFileNames: "assets/[ext]/[name]-[hash].[ext]",
+					chunkFileNames: 'assets/js/[name]-[hash].js',
+					entryFileNames: 'assets/js/[name]-[hash].js',
+					assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
 				},
 			},
 		},

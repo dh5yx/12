@@ -5,8 +5,8 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-30 09:23:26
  */
-import type { DirectiveBinding } from "vue";
-import { EventUtils } from "@/utils/eventUtils";
+import type { DirectiveBinding } from 'vue';
+import { EventUtils } from '@/utils/eventUtils';
 
 interface ElType extends HTMLElement {
 	callback?: Function;
@@ -29,11 +29,11 @@ export default {
 		el.callback = binding.value;
 		el.time = Number(binding.arg);
 		el.timeId = null;
-		EventUtils.addEvent(el, "mousedown", start);
-		EventUtils.addEvent(el, "mouseup", end);
+		EventUtils.addEvent(el, 'mousedown', start);
+		EventUtils.addEvent(el, 'mouseup', end);
 	},
 	beforeUnmount(el: ElType) {
-		EventUtils.removeEvent(el, "mousedown", start);
-		EventUtils.removeEvent(el, "mouseup", end);
+		EventUtils.removeEvent(el, 'mousedown', start);
+		EventUtils.removeEvent(el, 'mouseup', end);
 	},
 };

@@ -5,41 +5,41 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import * as echarts from "echarts";
+import { ref, onMounted } from 'vue';
+import * as echarts from 'echarts';
 
 const echartsRef = ref();
 
 const scaleData = [
 	{
 		value: 200,
-		name: "10岁以下",
-		percentage: "16%",
+		name: '10岁以下',
+		percentage: '16%',
 	},
 	{
 		value: 110,
-		name: "10 - 18岁",
-		percentage: "8%",
+		name: '10 - 18岁',
+		percentage: '8%',
 	},
 	{
 		value: 150,
-		name: "18 - 30岁",
-		percentage: "12%",
+		name: '18 - 30岁',
+		percentage: '12%',
 	},
 	{
 		value: 310,
-		name: "30 - 40岁",
-		percentage: "24%",
+		name: '30 - 40岁',
+		percentage: '24%',
 	},
 	{
 		value: 250,
-		name: "40 - 60岁",
-		percentage: "20%",
+		name: '40 - 60岁',
+		percentage: '20%',
 	},
 	{
 		value: 260,
-		name: "60岁以上",
-		percentage: "20%",
+		name: '60岁以上',
+		percentage: '20%',
 	},
 ];
 const placeHolderStyle = {
@@ -49,8 +49,8 @@ const placeHolderStyle = {
 	labelLine: {
 		show: false,
 	},
-	color: "rgba(0, 0, 0, 0)",
-	borderColor: "rgba(0, 0, 0, 0)",
+	color: 'rgba(0, 0, 0, 0)',
+	borderColor: 'rgba(0, 0, 0, 0)',
 	borderWidth: 0,
 };
 const data: Array<any> = [];
@@ -69,7 +69,7 @@ for (let i = 0; i < scaleData.length; i++) {
 		},
 		{
 			value: 2,
-			name: "",
+			name: '',
 			itemStyle: placeHolderStyle,
 		}
 	);
@@ -77,17 +77,17 @@ for (let i = 0; i < scaleData.length; i++) {
 const option = {
 	tooltip: {
 		show: true,
-		trigger: "item",
-		formatter: "{b} <br/>占比：{c}%",
+		trigger: 'item',
+		formatter: '{b} <br/>占比：{c}%',
 	},
 	legend: {
-		top: "5%",
-		right: "5%",
+		top: '5%',
+		right: '5%',
 		textStyle: {
-			color: "#fff",
+			color: '#fff',
 		},
 		formatter: function (name: string) {
-			return name + "   " + scaleData.find((val: any) => val.name === name).percentage;
+			return name + '   ' + scaleData.find((val: any) => val.name === name).percentage;
 		},
 	},
 	toolbox: {
@@ -95,10 +95,10 @@ const option = {
 	},
 	series: [
 		{
-			type: "pie",
+			type: 'pie',
 			clockWise: false,
-			radius: ["50%", "70%"],
-			center: ["40%", "50%"],
+			radius: ['50%', '70%'],
+			center: ['40%', '50%'],
 			labelLine: {
 				show: false,
 			},

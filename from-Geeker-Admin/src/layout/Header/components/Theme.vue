@@ -57,10 +57,10 @@
 </template>
 
 <script setup lang="ts">
-import { useGlobalStore } from "@/stores/index";
-import { useConfigStore } from "@/stores/modules/config";
-import { ref, computed } from "vue";
-import useTheme from "@/hooks/useTheme";
+import { useGlobalStore } from '@/stores/index';
+import { useConfigStore } from '@/stores/modules/config';
+import { ref, computed } from 'vue';
+import useTheme from '@/hooks/useTheme';
 
 const globalStore = useGlobalStore();
 const configStore = useConfigStore();

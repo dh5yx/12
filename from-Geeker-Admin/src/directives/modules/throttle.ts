@@ -5,9 +5,9 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-30 09:23:29
  */
-import type { DirectiveBinding } from "vue";
-import { EventUtils } from "@/utils/eventUtils";
-import { throttle } from "@/utils/debounce";
+import type { DirectiveBinding } from 'vue';
+import { EventUtils } from '@/utils/eventUtils';
+import { throttle } from '@/utils/debounce';
 
 interface ElType extends HTMLElement {
 	callback: Function;

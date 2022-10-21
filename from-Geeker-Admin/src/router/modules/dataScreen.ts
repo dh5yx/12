@@ -8,10 +8,10 @@
 
 export default [
 	{
-		path: "/dataScreen",
-		component: () => import("@/views/dataScreen/index.vue"),
+		path: '/dataScreen',
+		component: () => import('@/views/dataScreen/index.vue'),
 		meta: {
-			title: "数据大屏",
+			title: '数据大屏',
 		},
 	},
 ];

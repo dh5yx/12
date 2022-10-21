@@ -9,11 +9,11 @@ export const MODE = import.meta.env.MODE;
 
 const config: DevConfigType = {
 	development: {
-		baseURL: "/api",
+		baseURL: '/api',
 		timeout: 30000,
 	},
 	production: {
-		baseURL: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e",
+		baseURL: 'https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e',
 		timeout: 30000,
 	},
 };

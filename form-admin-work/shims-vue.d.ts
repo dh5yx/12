@@ -6,8 +6,8 @@
  * @LastEditTime: 2022-07-20 10:22:31
  */
 declare module '*.vue' {
-    import { DefineComponent } from 'vue';
+	import { DefineComponent } from 'vue';
 
-    const component: DefineComponent<{}, {}, any>;
-    export default component;
+	const component: DefineComponent<{}, {}, any>;
+	export default component;
 }

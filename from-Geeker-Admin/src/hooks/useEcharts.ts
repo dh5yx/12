@@ -5,8 +5,8 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-09 11:34:45
  */
-import { onBeforeUnmount } from "vue";
-import type { ECharts, EChartsCoreOption } from "echarts";
+import { onBeforeUnmount } from 'vue';
+import type { ECharts, EChartsCoreOption } from 'echarts';
 
 export default function useEcharts(myChart: ECharts, options: EChartsCoreOption) {
 	myChart.setOption(options);
@@ -15,9 +15,9 @@ export default function useEcharts(myChart: ECharts, options: EChartsCoreOption)
 		myChart && myChart.resize();
 	}
 
-	window.addEventListener("resize", echartsResize);
+	window.addEventListener('resize', echartsResize);
 
 	onBeforeUnmount(() => {
-		window.removeEventListener("resize", echartsResize);
+		window.removeEventListener('resize', echartsResize);
 	});
 }

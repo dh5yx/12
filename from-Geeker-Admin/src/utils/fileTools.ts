@@ -16,9 +16,9 @@
 export function downloadByBlob(data: Blob, fileName: string, type: string) {
 	const blob = new Blob([data]);
 	const url = window.URL.createObjectURL(blob);
-	const link = document.createElement("a");
+	const link = document.createElement('a');
 	link.href = url;
-	link.download = fileName + "." + type;
+	link.download = fileName + '.' + type;
 	link.click();
 	window.URL.revokeObjectURL(url);
 }
@@ -29,6 +29,6 @@ export function downloadByBlob(data: Blob, fileName: string, type: string) {
  * @return {*}
  */
 export function getExt(filename: string) {
-	const type = filename.split(".").pop();
+	const type = filename.split('.').pop();
 	return type ? type.toLowerCase() : filename;
 }

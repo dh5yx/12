@@ -14,10 +14,10 @@
 </template>
 
 <script setup lang="ts">
-import UploadImg from "@/components/UploadImg/index.vue";
-import { ref } from "vue";
+import UploadImg from '@/components/UploadImg/index.vue';
+import { ref } from 'vue';
 
-const imageUrl = ref<string>("");
+const imageUrl = ref<string>('');
 </script>
 
 <style scoped lang="scss"></style>

@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { ElMessage } from "element-plus";
+import { ElMessage } from 'element-plus';
 
 const debounceClick = () => {
-	ElMessage.success("我是节流按钮触发的事件 🍍🍓🍌");
+	ElMessage.success('我是节流按钮触发的事件 🍍🍓🍌');
 };
 </script>
 

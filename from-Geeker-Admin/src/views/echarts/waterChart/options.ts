@@ -6,10 +6,10 @@
  * @LastEditTime: 2022-08-01 14:52:53
  */
 export const option = {
-  series: [
-    {
-      type: "liquidFill",
-      data: [0.6, 0.5, 0.4, 0.3],
-    },
-  ],
+	series: [
+		{
+			type: 'liquidFill',
+			data: [0.6, 0.5, 0.4, 0.3],
+		},
+	],
 };

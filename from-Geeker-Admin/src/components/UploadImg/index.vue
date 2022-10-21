@@ -31,50 +31,50 @@
 </template>
 
 <script lang="ts" setup>
-import api from "@/api/index";
-import { ElNotification } from "element-plus";
-import { ref } from "vue";
-import type { UploadRequestOptions } from "element-plus";
+import api from '@/api/index';
+import { ElNotification } from 'element-plus';
+import { ref } from 'vue';
+import type { UploadRequestOptions } from 'element-plus';
 
-withDefaults(defineProps<{ modelValue?: string; disabled?: boolean }>(), { modelValue: "", disabled: false });
+withDefaults(defineProps<{ modelValue?: string; disabled?: boolean }>(), { modelValue: '', disabled: false });
 
-const emit = defineEmits(["update:modelValue", "change"]);
+const emit = defineEmits(['update:modelValue', 'change']);
 
 const dialogVisible = ref<boolean>(false);
 
 const uploadSuccess = () => {
 	ElNotification({
-		title: "温馨提示",
-		message: "图片上传成功！",
-		type: "success",
+		title: '温馨提示',
+		message: '图片上传成功！',
+		type: 'success',
 	});
 };
 
 const uploadError = () => {
 	ElNotification({
-		title: "温馨提示",
-		message: "图片上传失败，请您重新上传！",
-		type: "error",
+		title: '温馨提示',
+		message: '图片上传失败，请您重新上传！',
+		type: 'error',
 	});
 };
 
 const beforeUpload = (file: File) => {
 	const isLt3M = file.size / 1024 / 1024 < 3;
-	const isImage = ["image/jpg", "image/jpeg", "image/png"].includes(file.type);
+	const isImage = ['image/jpg', 'image/jpeg', 'image/png'].includes(file.type);
 
 	if (!isImage) {
 		ElNotification({
-			title: "温馨提示",
-			message: "上传图片必须是JPG/JPEG/PNG 格式！",
-			type: "warning",
+			title: '温馨提示',
+			message: '上传图片必须是JPG/JPEG/PNG 格式！',
+			type: 'warning',
 		});
 		return false;
 	}
 	if (!isLt3M) {
 		ElNotification({
-			title: "温馨提示",
-			message: "上传图片大小不能超过 3MB！",
-			type: "warning",
+			title: '温馨提示',
+			message: '上传图片大小不能超过 3MB！',
+			type: 'warning',
 		});
 		return false;
 	}
@@ -83,10 +83,10 @@ const beforeUpload = (file: File) => {
 
 const handleHttpUpload = function (e: UploadRequestOptions) {
 	const formData: FormData = new FormData();
-	formData.append("file", e.file);
+	formData.append('file', e.file);
 	return api.uploadImg(formData).then(res => {
-		emit("update:modelValue", res.data.fileUrl);
-		emit("change", res.data.fileUrl);
+		emit('update:modelValue', res.data.fileUrl);
+		emit('change', res.data.fileUrl);
 	});
 };
 

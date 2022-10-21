@@ -16,10 +16,10 @@
 </template>
 
 <script lang="ts" setup>
-import WangEditor from "@/components/WangEditor/index.vue";
-import { ref } from "vue";
+import WangEditor from '@/components/WangEditor/index.vue';
+import { ref } from 'vue';
 
-const editorValue = ref<string>("123");
+const editorValue = ref<string>('123');
 </script>
 
 <style lang="scss" scoped></style>

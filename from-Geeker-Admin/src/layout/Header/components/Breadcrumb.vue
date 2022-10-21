@@ -15,11 +15,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import { computed } from "vue";
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
 
 const route = useRoute();
-const breadcrumb = computed(() => route.matched.filter(v => v.meta && v.meta.title && v.meta.title !== "首页"));
+const breadcrumb = computed(() => route.matched.filter(v => v.meta && v.meta.title && v.meta.title !== '首页'));
 </script>
 
 <style lang="scss" scoped></style>

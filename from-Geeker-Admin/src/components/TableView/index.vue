@@ -44,11 +44,11 @@
 </template>
 
 <script setup lang="ts">
-import SearchForm from "@/components/SearchForm/index.vue";
-import useTable from "@/hooks/useTable";
-import useSelection from "@/hooks/useSelection";
-import { ref } from "vue";
-import type { ElTable } from "element-plus";
+import SearchForm from '@/components/SearchForm/index.vue';
+import useTable from '@/hooks/useTable';
+import useSelection from '@/hooks/useSelection';
+import { ref } from 'vue';
+import type { ElTable } from 'element-plus';
 
 interface ProTableProps {
 	api: (param: any) => Promise<any>;
@@ -67,7 +67,7 @@ const { searchParam, search, reset, tableData, pageable, handleSizeChange, handl
 	api: props.api,
 	initParams,
 });
-const { selectionChange, getRowKeys, selectedListIds } = useSelection({ el: tableRef, id: "id" });
+const { selectionChange, getRowKeys, selectedListIds } = useSelection({ el: tableRef, id: 'id' });
 
 defineExpose({ refresh: getTableList });
 </script>

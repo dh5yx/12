@@ -5,7 +5,7 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-30 09:56:42
  */
-import { reactive, toRefs, onMounted } from "vue";
+import { reactive, toRefs, onMounted } from 'vue';
 
 interface useTableParamsType {
 	api: (param: any) => Promise<any>;

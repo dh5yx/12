@@ -6,5 +6,5 @@
  * @LastEditTime: 2022-08-15 14:18:21
  */
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+	extends: ['@commitlint/config-conventional'],
 };

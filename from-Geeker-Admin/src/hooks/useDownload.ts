@@ -6,8 +6,8 @@
  * @LastEditTime: 2022-08-12 14:24:01
  */
 
-import { ElNotification } from "element-plus";
-import { downloadByBlob } from "@/utils/fileTools";
+import { ElNotification } from 'element-plus';
+import { downloadByBlob } from '@/utils/fileTools';
 
 type DownLoadType = (api: (params: any) => Promise<any>, params: any, tempName: string, isNotify?: boolean, fileType?: string) => Promise<any>;
 
@@ -20,12 +20,12 @@ type DownLoadType = (api: (params: any) => Promise<any>, params: any, tempName: 
  * @param {String} fileType 导出的文件格式(默认为.xlsx)
  * @return Promise
  * */
-export default <DownLoadType>async function useDownload(api, params = {}, tempName, isNotify = true, fileType = "xlsx") {
+export default <DownLoadType>async function useDownload(api, params = {}, tempName, isNotify = true, fileType = 'xlsx') {
 	if (isNotify) {
 		ElNotification({
-			title: "温馨提示",
-			message: "如果数据庞大会导致下载缓慢哦，请您耐心等待！",
-			type: "info",
+			title: '温馨提示',
+			message: '如果数据庞大会导致下载缓慢哦，请您耐心等待！',
+			type: 'info',
 			duration: 3000,
 		});
 	}

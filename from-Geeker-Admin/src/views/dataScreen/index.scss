@@ -2,7 +2,7 @@
 	width: 100%;
 	height: 100%;
 	color: #29fcff;
-	background: url("./images/bg.png") no-repeat;
+	background: url('./images/bg.png') no-repeat;
 	background-size: 100% 100%;
 }
 .header {
@@ -37,7 +37,7 @@
 			font-size: 24px;
 			line-height: 2.5;
 			font-weight: 600;
-			background: url("./images/dataScreen-header-center-bg.png") no-repeat;
+			background: url('./images/dataScreen-header-center-bg.png') no-repeat;
 		}
 		.header-center-warning {
 			color: var(--el-text-color-primary);
@@ -50,7 +50,7 @@
 			font-size: 12px;
 			font-weight: 600;
 			line-height: 44px;
-			background: url("./images/dataScreen-header-warn-bg.png") no-repeat;
+			background: url('./images/dataScreen-header-warn-bg.png') no-repeat;
 			transform: translateX(-50%);
 		}
 	}
@@ -100,7 +100,7 @@
 		}
 	}
 	.bg {
-		background: url("./images/dataScreen-main-lt.png") no-repeat;
+		background: url('./images/dataScreen-main-lt.png') no-repeat;
 		background-size: 100% 100%;
 	}
 	.main-left-top {

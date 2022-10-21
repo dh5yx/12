@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import SearchFormItem from "./components/SearchFormItem.vue";
+import SearchFormItem from './components/SearchFormItem.vue';
 
 interface SearchFormPropsType {
 	columns: Partial<ColumnProps>[];

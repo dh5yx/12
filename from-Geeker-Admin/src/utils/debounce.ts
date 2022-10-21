@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-26 16:07:03
  * @LastEditors: dh
- * @LastEditTime: 2022-08-30 09:27:49
+ * @LastEditTime: 2022-10-21 10:03:13
  */
 export function debounce(func: Function, wait: number, immediate?: Boolean) {
 	let timeout: null | number;
@@ -31,11 +31,10 @@ export function throttle(fn: Function, delay: number) {
 	// last 为上一次触发回调的时间
 	let last = 0;
 	// 将 throttle 处理结果当作函数返回
-	return function (this: any) {
+	return function (this: any, ...args: any) {
 		// 保留调用时的 this 上下文
 		let context = this;
 		// 保留调用时传入的参数
-		let args = arguments;
 		// 记录本次触发回调的时间
 		let now = +new Date();
 

@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts" name="Menu3">
-import { ref, getCurrentInstance } from "vue";
+import { ref, getCurrentInstance } from 'vue';
 const value = ref<string>();
 console.log(getCurrentInstance());
 </script>

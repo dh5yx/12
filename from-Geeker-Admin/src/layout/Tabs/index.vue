@@ -12,11 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from "vue-router";
-import { computed, watch } from "vue";
-import { TABS_BLACK_LIST } from "@/config";
-import { useGlobalStore } from "@/stores/index";
-import type { TabsPaneContext, TabPanelName } from "element-plus";
+import { useRoute, useRouter } from 'vue-router';
+import { computed, watch } from 'vue';
+import { TABS_BLACK_LIST } from '@/config';
+import { useGlobalStore } from '@/stores/index';
+import type { TabsPaneContext, TabPanelName } from 'element-plus';
 
 const globalStore = useGlobalStore();
 

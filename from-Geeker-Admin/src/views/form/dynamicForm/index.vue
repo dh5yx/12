@@ -53,8 +53,8 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from "vue";
-import type { FormInstance } from "element-plus";
+import { reactive, ref } from 'vue';
+import type { FormInstance } from 'element-plus';
 
 interface DomainItem {
 	key: number;
@@ -68,8 +68,8 @@ interface formType {
 
 const formRef = ref<FormInstance>();
 const dynamicValidateForm = reactive<formType>({
-	domains: [{ key: 1, value: "" }],
-	email: "",
+	domains: [{ key: 1, value: '' }],
+	email: '',
 });
 
 const removeDomain = (item: DomainItem) => {
@@ -82,7 +82,7 @@ const removeDomain = (item: DomainItem) => {
 const addDomain = () => {
 	dynamicValidateForm.domains.push({
 		key: Date.now(),
-		value: "",
+		value: '',
 	});
 };
 
@@ -90,9 +90,9 @@ const submitForm = (formEl: FormInstance | undefined) => {
 	if (!formEl) return;
 	formEl.validate(valid => {
 		if (valid) {
-			console.log("submit!");
+			console.log('submit!');
 		} else {
-			console.log("error submit!");
+			console.log('error submit!');
 			return false;
 		}
 	});

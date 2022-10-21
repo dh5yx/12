@@ -18,4 +18,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 	app.component(key, component);
 }
 
-app.use(router).use(ElementPlus).use(pinia).use(i18n).mount('#app');
+app.use(router);
+app.use(ElementPlus);
+app.use(pinia);
+app.use(i18n);
+app.mount('#app');

@@ -39,24 +39,24 @@
 </template>
 
 <script setup lang="ts">
-import api from "@/api/index";
-import UploadImg from "@/components/UploadImg/index.vue";
-import { ref, reactive } from "vue";
-import { UserGender } from "@/dict/index";
-import { ElMessage } from "element-plus";
-import type { FormInstance } from "element-plus";
-const emit = defineEmits(["change"]);
+import api from '@/api/index';
+import UploadImg from '@/components/UploadImg/index.vue';
+import { ref, reactive } from 'vue';
+import { UserGender } from '@/dict/index';
+import { ElMessage } from 'element-plus';
+import type { FormInstance } from 'element-plus';
+const emit = defineEmits(['change']);
 const formDateRef = ref<FormInstance>();
 const drawerVisible = ref<boolean>(false);
 const rules = reactive({
-	avatar: [{ required: true, message: "请上传用户头像", trigger: "change" }],
-	username: [{ required: true, message: "请填写用户姓名", trigger: "change" }],
-	gender: [{ required: true, message: "请选择性别", trigger: "change" }],
-	idCard: [{ required: true, message: "请填写身份证号", trigger: "change" }],
-	email: [{ required: true, message: "请填写邮箱", trigger: "change" }],
-	address: [{ required: true, message: "请填写居住地址", trigger: "change" }],
+	avatar: [{ required: true, message: '请上传用户头像', trigger: 'change' }],
+	username: [{ required: true, message: '请填写用户姓名', trigger: 'change' }],
+	gender: [{ required: true, message: '请选择性别', trigger: 'change' }],
+	idCard: [{ required: true, message: '请填写身份证号', trigger: 'change' }],
+	email: [{ required: true, message: '请填写邮箱', trigger: 'change' }],
+	address: [{ required: true, message: '请填写居住地址', trigger: 'change' }],
 });
-const formData = ref<User.UserInfo>({ username: "" });
+const formData = ref<User.UserInfo>({ username: '' });
 const isEdit = ref<boolean>(false);
 
 const open = (data: User.UserInfo | undefined) => {
@@ -70,7 +70,7 @@ const handleSubmit = () => {
 		const apiInstace = isEdit.value ? api.userEdit : api.userAdd;
 		const res = await apiInstace(formData.value);
 		ElMessage.success({ message: res.msg });
-		emit("change");
+		emit('change');
 		drawerVisible.value = false;
 	});
 };

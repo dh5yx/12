@@ -5,20 +5,20 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-17 14:03:24
  */
-import layout from "@/layout/index.vue";
+import layout from '@/layout/index.vue';
 
 export default [
 	{
-		path: "/",
+		path: '/',
 		component: layout,
-		redirect: "/home/index",
+		redirect: '/home/index',
 		children: [
 			{
-				path: "/home/index",
-				name: "home",
-				component: () => import("@/views/home/index.vue"),
+				path: '/home/index',
+				name: 'home',
+				component: () => import('@/views/home/index.vue'),
 				meta: {
-					title: "首页",
+					title: '首页',
 				},
 			},
 		],

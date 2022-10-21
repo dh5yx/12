@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import * as echarts from "echarts";
-import { randomNum } from "@/utils/util";
+import { ref, onMounted } from 'vue';
+import * as echarts from 'echarts';
+import { randomNum } from '@/utils/util';
 // js 获取当前日期到之后一个月30天的日期区间
 const initDate = (): string[] => {
 	let dateList = [];
@@ -16,9 +16,9 @@ const initDate = (): string[] => {
 	endDate.setDate(startDate.getDate() + 30);
 	startDate.setDate(startDate.getDate() + 1);
 	while (endDate.getTime() - startDate.getTime() >= 0) {
-		let month = (startDate.getMonth() + 1).toString().length === 1 ? "0" + (startDate.getMonth() + 1).toString() : startDate.getMonth() + 1;
-		let day = startDate.getDate().toString().length === 1 ? "0" + startDate.getDate() : startDate.getDate();
-		dateList.push(month + "/" + day);
+		let month = (startDate.getMonth() + 1).toString().length === 1 ? '0' + (startDate.getMonth() + 1).toString() : startDate.getMonth() + 1;
+		let day = startDate.getDate().toString().length === 1 ? '0' + startDate.getDate() : startDate.getDate();
+		dateList.push(month + '/' + day);
 		startDate.setDate(startDate.getDate() + 1);
 	}
 	return dateList;
@@ -26,7 +26,7 @@ const initDate = (): string[] => {
 const echartsRef = ref();
 const option = {
 	tooltip: {
-		trigger: "axis",
+		trigger: 'axis',
 		confine: true,
 		formatter: (params: any) => {
 			let tipData = params[0];
@@ -35,35 +35,35 @@ const option = {
                     </div>`;
 			return html;
 		},
-		backgroundColor: "transparent", //提示标签背景颜色
-		borderColor: "transparent",
+		backgroundColor: 'transparent', //提示标签背景颜色
+		borderColor: 'transparent',
 		axisPointer: {
 			lineStyle: {
-				type: "dashed",
+				type: 'dashed',
 			},
 			snap: true,
 		},
-		extraCssText: "box-shadow: none;padding:0",
+		extraCssText: 'box-shadow: none;padding:0',
 	},
 	legend: {
 		show: false,
 	},
 	grid: {
-		top: "15%",
-		left: "5%",
-		right: "0%",
-		bottom: "15%",
+		top: '15%',
+		left: '5%',
+		right: '0%',
+		bottom: '15%',
 	},
 	xAxis: [
 		{
-			type: "category",
+			type: 'category',
 			axisLine: {
 				lineStyle: {
-					color: "#494e54",
+					color: '#494e54',
 				},
 			},
 			axisLabel: {
-				color: "#d9d9d9",
+				color: '#d9d9d9',
 			},
 			splitLine: {
 				show: false,
@@ -74,32 +74,32 @@ const option = {
 	],
 	yAxis: [
 		{
-			type: "value",
-			name: "访问量",
+			type: 'value',
+			name: '访问量',
 			nameTextStyle: {
-				color: "#b9bec6",
+				color: '#b9bec6',
 				fontSize: 12,
 			},
 			axisLine: {
 				lineStyle: {
-					color: "#494e54",
+					color: '#494e54',
 					fontSize: 14,
 				},
 			},
 			splitLine: {
 				show: true,
 				lineStyle: {
-					color: "#2d3b47",
+					color: '#2d3b47',
 				},
 			},
 			axisLabel: {
 				show: true,
 				textStyle: {
-					color: "#d9d9d9",
+					color: '#d9d9d9',
 				},
 				formatter: function (value: string) {
 					if (Number(value) >= 10000) {
-						value = Number(value) / 10000 + "w";
+						value = Number(value) / 10000 + 'w';
 					}
 					return value;
 				},
@@ -108,14 +108,14 @@ const option = {
 	],
 	series: [
 		{
-			name: "抛物线",
-			type: "line",
-			data: new Array(30).fill("").map(val => {
+			name: '抛物线',
+			type: 'line',
+			data: new Array(30).fill('').map(val => {
 				val = randomNum(1, 20000);
 				return val;
 			}),
 			smooth: true,
-			symbol: "none",
+			symbol: 'none',
 			itemStyle: {
 				borderWidth: 2,
 				normal: {
@@ -123,15 +123,15 @@ const option = {
 						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
 							{
 								offset: 0,
-								color: "rgba(39, 222, 172, 1)",
+								color: 'rgba(39, 222, 172, 1)',
 							},
 							{
 								offset: 0.5,
-								color: "rgba(39, 222, 172, 0.7)",
+								color: 'rgba(39, 222, 172, 0.7)',
 							},
 							{
 								offset: 1,
-								color: "rgba(39, 222, 172,0)",
+								color: 'rgba(39, 222, 172,0)',
 							},
 						]),
 					},
@@ -139,15 +139,15 @@ const option = {
 						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
 							{
 								offset: 0,
-								color: "rgba(39, 222, 172, 0.9)",
+								color: 'rgba(39, 222, 172, 0.9)',
 							},
 							{
 								offset: 0.4,
-								color: "rgba(39, 222, 172, 0.5)",
+								color: 'rgba(39, 222, 172, 0.5)',
 							},
 							{
 								offset: 1,
-								color: "rgba(39, 222, 172, 0)",
+								color: 'rgba(39, 222, 172, 0)',
 							},
 						]),
 					},
@@ -175,7 +175,7 @@ onMounted(() => {
 			width: 180px;
 			height: 60px;
 			padding-left: 20px;
-			background: url("../images/line-bg.png") no-repeat;
+			background: url('../images/line-bg.png') no-repeat;
 			background-size: 100% 100%;
 			span {
 				font-size: 12px;

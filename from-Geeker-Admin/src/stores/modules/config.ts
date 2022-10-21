@@ -5,7 +5,7 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-17 14:01:02
  */
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
 interface ConfigState {
 	primary: string;
@@ -18,9 +18,9 @@ interface ConfigState {
 }
 
 export const useConfigStore = defineStore({
-	id: "useConfigStore",
+	id: 'useConfigStore',
 	state: (): ConfigState => ({
-		primary: "#ff6ff6",
+		primary: '#ff6ff6',
 		isDark: false,
 		isGrey: false,
 		isWeak: false,

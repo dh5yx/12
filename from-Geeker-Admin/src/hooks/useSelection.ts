@@ -5,7 +5,7 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-30 09:23:53
  */
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue';
 
 interface configType {
 	el: any;
@@ -17,7 +17,7 @@ interface configType {
  * @param {string} id 为每条数据唯一标识
  * @return {*}
  */
-export default function useSelection({ el, id = "id" }: configType) {
+export default function useSelection({ el, id = 'id' }: configType) {
 	const selectedList = ref<Array<any>>([]);
 	const selectedListIds = computed(() => selectedList.value.map(v => v[id]));
 

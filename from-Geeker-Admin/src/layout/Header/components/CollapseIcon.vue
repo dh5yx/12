@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import { Expand } from "@element-plus/icons-vue";
-import { useGlobalStore } from "@/stores/index";
+import { Expand } from '@element-plus/icons-vue';
+import { useGlobalStore } from '@/stores/index';
 const setCollapse = useGlobalStore().setCollapse;
 </script>
 

@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import * as echarts from "echarts";
-import useCharts from "@/hooks/useEcharts";
-import { option } from "./options";
+import { ref, onMounted } from 'vue';
+import * as echarts from 'echarts';
+import useCharts from '@/hooks/useEcharts';
+import { option } from './options';
 const echartsRef = ref<HTMLElement>();
 
 onMounted(() => {

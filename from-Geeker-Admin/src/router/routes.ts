@@ -6,13 +6,13 @@
  * @LastEditTime: 2022-08-12 15:40:24
  */
 
-import type { RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from 'vue-router';
 
 // * 路由模块集合
 export const routerArray: Array<RouteRecordRaw> = [];
 
 // * 路由模块集合
-const metaRouters = import.meta.globEager("./modules/*.ts");
+const metaRouters = import.meta.globEager('./modules/*.ts');
 
 Object.keys(metaRouters).forEach((item: string) => {
 	const itemRoute: any = metaRouters[item];
@@ -34,14 +34,14 @@ Object.keys(metaRouters).forEach((item: string) => {
  * */
 const routes: Array<RouteRecordRaw> = [
 	{
-		path: "/login",
-		name: "login",
-		component: () => import("@/views/login/index.vue"),
+		path: '/login',
+		name: 'login',
+		component: () => import('@/views/login/index.vue'),
 	},
 	...routerArray,
 	{
-		path: "/:pathMatch(.*)",
-		redirect: { name: "404" },
+		path: '/:pathMatch(.*)',
+		redirect: { name: '404' },
 	},
 ];
 

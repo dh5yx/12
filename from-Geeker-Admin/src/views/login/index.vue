@@ -42,14 +42,14 @@
 </template>
 
 <script setup lang="ts">
-import md5 from "js-md5";
-import api from "@/api/index";
-import { ref, reactive } from "vue";
-import { User, Lock } from "@element-plus/icons-vue";
-import { useGlobalStore } from "@/stores";
-import { useRouter } from "vue-router";
-import type { LoginType } from "@/types/login";
-import type { ElForm } from "element-plus";
+import md5 from 'js-md5';
+import api from '@/api/index';
+import { ref, reactive } from 'vue';
+import { User, Lock } from '@element-plus/icons-vue';
+import { useGlobalStore } from '@/stores';
+import { useRouter } from 'vue-router';
+import type { LoginType } from '@/types/login';
+import type { ElForm } from 'element-plus';
 
 const globalStore = useGlobalStore();
 const router = useRouter();
@@ -57,12 +57,12 @@ const router = useRouter();
 type FormInstance = InstanceType<typeof ElForm>;
 const loginFormRef: any = ref<FormInstance>();
 const loginForm = reactive<LoginType.ReqLoginForm>({
-	username: "admin",
-	password: "123456",
+	username: 'admin',
+	password: '123456',
 });
 const loginRules = reactive({
-	username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
-	password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+	username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+	password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 });
 
 const login = function (formEl: FormInstance | undefined) {
@@ -74,14 +74,14 @@ const login = function (formEl: FormInstance | undefined) {
 			password: md5(loginForm.password),
 		});
 		globalStore.setToken(res.data!.access_token);
-		router.push({ name: "home" });
+		router.push({ name: 'home' });
 	});
 };
 </script>
 
 <style lang="scss" scoped>
 .page-login {
-	background: url("@/assets/images/login_bg.svg") no-repeat;
+	background: url('@/assets/images/login_bg.svg') no-repeat;
 	background-size: cover;
 	height: 100vh;
 	width: 100vw;

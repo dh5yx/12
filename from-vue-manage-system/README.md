@@ -1,4 +1,4 @@
-# 此项目 参照 https://github.com/lin-xin/vue-manage-system 项目构建，大部分是copy的，主要为了数据 vue3 + ts + pinia
+# 此项目 参照 https://github.com/lin-xin/vue-manage-system 项目构建，大部分是 copy 的，主要为了数据 vue3 + ts + pinia
 
 ## iconfont
 

@@ -23,14 +23,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-import * as echarts from "echarts";
+import { ref, onMounted } from 'vue';
+import * as echarts from 'echarts';
 
 const echartsRef = ref();
 
 const echartsData = [
-	{ name: "男士", data: [40] },
-	{ name: "女士", data: [60] },
+	{ name: '男士', data: [40] },
+	{ name: '女士', data: [60] },
 ];
 
 const option = {
@@ -43,8 +43,8 @@ const option = {
 	},
 	tooltip: {
 		show: true,
-		trigger: "item",
-		formatter: "{a} <br/>占比：{c}%",
+		trigger: 'item',
+		formatter: '{a} <br/>占比：{c}%',
 	},
 	legend: {
 		show: false,
@@ -64,7 +64,7 @@ const option = {
 		},
 	},
 	yAxis: {
-		data: ["sss"],
+		data: ['sss'],
 		axisLabel: {
 			show: false,
 		},
@@ -78,26 +78,26 @@ const option = {
 			show: false,
 		},
 	},
-	color: ["#5292FD", "#EF6B6E"],
+	color: ['#5292FD', '#EF6B6E'],
 	series: [] as any,
 };
 
 echartsData.forEach(item => {
 	option.series.push({
-		type: "bar",
+		type: 'bar',
 		name: item.name,
-		stack: "1",
+		stack: '1',
 		label: {
 			show: true,
 			position: [5, 5],
-			formatter: item.name + item.data + "%",
-			color: "#fff",
+			formatter: item.name + item.data + '%',
+			color: '#fff',
 			offset: [0, -20],
 		},
 		barWidth: 26,
 		data: item.data,
 		itemStyle: {
-			color: "#007AFE",
+			color: '#007AFE',
 			normal: {
 				barBorderRadius: [0],
 			},
@@ -130,10 +130,10 @@ onMounted(() => {
 		font-size: 12px;
 	}
 	.boy {
-		background: url("../images/man-bg.png") no-repeat;
+		background: url('../images/man-bg.png') no-repeat;
 	}
 	.girl {
-		background: url("../images/woman-bg.png") no-repeat;
+		background: url('../images/woman-bg.png') no-repeat;
 	}
 	img {
 		margin-top: 20px;

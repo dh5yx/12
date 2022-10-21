@@ -23,8 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
-import { useElementStore } from "@/stores/modules/element";
+import { computed } from 'vue';
+import { useElementStore } from '@/stores/modules/element';
 
 const elementStore = useElementStore();
 

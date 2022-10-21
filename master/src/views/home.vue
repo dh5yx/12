@@ -6,7 +6,7 @@
  * @LastEditTime: 2022-01-20 17:24:45
 -->
 <template>
-    <div>home</div>
+	<div>home</div>
 </template>
 
 <script setup lang="ts"></script>

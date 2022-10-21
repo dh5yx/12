@@ -7,28 +7,28 @@
  */
 export default [
 	{
-		path: "/403",
-		component: () => import("@/views/error/403.vue"),
+		path: '/403',
+		component: () => import('@/views/error/403.vue'),
 		children: [],
 		meta: {
-			title: "403",
+			title: '403',
 		},
 	},
 	{
-		path: "/404",
-		name: "404",
-		component: () => import("@/views/error/404.vue"),
+		path: '/404',
+		name: '404',
+		component: () => import('@/views/error/404.vue'),
 		children: [],
 		meta: {
-			title: "404",
+			title: '404',
 		},
 	},
 	{
-		path: "/500",
-		component: () => import("@/views/error/500.vue"),
+		path: '/500',
+		component: () => import('@/views/error/500.vue'),
 		children: [],
 		meta: {
-			title: "500",
+			title: '500',
 		},
 	},
 ];

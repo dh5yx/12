@@ -6,7 +6,7 @@
  * @LastEditTime: 2022-01-20 17:07:34
 -->
 <template>
-    <div>axios</div>
+	<div>axios</div>
 </template>
 
 <script setup lang="ts"></script>

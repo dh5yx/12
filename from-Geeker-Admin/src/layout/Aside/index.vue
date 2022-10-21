@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 13:44:44
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:01:42
+ * @LastEditTime: 2022-10-21 13:51:09
 -->
 <template>
 	<div class="aside" :style="{ width: isCollapse ? '65px' : '220px' }">
@@ -28,14 +28,14 @@
 </template>
 
 <script lang="ts" setup>
-import MenuItem from "./MenuItem.vue";
-import api from "@/api/index";
-import { onMounted } from "vue";
-import { computed } from "vue";
-import { useGlobalStore } from "@/stores/index";
-import { useRoute } from "vue-router";
-import { handleRouter } from "@/utils/util";
-import { useAuthStore } from "@/stores/modules/auth";
+import MenuItem from './MenuItem.vue';
+import api from '@/api/index';
+import { onMounted } from 'vue';
+import { computed } from 'vue';
+import { useGlobalStore } from '@/stores/index';
+import { useRoute } from 'vue-router';
+import { handleRouter } from '@/utils/util';
+import { useAuthStore } from '@/stores/modules/auth';
 
 const route = useRoute();
 

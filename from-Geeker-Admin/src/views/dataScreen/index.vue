@@ -77,32 +77,32 @@
 </template>
 
 <script setup lang="ts">
-import BaseBox from "./components/base-box.vue";
-import MapEcharts from "./components/map-echarts.vue";
-import visitorStatistics from "./components/visitor-statistics.vue";
-import RealTimeVisitor from "./components/real-time-visitor.vue";
-import AgeRatio from "./components/age-ratio.vue";
-import FutureTrends from "./components/future-trends.vue";
-import TopRanking from "./components/top-ranking.vue";
-import YearComparison from "./components/year-comparison.vue";
-import ChannelStatistics from "./components/channel-statistics.vue";
-import { onMounted, ref, computed } from "vue";
-import { useRouter } from "vue-router";
-import { useDateFormat, useNow } from "@vueuse/core";
+import BaseBox from './components/base-box.vue';
+import MapEcharts from './components/map-echarts.vue';
+import visitorStatistics from './components/visitor-statistics.vue';
+import RealTimeVisitor from './components/real-time-visitor.vue';
+import AgeRatio from './components/age-ratio.vue';
+import FutureTrends from './components/future-trends.vue';
+import TopRanking from './components/top-ranking.vue';
+import YearComparison from './components/year-comparison.vue';
+import ChannelStatistics from './components/channel-statistics.vue';
+import { onMounted, ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useDateFormat, useNow } from '@vueuse/core';
 
 const router = useRouter();
 const dataScreenRef = ref();
 const mapEchartsRef = ref();
-const time = useDateFormat(useNow(), "YYYY-MM-DD HH:mm:ss");
-const planHeight = ref<string>("1080px");
-const planWidth = ref<string>("1920px");
+const time = useDateFormat(useNow(), 'YYYY-MM-DD HH:mm:ss');
+const planHeight = ref<string>('1080px');
+const planWidth = ref<string>('1920px');
 const scale = ref<number>(1);
 const transform = computed(() => {
 	return ` translate(-50%,-50%) scale(${scale.value})`;
 });
 
 const handleTo = (): void => {
-	router.push("/");
+	router.push('/');
 };
 
 const sizeChange = () => {
@@ -117,7 +117,7 @@ onMounted(() => {
 });
 </script>
 <style lang="scss" scoped>
-@import "./index.scss";
+@import './index.scss';
 .dataScreen {
 	transform: v-bind(transform);
 	height: v-bind(planHeight);

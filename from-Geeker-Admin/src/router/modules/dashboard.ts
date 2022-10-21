@@ -5,31 +5,31 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-12 15:10:01
  */
-import layout from "@/layout/index.vue";
+import layout from '@/layout/index.vue';
 
 export default [
 	{
-		path: "/dashboard",
-		redirect: "/dashboard/dataVisualize",
+		path: '/dashboard',
+		redirect: '/dashboard/dataVisualize',
 		component: layout,
 		meta: {
-			title: "Dashboard",
+			title: 'Dashboard',
 		},
 		children: [
 			{
-				path: "/dashboard/embedded",
-				component: () => import("@/views/dashboard/embedded/index.vue"),
+				path: '/dashboard/embedded',
+				component: () => import('@/views/dashboard/embedded/index.vue'),
 				children: [],
 				meta: {
-					title: "内嵌页面",
+					title: '内嵌页面',
 				},
 			},
 			{
-				path: "/dashboard/dataVisualize",
-				component: () => import("@/views/dashboard/dataVisualize/index.vue"),
+				path: '/dashboard/dataVisualize',
+				component: () => import('@/views/dashboard/dataVisualize/index.vue'),
 				children: [],
 				meta: {
-					title: "数据可视化",
+					title: '数据可视化',
 				},
 			},
 		],

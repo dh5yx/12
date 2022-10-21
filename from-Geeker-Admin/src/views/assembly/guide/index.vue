@@ -13,46 +13,46 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-import Driver from "driver.js";
-import "driver.js/dist/driver.min.css"; // import driver.js css
+import { onMounted } from 'vue';
+import Driver from 'driver.js';
+import 'driver.js/dist/driver.min.css'; // import driver.js css
 const steps = [
 	{
-		element: "#collapseIcon",
+		element: '#collapseIcon',
 		popover: {
-			title: "菜单收缩",
-			description: "点击咱开收缩菜单栏",
-			position: "right",
+			title: '菜单收缩',
+			description: '点击咱开收缩菜单栏',
+			position: 'right',
 		},
 		padding: 10,
 		offset: 20,
 	},
 	{
-		element: "#breadcrumb",
+		element: '#breadcrumb',
 		popover: {
-			title: "面包屑",
-			description: "展示菜单层级",
-			position: "right",
+			title: '面包屑',
+			description: '展示菜单层级',
+			position: 'right',
 		},
 		padding: 10,
 		offset: 20,
 	},
 	{
-		element: "#globalSize",
+		element: '#globalSize',
 		popover: {
-			title: "组件大小",
-			description: "控制全局组件的大小",
-			position: "left",
+			title: '组件大小',
+			description: '控制全局组件的大小',
+			position: 'left',
 		},
 		padding: 10,
 		offset: 20,
 	},
 	{
-		element: "#globalLocale",
+		element: '#globalLocale',
 		popover: {
-			title: "语言",
-			description: "国际化",
-			position: "left",
+			title: '语言',
+			description: '国际化',
+			position: 'left',
 		},
 		padding: 10,
 		offset: 20,
@@ -60,10 +60,10 @@ const steps = [
 ];
 const driver: Driver = new Driver({
 	allowClose: false,
-	doneBtnText: "结束",
-	closeBtnText: "关闭",
-	nextBtnText: "下一步",
-	prevBtnText: "上一步",
+	doneBtnText: '结束',
+	closeBtnText: '关闭',
+	nextBtnText: '下一步',
+	prevBtnText: '上一步',
 });
 onMounted(() => {
 	driver.defineSteps(steps);

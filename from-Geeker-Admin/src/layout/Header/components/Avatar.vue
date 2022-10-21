@@ -23,39 +23,39 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import PasswordDialog from "./PasswordDialog.vue";
-import UserInfoDialog from "./UserInfoDialog.vue";
-import { useRouter } from "vue-router";
-import { ElMessageBox, ElMessage } from "element-plus";
+import { ref } from 'vue';
+import PasswordDialog from './PasswordDialog.vue';
+import UserInfoDialog from './UserInfoDialog.vue';
+import { useRouter } from 'vue-router';
+import { ElMessageBox, ElMessage } from 'element-plus';
 
 const router = useRouter();
 const passwordRef = ref<InstanceType<typeof PasswordDialog> | null>(null);
 const userInfoRef = ref<InstanceType<typeof UserInfoDialog> | null>(null);
 
 const logout = function (): void {
-	ElMessageBox.confirm("您是否确认退出登录?", "温馨提示", {
+	ElMessageBox.confirm('您是否确认退出登录?', '温馨提示', {
 		// confirmButtonText: "确定",
 		// cancelButtonText: "取消",
-		type: "warning",
+		type: 'warning',
 	}).then(() => {
-		router.push({ name: "login" });
+		router.push({ name: 'login' });
 		ElMessage({
-			type: "success",
-			message: "退出登录成功！",
+			type: 'success',
+			message: '退出登录成功！',
 		});
 	});
 };
 
 const command = function (e: string): void {
 	switch (e) {
-		case "userInfo":
+		case 'userInfo':
 			userInfoRef.value?.openDialog();
 			break;
-		case "password":
+		case 'password':
 			passwordRef.value?.openDialog();
 			break;
-		case "logout":
+		case 'logout':
 			logout();
 			break;
 	}

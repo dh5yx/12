@@ -5,7 +5,7 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-07-25 11:31:08
  */
-declare module "element-plus/dist/locale/en.mjs";
-declare module "element-plus/dist/locale/zh-cn.mjs";
+declare module 'element-plus/dist/locale/en.mjs';
+declare module 'element-plus/dist/locale/zh-cn.mjs';
 
-declare type ElementSize = "" | "default" | "small" | "large";
+declare type ElementSize = '' | 'default' | 'small' | 'large';

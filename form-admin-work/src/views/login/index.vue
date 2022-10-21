@@ -1,21 +1,12 @@
 <template>
-    <div class="login">
-
-    </div>
+	<div class="login" />
 </template>
 
-<script setup lang="ts" >
-const obj = {
-  a: '123'
-}
-var a = 10
-// console.log(obj)
-
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-.login{
-  height: 100vh;
-  width: 100%;
+.login {
+	height: 100vh;
+	width: 100%;
 }
 </style>

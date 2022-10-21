@@ -6,6 +6,6 @@
  * @LastEditTime: 2022-08-30 09:23:08
  */
 export const UserGender = [
-	{ label: "男", value: 1 },
-	{ label: "女", value: 2 },
+	{ label: '男', value: 1 },
+	{ label: '女', value: 2 },
 ];

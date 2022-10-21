@@ -5,9 +5,9 @@
  * @LastEditors: dh
  * @LastEditTime: 2022-08-30 09:23:46
  */
-import { ElMessageBox, ElMessage } from "element-plus";
+import { ElMessageBox, ElMessage } from 'element-plus';
 
-type MessageType = "" | "success" | "warning" | "info" | "error";
+type MessageType = '' | 'success' | 'warning' | 'info' | 'error';
 
 type HandleDataType = (
 	api: (params: any) => Promise<any>,
@@ -24,17 +24,17 @@ type HandleDataType = (
  * @param {String} confirmType icon类型(不必传,默认为 warning)
  * @return Promise
  */
-export default <HandleDataType>async function useHandleData(api, params, message, confirmType = "warning") {
+export default <HandleDataType>async function useHandleData(api, params, message, confirmType = 'warning') {
 	return new Promise((resolve, reject) => {
-		ElMessageBox.confirm(`是否${message}?`, "温馨提示", {
-			confirmButtonText: "确定",
-			cancelButtonText: "取消",
+		ElMessageBox.confirm(`是否${message}?`, '温馨提示', {
+			confirmButtonText: '确定',
+			cancelButtonText: '取消',
 			draggable: true,
 			type: confirmType,
 		}).then(async () => {
 			const res = await api(params);
 			if (!res) return reject(false);
-			ElMessage({ type: "success", message: `${message}成功!` });
+			ElMessage({ type: 'success', message: `${message}成功!` });
 			resolve(res);
 		});
 	});

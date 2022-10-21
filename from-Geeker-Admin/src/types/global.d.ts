@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 16:28:30
  * @LastEditors: dh
- * @LastEditTime: 2022-09-30 15:56:57
+ * @LastEditTime: 2022-10-21 11:54:46
  */
 
 // 环境配置
@@ -15,12 +15,17 @@ interface DevConfigType {
 
 // * Menu
 declare namespace Menu {
-	interface MenuOptions {
-		path: string;
+	interface RouterMeta {
 		title: string;
 		icon?: string;
 		isLink?: string;
 		close?: boolean;
+	}
+	interface MenuOptions {
+		path: string;
+		component: string;
+		name: string;
+		meta: RouterMeta;
 		children?: MenuOptions[];
 	}
 }

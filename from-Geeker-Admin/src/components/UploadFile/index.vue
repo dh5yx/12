@@ -26,9 +26,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ElNotification } from "element-plus";
-import { getExt } from "@/utils/fileTools";
-import type { UploadRequestOptions } from "element-plus";
+import { ElNotification } from 'element-plus';
+import { getExt } from '@/utils/fileTools';
+import type { UploadRequestOptions } from 'element-plus';
 
 interface PropsType {
 	uploadApi: (params: any) => Promise<any>;
@@ -36,33 +36,33 @@ interface PropsType {
 }
 
 const props = withDefaults(defineProps<PropsType>(), {
-	accept: () => ["*"],
+	accept: () => ['*'],
 });
 
 const handleHttpUpload = async function (e: UploadRequestOptions) {
 	const formData = new FormData();
-	formData.append("file", e.file);
+	formData.append('file', e.file);
 	props.uploadApi(formData);
 };
 
 const beforeUpload = function (file: File) {
 	const fileType = getExt(file.name);
-	const isAccept = props.accept.includes("." + fileType) || props.accept.includes("*");
+	const isAccept = props.accept.includes('.' + fileType) || props.accept.includes('*');
 	const isLt5M = file.size / 1024 / 1024 < 5;
 	if (!isAccept) {
 		ElNotification({
-			title: "温馨提示",
-			message: `上传文件只能是 ${props.accept.join(",")} 格式！`,
-			type: "warning",
+			title: '温馨提示',
+			message: `上传文件只能是 ${props.accept.join(',')} 格式！`,
+			type: 'warning',
 		});
 		return false;
 	}
 
 	if (!isLt5M) {
 		ElNotification({
-			title: "温馨提示",
-			message: "上传文件大小不能超过 5MB！",
-			type: "warning",
+			title: '温馨提示',
+			message: '上传文件大小不能超过 5MB！',
+			type: 'warning',
 		});
 		return false;
 	}
@@ -72,17 +72,17 @@ const beforeUpload = function (file: File) {
 
 const uploadSuccess = (): void => {
 	ElNotification({
-		title: "温馨提示",
-		message: "上传成功！",
-		type: "success",
+		title: '温馨提示',
+		message: '上传成功！',
+		type: 'success',
 	});
 };
 
 const uploadError = (): void => {
 	ElNotification({
-		title: "温馨提示",
-		message: "图片上传失败，请您重新上传！",
-		type: "error",
+		title: '温馨提示',
+		message: '图片上传失败，请您重新上传！',
+		type: 'error',
 	});
 };
 </script>

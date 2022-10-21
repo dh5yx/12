@@ -5,14 +5,14 @@
         "noImplicitAny": false, //不需要显示的声明变量的类型any
         "target": "esnext",// 编译后的目标javascript版本， ES5, ES6/ES2015, ES2016, ES2017, ES2018, ES2019, ES2020, ESNext
         "useDefineForClassFields": true,
-        "module": "esnext", //配置的是我们代码的模块系统， Node.js的CommonJS、ES6标准的esnext、requireJs的AMD
+        "module": "esnext", // 生成代码的模板标准， Node.js的CommonJS、ES6标准的esnext、requireJs的AMD
         "moduleResolution": "node", //决定了我们编译器的工作方式，"node" and "classic", 但classic在2019年已经废弃，现在只剩node可以选择了
         "strict": true,
         "jsx": "preserve", //允许编译器支持编译react代码
         "sourceMap": true,
         "resolveJsonModule": true,
         "esModuleInterop": true, // false,  import * as React from 'react'   true //允许我们使用commonjs的方式import默认文件， import React from 'react'
-        "lib": ["esnext", "dom"], // document.getElementById('root')
+        "lib": ["esnext", "dom"],   // TS 需要引用的库，即声明文件，es5 默认引用 dom、es5、scripthost,如需要使用 es 的高级版本特性，通常都需要配置，如 es8 的数组新特性需要引入"ES2019.Array",
         "types": [],
         "allowJs": true, //允许混合编译Javascript文件
         "skipLibCheck": true,
@@ -33,10 +33,10 @@
         // }
 		 tsBuildInfoFile: './buildFile', // 增量编译文件的存储位置
         diagnostics: true, // 打印诊断信息
-        outFile: './app.js', // 将多个相互依赖的文件生成一个文件，可以用在AMD模块中，即开启时应设置"module": "AMD",
         lib: ['DOM', 'ES2015', 'ScriptHost', 'ES2019.Array'], // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array",
         allowJS: true, // 允许编译器编译JS，JSX文件
         checkJs: true, // 允许在JS文件中报错，通常与allowJS一起使用
+		outFile: './app.js', // 将多个相互依赖的文件生成一个文件，可以用在 AMD 模块中，即开启时应设置"module": "AMD",
         outDir: './dist', // 指定输出目录
         rootDir: './', // 指定输出文件目录(用于输出)，用于控制输出目录结构
         declaration: true, // 生成声明文件，开启后会自动生成声明文件

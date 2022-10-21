@@ -6,19 +6,19 @@
  * @LastEditTime: 2022-01-24 09:24:07
 -->
 <template>
-    <div class="page-vuex">
-        <div>vuex</div>
-        <div>
-            <span>age:</span>
-            <span>{{ age }}</span>
-            <button @click="changeAge">改变</button>
-        </div>
-        <div>
-            <span>name:</span>
-            <span>{{ name }}</span>
-            <button @click="changeName">改变</button>
-        </div>
-    </div>
+	<div class="page-vuex">
+		<div>vuex</div>
+		<div>
+			<span>age:</span>
+			<span>{{ age }}</span>
+			<button @click="changeAge">改变</button>
+		</div>
+		<div>
+			<span>name:</span>
+			<span>{{ name }}</span>
+			<button @click="changeName">改变</button>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -35,6 +35,6 @@ const changeName = () => store.dispatch('user/A_change_name', 'lei-xin');
 
 <style scoped>
 .page-vuex {
-    border: 1px dashed teal;
+	border: 1px dashed teal;
 }
 </style>

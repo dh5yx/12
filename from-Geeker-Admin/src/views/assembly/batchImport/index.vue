@@ -28,17 +28,17 @@
 </template>
 
 <script setup lang="ts">
-import UploadFile from "@/components/UploadFile/index.vue";
-import useDownload from "@/hooks/useDownload";
-import api from "@/api/index";
-import { ref } from "vue";
-import { Download } from "@element-plus/icons-vue";
+import UploadFile from '@/components/UploadFile/index.vue';
+import useDownload from '@/hooks/useDownload';
+import api from '@/api/index';
+import { ref } from 'vue';
+import { Download } from '@element-plus/icons-vue';
 
 const uploadFile = ref(null);
 const isCover = ref<boolean>(false);
 
 const exportTemplate = function () {
-	useDownload(api.exportTem, null, "test");
+	useDownload(api.exportTem, null, 'test');
 };
 </script>
 

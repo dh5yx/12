@@ -11,61 +11,61 @@
 <script setup lang="ts">
 // Echarts 为init（dom元素后的类型）
 // EChartsOption 为 option 的类型
-import * as echarts from "echarts";
-import { ranking1, ranking2, ranking3, ranking4 } from "../assets/ranking-icon";
-import { ref, onMounted } from "vue";
+import * as echarts from 'echarts';
+import { ranking1, ranking2, ranking3, ranking4 } from '../assets/ranking-icon';
+import { ref, onMounted } from 'vue';
 
 const hotData = [
 	{
 		value: 79999,
-		name: "峨眉山",
-		percentage: "80%",
+		name: '峨眉山',
+		percentage: '80%',
 		maxValue: 100000,
 	},
 	{
 		value: 59999,
-		name: "稻城亚丁",
-		percentage: "60%",
+		name: '稻城亚丁',
+		percentage: '60%',
 		maxValue: 100000,
 	},
 	{
 		value: 49999,
-		name: "九寨沟",
-		percentage: "50%",
+		name: '九寨沟',
+		percentage: '50%',
 		maxValue: 100000,
 	},
 	{
 		value: 39999,
-		name: "万里长城",
-		percentage: "40%",
+		name: '万里长城',
+		percentage: '40%',
 		maxValue: 100000,
 	},
 	{
 		value: 29999,
-		name: "北京故宫",
-		percentage: "30%",
+		name: '北京故宫',
+		percentage: '30%',
 		maxValue: 100000,
 	},
 ];
 
 const echartsRef = ref();
 
-const colors = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"];
+const colors = ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6'];
 
 const option = {
 	grid: {
-		top: "5%",
-		left: "7%",
-		right: "4%",
-		bottom: "1%",
+		top: '5%',
+		left: '7%',
+		right: '4%',
+		bottom: '1%',
 		containLabel: true,
 	},
 	xAxis: {
-		type: "value",
+		type: 'value',
 		axisLine: {
 			show: false,
 			lineStyle: {
-				color: "white",
+				color: 'white',
 			},
 		},
 		nameGap: 1,
@@ -98,11 +98,11 @@ const option = {
 				show: false,
 			},
 			axisLabel: {
-				color: "#fff",
+				color: '#fff',
 				formatter: function (value: any) {
-					let str = value.length > 6 ? value.slice(0, 6) + "..." : value;
+					let str = value.length > 6 ? value.slice(0, 6) + '...' : value;
 					let index = hotData.map(item => item.name).indexOf(value) + 1;
-					return ["{" + (index > 3 ? "lg" : "lg" + index) + "|NO." + index + "}", "{title|" + str + "}"].join(" ");
+					return ['{' + (index > 3 ? 'lg' : 'lg' + index) + '|NO.' + index + '}', '{title|' + str + '}'].join(' ');
 				},
 				rich: {
 					lg1: {
@@ -110,8 +110,8 @@ const option = {
 						backgroundColor: {
 							image: ranking1,
 						},
-						color: "#fff",
-						align: "center",
+						color: '#fff',
+						align: 'center',
 						height: 20,
 						fontSize: 13,
 					},
@@ -120,8 +120,8 @@ const option = {
 						backgroundColor: {
 							image: ranking2,
 						},
-						color: "#fff",
-						align: "center",
+						color: '#fff',
+						align: 'center',
 
 						height: 20,
 						fontSize: 13,
@@ -131,8 +131,8 @@ const option = {
 						backgroundColor: {
 							image: ranking3,
 						},
-						color: "#fff",
-						align: "center",
+						color: '#fff',
+						align: 'center',
 						height: 20,
 						fontSize: 13,
 					},
@@ -141,8 +141,8 @@ const option = {
 						backgroundColor: {
 							image: ranking4,
 						},
-						color: "#fff",
-						align: "center",
+						color: '#fff',
+						align: 'center',
 
 						height: 20,
 						fontSize: 13,
@@ -150,7 +150,7 @@ const option = {
 					title: {
 						width: 60,
 						fontSize: 13,
-						align: "center",
+						align: 'center',
 						padding: [0, 10, 0, 15],
 					},
 				},
@@ -163,11 +163,11 @@ const option = {
 			data: hotData,
 			axisLabel: {
 				fontSize: 14,
-				color: "#fff",
+				color: '#fff',
 				// align: "right",
 				margin: 20,
 				formatter: (value: any) => {
-					return value >= 10000 ? (value / 10000).toFixed(2) + "w" : value;
+					return value >= 10000 ? (value / 10000).toFixed(2) + 'w' : value;
 				},
 			},
 			axisLine: {
@@ -184,8 +184,8 @@ const option = {
 	],
 	series: [
 		{
-			name: "条",
-			type: "bar",
+			name: '条',
+			type: 'bar',
 			yAxisIndex: 0,
 			data: hotData,
 			barWidth: 12,
@@ -200,15 +200,15 @@ const option = {
 				show: true,
 				position: [12, 0],
 				lineHeight: 14,
-				color: "#fff",
+				color: '#fff',
 				formatter: (params: any) => {
 					return params.data.percentage;
 				},
 			},
 		},
 		{
-			name: "框",
-			type: "bar",
+			name: '框',
+			type: 'bar',
 			yAxisIndex: 1,
 			data: hotData.map(val => {
 				if (!val.maxValue) {
@@ -218,8 +218,8 @@ const option = {
 			}),
 			barWidth: 18,
 			itemStyle: {
-				color: "none",
-				borderColor: "#00c1de",
+				color: 'none',
+				borderColor: '#00c1de',
 				borderWidth: 1,
 				borderRadius: 15,
 			},
@@ -243,7 +243,7 @@ onMounted(() => {
 	height: 36px;
 	margin: 10px 10px 0;
 	line-height: 36px;
-	background: url("../images/rankingChart-bg.png") no-repeat;
+	background: url('../images/rankingChart-bg.png') no-repeat;
 	background-size: 100% 100%;
 	span {
 		width: 18%;

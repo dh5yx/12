@@ -34,16 +34,16 @@
 </template>
 
 <script setup lang="ts">
-import Aside from "./Aside/index.vue";
-import Header from "./Header/index.vue";
-import Footer from "./Footer/index.vue";
-import Tabs from "./Tabs/index.vue";
-import api from "@/api/index";
-import { useAuthStore } from "@/stores/modules/auth";
-import { onMounted, computed } from "vue";
-import { useConfigStore } from "@/stores/modules/config";
-import { routerArray } from "@/router/routes";
-import type { RouteRecordRaw, RouteRecordName } from "vue-router";
+import Aside from './Aside/index.vue';
+import Header from './Header/index.vue';
+import Footer from './Footer/index.vue';
+import Tabs from './Tabs/index.vue';
+import api from '@/api/index';
+import { useAuthStore } from '@/stores/modules/auth';
+import { onMounted, computed } from 'vue';
+import { useConfigStore } from '@/stores/modules/config';
+import { routerArray } from '@/router/routes';
+import type { RouteRecordRaw, RouteRecordName } from 'vue-router';
 
 const authStore = useAuthStore();
 const configStore = useConfigStore();

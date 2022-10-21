@@ -21,11 +21,11 @@ export function randomNum(start: number, end: number) {
  */
 export function getBrowserLang() {
 	let browserLang = navigator.language ? navigator.language : navigator.browserLanguage;
-	let defaultBrowserLang = "";
-	if (browserLang.toLowerCase() === "cn" || browserLang.toLowerCase() === "zh" || browserLang.toLowerCase() === "zh-cn") {
-		defaultBrowserLang = "zh";
+	let defaultBrowserLang = '';
+	if (browserLang.toLowerCase() === 'cn' || browserLang.toLowerCase() === 'zh' || browserLang.toLowerCase() === 'zh-cn') {
+		defaultBrowserLang = 'zh';
 	} else {
-		defaultBrowserLang = "en";
+		defaultBrowserLang = 'en';
 	}
 	return defaultBrowserLang;
 }
@@ -38,7 +38,7 @@ export function getBrowserLang() {
  */
 export function handleRouter(routerList: Menu.MenuOptions[], newArr: string[] = []) {
 	routerList.forEach((item: Menu.MenuOptions) => {
-		typeof item === "object" && item.path && newArr.push(item.path);
+		typeof item === 'object' && item.path && newArr.push(item.path);
 		item.children && item.children.length && handleRouter(item.children, newArr);
 	});
 	return newArr;

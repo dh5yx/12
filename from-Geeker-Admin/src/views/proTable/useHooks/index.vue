@@ -65,7 +65,7 @@
 			<el-table-column type="selection" reserve-selection width="80" />
 			<el-table-column prop="username" label="用户姓名" show-overflow-tooltip width="140"></el-table-column>
 			<el-table-column prop="gender" label="性别" show-overflow-tooltip width="140" v-slot="scope">
-				{{ scope.row.gender == 1 ? "男" : "女" }}
+				{{ scope.row.gender == 1 ? '男' : '女' }}
 			</el-table-column>
 			<el-table-column prop="idCard" label="身份证号" show-overflow-tooltip></el-table-column>
 			<el-table-column prop="email" label="邮箱" show-overflow-tooltip width="240"></el-table-column>
@@ -80,7 +80,7 @@
 					@change="changeStatus($event as number, scope.row)"
 					v-if="BUTTONS.status"
 				/>
-				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else> {{ scope.row.status === 1 ? "启用" : "禁用" }}</el-tag>
+				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else> {{ scope.row.status === 1 ? '启用' : '禁用' }}</el-tag>
 			</el-table-column>
 			<el-table-column label="操作" fixed="right" width="260" v-slot="scope">
 				<el-button type="primary" link icon="view" @click="openDrawer(scope.row)" v-if="BUTTONS.view">查看</el-button>
@@ -107,15 +107,15 @@
 </template>
 
 <script setup lang="ts">
-import EditDrawer from "../components/editDrawer.vue";
-import api from "@/api/index";
-import useHandleData from "@/hooks/useHandleData";
-import useSelection from "@/hooks/useSelection";
-import useTable from "@/hooks/useTable";
-import { reactive, onMounted, computed, ref } from "vue";
-import { UserGender } from "@/dict/index";
-import { useAuthStore } from "@/stores/modules/auth";
-import type { ElTable } from "element-plus";
+import EditDrawer from '../components/editDrawer.vue';
+import api from '@/api/index';
+import useHandleData from '@/hooks/useHandleData';
+import useSelection from '@/hooks/useSelection';
+import useTable from '@/hooks/useTable';
+import { reactive, onMounted, computed, ref } from 'vue';
+import { UserGender } from '@/dict/index';
+import { useAuthStore } from '@/stores/modules/auth';
+import type { ElTable } from 'element-plus';
 
 const authStore = useAuthStore();
 const tableRef = ref<InstanceType<typeof ElTable>>();
@@ -128,7 +128,7 @@ const { tableData, reset, search, getTableList, searchParam, pageable, handleSiz
 	api: api.userList,
 	initParams,
 });
-const { getRowKeys, selectionChange, selectedListIds } = useSelection({ el: tableRef, id: "id" });
+const { getRowKeys, selectionChange, selectedListIds } = useSelection({ el: tableRef, id: 'id' });
 
 // 分页
 // const getTableList = async () => {
@@ -153,13 +153,13 @@ const resetPass = async (row: User.UserInfo) => {
 
 // 删除用户
 const deleteAccount = async (row: User.UserInfo) => {
-	await useHandleData(api.userDelete, { id: [row.id] }, "删除所选用户信息");
+	await useHandleData(api.userDelete, { id: [row.id] }, '删除所选用户信息');
 	await getTableList();
 };
 
 // 批量删除用户
 const batchDelete = async () => {
-	await useHandleData(api.userDelete, { id: selectedListIds.value }, "删除所选用户信息");
+	await useHandleData(api.userDelete, { id: selectedListIds.value }, '删除所选用户信息');
 	await getTableList();
 };
 
