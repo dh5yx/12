@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 16:45:32
  * @LastEditors: dh
- * @LastEditTime: 2022-10-20 15:30:06
+ * @LastEditTime: 2022-10-21 16:05:07
  */
 // @see: http://eslint.cn
 
@@ -21,7 +21,6 @@ module.exports = {
 		parser: '@typescript-eslint/parser',
 		ecmaVersion: 2020,
 		sourceType: 'module',
-		jsxPragma: 'React',
 		ecmaFeatures: {
 			jsx: true,
 		},

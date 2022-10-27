@@ -1,4 +1,4 @@
-## 原链接 https://gitee.com/laramie/Geeker-Admin，本校同为熟悉ts，vite，vue3，所以照着敲了一遍代码
+## 原链接 https://gitee.com/laramie/Geeker-Admin，本项目为熟悉ts，vite，vue3，所以照着敲了一遍代码
 
 ## 功能包括
 
