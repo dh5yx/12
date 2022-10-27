@@ -8,12 +8,7 @@
 <template>
 	<!-- 文本框 -->
 	<template v-if="item.searchType == undefined || item.searchType == 'text'">
-		<el-input
-			v-model="searchParam[item.prop!]"
-			v-bind="item.searchProps"
-			placeholder="请输入"
-			:clearable="clearable(item)"
-		></el-input>
+		<el-input v-model="searchParam[item.prop!]" v-bind="item.searchProps" placeholder="请输入" :clearable="clearable(item)"></el-input>
 	</template>
 	<!-- 下拉选择框 -->
 	<template v-if="item.searchType == 'select' || item.searchType == 'multipleSelect'">

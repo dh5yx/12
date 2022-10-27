@@ -8,13 +8,7 @@
 <template>
 	<div style="border: 1px solid #ccc">
 		<Toolbar style="border-bottom: 1px solid #ccc" :editor="editorRef" :defaultConfig="toolbarConfig" mode="default" />
-		<Editor
-			v-model="valueHtml"
-			style="height: 400px; overflow-y: hidden"
-			:defaultConfig="editorConfig"
-			mode="default"
-			@on-created="handleCreated"
-		/>
+		<Editor v-model="valueHtml" style="height: 400px; overflow-y: hidden" :defaultConfig="editorConfig" mode="default" @on-created="handleCreated" />
 	</div>
 </template>
 

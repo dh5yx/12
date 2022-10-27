@@ -151,7 +151,7 @@ module.exports = {
 
 ### 集成 .editorconfig
 
-添加 .editorconfig ，不过 有些配置 和 prettier eslint 可能会有一些冲突，比如最大换行，这里以prettier：150为准
+添加 .editorconfig ，不过 有些配置 和 prettier eslint 可能会有一些冲突，比如最大换行，这里以 prettier：150 为准
 
 ### 集成 pinia
 
@@ -226,7 +226,47 @@ import router from '@/router/index';
 app.use(router);
 ```
 
-### 集成 vueuse
+### 集成 axios
+
+1. 安装
+
+   ```base
+   pnpm i axios -S
+   ```
+
+2. 实例化
+
+   ```js
+   // src/utils/axios.ts
+   import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
+
+   const service = axios.create(); // Request interceptors
+
+   service.interceptors.request.use(
+   	(config: AxiosRequestConfig) => {
+   		// do something
+   		return config;
+   	},
+   	(error: any) => {
+   		Promise.reject(error);
+   	}
+   ); // Response interceptors
+
+   service.interceptors.response.use(
+   	(response: AxiosResponse) => {
+   		// do something
+   		return response;
+   	},
+   	(error: any) => {
+   		// do something
+   		return Promise.reject(error);
+   	}
+   );
+
+   export default service;
+   ```
+
+### [集成 vueuse](https://vueuse.org/)
 
 1. 安装
 
@@ -256,3 +296,7 @@ export default defineConfig({
 	},
 });
 ```
+
+### 使用 commitizen 规范 git 提交
+
+集成 过程 在 主项目 里面

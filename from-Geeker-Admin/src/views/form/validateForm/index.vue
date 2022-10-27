@@ -15,13 +15,7 @@
 		<el-form-item label="Activity time" required>
 			<el-col :span="11">
 				<el-form-item prop="date1">
-					<el-date-picker
-						v-model="ruleForm.date1"
-						type="date"
-						label="Pick a date"
-						placeholder="Pick a date"
-						style="width: 100%"
-					/>
+					<el-date-picker v-model="ruleForm.date1" type="date" label="Pick a date" placeholder="Pick a date" style="width: 100%" />
 				</el-form-item>
 			</el-col>
 			<el-col class="text-center" :span="2">

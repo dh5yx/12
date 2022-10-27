@@ -61,14 +61,7 @@
 			</el-button>
 		</div>
 
-		<el-table
-			ref="tableRef"
-			class="table"
-			:data="tableData"
-			:border="true"
-			:row-key="getRowKeys"
-			@selection-change="selectionChange"
-		>
+		<el-table ref="tableRef" class="table" :data="tableData" :border="true" :row-key="getRowKeys" @selection-change="selectionChange">
 			<el-table-column type="selection" reserve-selection width="80" />
 			<el-table-column prop="username" label="用户姓名" show-overflow-tooltip width="140"></el-table-column>
 			<el-table-column prop="gender" label="性别" show-overflow-tooltip width="140" v-slot="scope">
@@ -87,9 +80,7 @@
 					@change="changeStatus($event as number, scope.row)"
 					v-if="BUTTONS.status"
 				/>
-				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else>
-					{{ scope.row.status === 1 ? '启用' : '禁用' }}</el-tag
-				>
+				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else> {{ scope.row.status === 1 ? '启用' : '禁用' }}</el-tag>
 			</el-table-column>
 			<el-table-column label="操作" fixed="right" width="260" v-slot="scope">
 				<el-button type="primary" link icon="view" @click="openDrawer(scope.row)" v-if="BUTTONS.view">查看</el-button>
