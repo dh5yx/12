@@ -13,24 +13,24 @@ npm i -D naive-ui
 
 ```js
 // vite.config.ts
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import { NaiveUiResolver } from "unplugin-vue-components/resolvers";
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 export default defineConfig({
-    plugins: [
-        vue(),
-        AutoImport({
-            imports: [
-                "vue",
-                {
-                    "naive-ui": ["useDialog", "useMessage", "useNotification", "useLoadingBar"],
-                },
-            ],
-        }),
-        Components({
-            resolvers: [NaiveUiResolver()],
-        }),
-    ],
+	plugins: [
+		vue(),
+		AutoImport({
+			imports: [
+				'vue',
+				{
+					'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
+				},
+			],
+		}),
+		Components({
+			resolvers: [NaiveUiResolver()],
+		}),
+	],
 });
 ```
 
@@ -77,16 +77,16 @@ npm install vue-router@4
 
 ```js
 // router/index.ts
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
 const routes = [];
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+	history: createWebHistory(),
+	routes,
 });
 export default router;
 
 // main.ts
-import router from "@/router/index";
+import router from '@/router/index';
 app.use(router);
 ```
 
@@ -127,11 +127,12 @@ yarn add @typescript-eslint/parser --dev
 yarn add prettier --dev
 yarn add eslint-config-prettier --dev
 
-// 执行 
+// 执行
 npx eslint --init
 ```
 
-### 配置全局 scss 
+### 配置全局 scss
+
 ```js
 export default defineConfig({
 css:{
