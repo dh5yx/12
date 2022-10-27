@@ -9,7 +9,13 @@
 import { ElNotification } from 'element-plus';
 import { downloadByBlob } from '@/utils/fileTools';
 
-type DownLoadType = (api: (params: any) => Promise<any>, params: any, tempName: string, isNotify?: boolean, fileType?: string) => Promise<any>;
+type DownLoadType = (
+	api: (params: any) => Promise<any>,
+	params: any,
+	tempName: string,
+	isNotify?: boolean,
+	fileType?: string
+) => Promise<any>;
 
 /**
  * @description 接收数据流生成blob，创建链接，下载文件

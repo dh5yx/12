@@ -149,6 +149,10 @@ module.exports = {
 }
 ```
 
+### 集成 .editorconfig
+
+添加 .editorconfig ，不过 有些配置 和 prettier eslint 可能会有一些冲突，比如最大换行，这里以prettier：150为准
+
 ### 集成 pinia
 
 1. 安装

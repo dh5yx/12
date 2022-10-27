@@ -28,9 +28,16 @@
 			<template #status="scope">
 				<!-- 如果插槽的值为 el-switch，第一次加载会默认触发 switch 的 @change 方法，所有在外层包一个盒子，点击触发盒子 click 方法（暂时只能这样解决） -->
 				<div v-if="BUTTONS.status" @click="changeStatus(scope.row)">
-					<el-switch :value="scope.row.status" :active-text="scope.row.status === 1 ? '启用' : '禁用'" :active-value="1" :inactive-value="0" />
+					<el-switch
+						:value="scope.row.status"
+						:active-text="scope.row.status === 1 ? '启用' : '禁用'"
+						:active-value="1"
+						:inactive-value="0"
+					/>
 				</div>
-				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else> {{ scope.row.status === 1 ? '启用' : '禁用' }}</el-tag>
+				<el-tag :type="scope.row.status === 1 ? 'success' : 'danger'" v-else>
+					{{ scope.row.status === 1 ? '启用' : '禁用' }}</el-tag
+				>
 			</template>
 			<template #operation="scope">
 				<el-button type="primary" link icon="view" @click="openDrawer(scope.row)">查看</el-button>
@@ -71,7 +78,13 @@ const columns: Partial<ColumnProps>[] = [
 	{ prop: 'idCard', label: '身份证号', search: true },
 	{ prop: 'email', label: '邮箱', width: 240, search: true },
 	{ prop: 'address', label: '居住地址', search: true },
-	{ prop: 'createTime', label: '创建时间', width: 200, search: true, searchType: 'datetimerange' },
+	{
+		prop: 'createTime',
+		label: '创建时间',
+		width: 200,
+		search: true,
+		searchType: 'datetimerange',
+	},
 	{ prop: 'status', label: '用户状态', sortable: true, width: 180 },
 	{ prop: 'operation', label: '操作', width: 260, fixed: 'right' },
 ];

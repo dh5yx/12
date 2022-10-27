@@ -69,9 +69,11 @@ service.interceptors.response.use(
 );
 
 export default {
-	get: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> => service.get(url, { params, ...config }),
+	get: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> =>
+		service.get(url, { params, ...config }),
 
-	delete: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> => service.delete(url, { params, ...config }),
+	delete: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> =>
+		service.delete(url, { params, ...config }),
 
 	post: <T = any>(url: string, data?: object, config?: object): Promise<AxiosResponseType<T>> => service.post(url, data, config),
 

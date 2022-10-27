@@ -56,5 +56,12 @@ export default function useTable({ api, initParams }: useTableParamsType) {
 		reset();
 	});
 
-	return { ...toRefs(state), reset, search, getTableList, handleSizeChange, handleCurrentChange };
+	return {
+		...toRefs(state),
+		reset,
+		search,
+		getTableList,
+		handleSizeChange,
+		handleCurrentChange,
+	};
 }

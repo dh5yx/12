@@ -14,13 +14,39 @@
 			<slot name="handle" :selectedListIds="selectedListIds"></slot>
 		</div>
 		<div class="table-box">
-			<el-table class="table" ref="tableRef" :data="tableData" :border="true" :row-key="getRowKeys" @selection-change="selectionChange">
+			<el-table
+				class="table"
+				ref="tableRef"
+				:data="tableData"
+				:border="true"
+				:row-key="getRowKeys"
+				@selection-change="selectionChange"
+			>
 				<template v-for="item in props.columns" :key="item">
-					<el-table-column v-if="item.type == 'selection'" :type="item.type" :label="item.label" :width="item.width" :fixed="item.fixed">
+					<el-table-column
+						v-if="item.type == 'selection'"
+						:type="item.type"
+						:label="item.label"
+						:width="item.width"
+						:fixed="item.fixed"
+					>
 					</el-table-column>
-					<el-table-column v-else-if="item.type == 'index'" :type="item.type" :label="item.label" :width="item.width" :fixed="item.fixed">
+					<el-table-column
+						v-else-if="item.type == 'index'"
+						:type="item.type"
+						:label="item.label"
+						:width="item.width"
+						:fixed="item.fixed"
+					>
 					</el-table-column>
-					<el-table-column v-else :prop="item.prop" :label="item.label" :sortable="item.sortable" :width="item.width" :fixed="item.fixed">
+					<el-table-column
+						v-else
+						:prop="item.prop"
+						:label="item.label"
+						:sortable="item.sortable"
+						:width="item.width"
+						:fixed="item.fixed"
+					>
 						<template #default="scope">
 							<slot :name="item.prop" :row="scope.row">{{ scope.row[item.prop as string] }}</slot>
 						</template>
@@ -67,7 +93,10 @@ const { searchParam, search, reset, tableData, pageable, handleSizeChange, handl
 	api: props.api,
 	initParams,
 });
-const { selectionChange, getRowKeys, selectedListIds } = useSelection({ el: tableRef, id: 'id' });
+const { selectionChange, getRowKeys, selectedListIds } = useSelection({
+	el: tableRef,
+	id: 'id',
+});
 
 defineExpose({ refresh: getTableList });
 </script>

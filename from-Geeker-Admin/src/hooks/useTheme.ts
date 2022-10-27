@@ -45,7 +45,10 @@ export default function useTheme() {
 	const primaryChange = (val: string) => {
 		if (!val) {
 			val = DEFAULT_PRIMARY;
-			ElMessage({ type: 'success', message: `主题颜色已重置为 ${DEFAULT_PRIMARY}` });
+			ElMessage({
+				type: 'success',
+				message: `主题颜色已重置为 ${DEFAULT_PRIMARY}`,
+			});
 		}
 		configStore.setPrimary(val);
 		// 颜色加深
@@ -53,7 +56,10 @@ export default function useTheme() {
 		document.documentElement.style.setProperty('--el-color-primary', configStore.primary);
 		// 颜色变浅
 		for (let i = 1; i <= 9; i++) {
-			document.documentElement.style.setProperty(`--el-color-primary-light-${i}`, `${getLightColor(configStore.primary, i / 10)}`);
+			document.documentElement.style.setProperty(
+				`--el-color-primary-light-${i}`,
+				`${getLightColor(configStore.primary, i / 10)}`
+			);
 		}
 	};
 

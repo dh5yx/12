@@ -36,7 +36,10 @@ import { ElNotification } from 'element-plus';
 import { ref } from 'vue';
 import type { UploadRequestOptions } from 'element-plus';
 
-withDefaults(defineProps<{ modelValue?: string; disabled?: boolean }>(), { modelValue: '', disabled: false });
+withDefaults(defineProps<{ modelValue?: string; disabled?: boolean }>(), {
+	modelValue: '',
+	disabled: false,
+});
 
 const emit = defineEmits(['update:modelValue', 'change']);
 

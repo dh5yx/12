@@ -8,7 +8,9 @@
 <template>
 	<div class="visitor-statistics">
 		<div class="total">
-			<div class="total-item" v-for="item in realTotal" :key="item">{{ item }}</div>
+			<div class="total-item" v-for="item in realTotal" :key="item">
+				{{ item }}
+			</div>
 			<div class="total-item">人</div>
 		</div>
 		<div ref="echartsRef" class="echarts"></div>
