@@ -52,6 +52,7 @@ export default defineConfig({
    pnpm install @typescript-eslint/eslint-plugin --save-dev
    ```
 2. 创建配置文件：.eslintrc.cjs 或 .eslintrc.js
+	ESLint 安装成功后，执行 npx eslint --init，然后按照终端操作提示完成一系列设置来创建配置文件。**但是目前不建议**，直接走下面的流程
 
    ```js
    module.exports = {
