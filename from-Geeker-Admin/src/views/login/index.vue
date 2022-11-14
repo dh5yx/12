@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 16:46:18
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 14:24:52
+ * @LastEditTime: 2022-11-14 16:40:30
 -->
 <template>
 	<div class="page-login">
@@ -69,11 +69,12 @@ const login = function (formEl: FormInstance | undefined) {
 	if (!formEl) return;
 	formEl.validate(async valid => {
 		if (!valid) return;
-		const res = await api.login({
+		const params = {
 			username: loginForm.username,
 			password: md5(loginForm.password),
-		});
-		globalStore.setToken(res.data!.access_token);
+		};
+		const res = await api.login(params);
+		globalStore.setToken(res.data.access_token);
 		router.push({ name: 'home' });
 	});
 };

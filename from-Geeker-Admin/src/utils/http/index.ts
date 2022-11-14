@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 09:17:15
  * @LastEditors: dh
- * @LastEditTime: 2022-10-27 16:54:39
+ * @LastEditTime: 2022-11-14 16:41:50
  */
 import axios from 'axios';
 import httpConfig from '@/config/http';
@@ -69,13 +69,13 @@ service.interceptors.response.use(
 );
 
 export default {
-	get: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> => service.get(url, { params, ...config }),
+	get: <T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponseType<T>> => service.get(url, config),
 
-	delete: <T = any>(url: string, params?: object, config?: object): Promise<AxiosResponseType<T>> => service.delete(url, { params, ...config }),
+	post: <T = any>(url: string, data?: object, config?: AxiosRequestConfig): Promise<AxiosResponseType<T>> => service.post(url, data, config),
 
-	post: <T = any>(url: string, data?: object, config?: object): Promise<AxiosResponseType<T>> => service.post(url, data, config),
+	delete: <T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponseType<T>> => service.delete(url, config),
 
-	put: <T = any>(url: string, data?: object, config?: object): Promise<AxiosResponseType<T>> => service.put(url, data, config),
+	put: <T = any>(url: string, data?: object, config?: AxiosRequestConfig): Promise<AxiosResponseType<T>> => service.put(url, data, config),
 
 	request: <T = any>(config: Object): Promise<AxiosResponseType<T>> => service.request(config),
 };

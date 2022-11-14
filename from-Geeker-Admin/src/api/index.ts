@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 17:30:33
  * @LastEditors: dh
- * @LastEditTime: 2022-08-30 09:57:53
+ * @LastEditTime: 2022-11-14 16:40:24
  */
 import http from '@/utils/http';
 import { PORT1 } from '@/config';
@@ -12,7 +12,7 @@ import type { LoginType } from '@/types/login';
 type UserList = { datalist: Array<any> } & { [key: string]: String };
 
 export default {
-	login: (param: LoginType.ReqLoginForm) => http.post(PORT1 + '/login', param),
+	login: (param: LoginType.ReqLoginForm) => http.post<{ access_token: string }>(PORT1 + '/login', param),
 	menu: () => http.get(PORT1 + '/menu/list'),
 	uploadImg: (params: FormData) => http.post(PORT1 + `/file/upload/img`, params),
 	exportTem: (params: { [key: string]: string }) => http.post(PORT1 + `/user/export`, params, { responseType: 'blob' }),
