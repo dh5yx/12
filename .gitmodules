@@ -1,0 +1,3 @@
+[submodule "base/src/libcommon"]
+	path = base/src/libcommon
+	url = https://gitee.com/deng_hong/lib-submodule.git
