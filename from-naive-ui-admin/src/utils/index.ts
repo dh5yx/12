@@ -13,3 +13,37 @@ export function renderIcon(icon: string | Component) {
 		return () => h(resolveComponent((icon || '') as string));
 	}
 }
+
+/**
+ * @description: 是否 json 字符串
+ * @param {string} str
+ * @return {*}
+ */
+export function isJsonStr(str: string) {
+	if (typeof str == 'string') {
+		try {
+			let obj = JSON.parse(str);
+			if (typeof obj == 'object' && obj) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (e) {
+			console.log('error：' + str + '!!!' + e);
+			return false;
+		}
+	}
+}
+
+/**
+ * @description: 睡眠函数
+ * @param {*} timer
+ * @return {*}
+ */
+export function sleep(timer: number) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(true);
+		}, timer);
+	});
+}

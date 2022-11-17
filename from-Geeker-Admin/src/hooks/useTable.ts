@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-03 15:16:54
  * @LastEditors: dh
- * @LastEditTime: 2022-10-27 16:54:17
+ * @LastEditTime: 2022-11-17 15:28:55
  */
 import { reactive, toRefs, onMounted } from 'vue';
 
@@ -36,6 +36,8 @@ export default function useTable({ api, initParams }: useTableParamsType) {
 	const getTableList = async () => {
 		const { pageable, searchParam } = state;
 		const { pageNum, pageSize } = pageable;
+		api({ pageSize, pageNum, ...searchParam });
+		api({ pageSize, pageNum, ...searchParam });
 		const { data: res } = await api({ pageSize, pageNum, ...searchParam });
 		const { total } = res;
 		state.tableData = res.datalist || res.data;

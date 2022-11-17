@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 09:17:15
  * @LastEditors: dh
- * @LastEditTime: 2022-09-19 14:28:27
+ * @LastEditTime: 2022-11-16 15:08:39
  */
 import axios from 'axios';
 import httpConfig from '@/config/http';
@@ -12,13 +12,16 @@ import { showFullScreenLoading, tryHideFullScreenLoading } from '@/utils/service
 import { useGlobalStore } from '@/stores/index';
 import { TOKEN_KEY } from '@/config/http';
 import { checkStatus } from './checkStatus';
+import { againRequest } from './againRequest';
 import router from '@/router/index';
 import type { AxiosResponse, AxiosRequestConfig, AxiosError } from 'axios';
 
 axios.defaults.baseURL = httpConfig.baseURL as string;
 axios.defaults.timeout = httpConfig.timeout as number;
 
-const service = axios.create({});
+const service = axios.create({
+	retry: 3, // 接口失败再次请求次数
+});
 
 service.interceptors.request.use(
 	(config: AxiosRequestConfig) => {
@@ -55,9 +58,20 @@ service.interceptors.response.use(
 		return data;
 	},
 	(error: AxiosError) => {
-		const { response } = error;
+		const { response, config } = error;
+
+		// 请求失败，移除从pending列表移除
+		axiosCancel.removePendingAxios(config);
+
 		// 关闭全局loading
 		tryHideFullScreenLoading();
+
+		// 需要特殊处理请求被取消的情况
+		if (!axios.isCancel(error) && config.retry) {
+			// 请求重发
+			return againRequest(error, service);
+		}
+
 		// 请求超时单独判断，因为请求超时没有 response
 		if (error.message.indexOf('timeout') !== -1) window.$message?.error('请求超时！请您稍后重试');
 		// 根据响应的错误状态码，做不同的处理

@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-08-09 15:57:06
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 09:53:15
+ * @LastEditTime: 2022-11-16 11:15:36
  */
 /**
  * @description: 获取指定区间 随机整数
@@ -42,4 +42,37 @@ export function handleRouter(routerList: Menu.MenuOptions[], newArr: string[] = 
 		item.children && item.children.length && handleRouter(item.children, newArr);
 	});
 	return newArr;
+}
+/**
+ * @description: 是否 json 字符串
+ * @param {string} str
+ * @return {*}
+ */
+export function isJsonStr(str: string) {
+	if (typeof str == 'string') {
+		try {
+			let obj = JSON.parse(str);
+			if (typeof obj == 'object' && obj) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (e) {
+			console.log('error：' + str + '!!!' + e);
+			return false;
+		}
+	}
+}
+
+/**
+ * @description: 睡眠函数
+ * @param {*} timer
+ * @return {*}
+ */
+export function sleep(timer: number) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve(true);
+		}, timer);
+	});
 }

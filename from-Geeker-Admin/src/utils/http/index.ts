@@ -3,9 +3,10 @@
  * @Author: dh
  * @Date: 2022-07-21 09:17:15
  * @LastEditors: dh
- * @LastEditTime: 2022-11-14 16:41:50
+ * @LastEditTime: 2022-11-17 15:29:13
  */
 import axios from 'axios';
+// import axiosRetry from 'axios-retry';
 import httpConfig from '@/config/http';
 import axiosCancel from './axiosCancel';
 import { showFullScreenLoading, tryHideFullScreenLoading } from '@/config/serviceLoading';
@@ -13,26 +14,40 @@ import { useGlobalStore } from '@/stores/index';
 import { TOKEN_KEY } from '@/config';
 import { ElMessage } from 'element-plus';
 import { checkStatus } from './checkStatus';
+import { againRequest } from './againRequest';
 import router from '@/router/index';
 import type { AxiosResponse, AxiosRequestConfig, AxiosError } from 'axios';
 
 axios.defaults.baseURL = httpConfig.baseURL as string;
 axios.defaults.timeout = httpConfig.timeout as number;
 
-const service = axios.create({});
+const service = axios.create({
+	retry: 3, // 接口失败再次请求次数
+});
+
+// * 重试接口 插件方式 ，这里用手动实现的方式，项目中，最好还是使用次插件
+// axiosRetry(service, {
+// 	retries: 3,
+// 	retryCondition: e => {
+// 		// 默认5** 触发重复请求
+// 		console.log(e);
+// 		return true;
+// 	},
+// });
 
 service.interceptors.request.use(
 	(config: AxiosRequestConfig) => {
+		// 获取token
+		const token = useGlobalStore().token;
+		token && (config.headers![TOKEN_KEY] = token);
+
 		// 开启全局loading
 		showFullScreenLoading();
 
 		// 添加axios到列表
 		axiosCancel.addPendingAxios(config);
 
-		// 获取token
-		const globalStore = useGlobalStore();
-
-		return { ...config, headers: { [TOKEN_KEY]: globalStore.token } };
+		return config;
 	},
 	(error: AxiosError) => {
 		// 关闭全局loading
@@ -55,9 +70,20 @@ service.interceptors.response.use(
 		return data;
 	},
 	(error: AxiosError) => {
-		const { response } = error;
+		const { response, config } = error;
+
+		// 请求失败，移除从pending列表移除
+		// axiosCancel.removePendingAxios(config);
+
 		// 关闭全局loading
 		tryHideFullScreenLoading();
+
+		// 非主動取消请求情况的
+		if (!axios.isCancel(error) && config.retry) {
+			// 请求重发
+			return againRequest(error, service);
+		}
+
 		// 请求超时单独判断，因为请求超时没有 response
 		if (error.message.indexOf('timeout') !== -1) ElMessage.error('请求超时！请您稍后重试');
 		// 根据响应的错误状态码，做不同的处理

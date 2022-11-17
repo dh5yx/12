@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 16:28:30
  * @LastEditors: dh
- * @LastEditTime: 2022-10-21 11:54:46
+ * @LastEditTime: 2022-11-16 14:30:56
  */
 
 // 环境配置
@@ -13,6 +13,13 @@ interface DevConfigType {
 	};
 }
 
+// 接口返回格式
+declare type AxiosResponseType<T> = {
+	data: T;
+	msg?: string;
+	message?: string;
+	code: string | number;
+};
 // * Menu
 declare namespace Menu {
 	interface RouterMeta {

@@ -6,6 +6,7 @@ import { ElMessage } from 'element-plus';
  * @return void
  */
 export const checkStatus = (status: number): void => {
+	ElMessage.closeAll();
 	switch (status) {
 		case 400:
 			ElMessage.error('请求失败！请您稍后重试');

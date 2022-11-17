@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 16:46:10
  * @LastEditors: dh
- * @LastEditTime: 2022-08-12 15:11:43
+ * @LastEditTime: 2022-11-17 15:10:41
  */
 import NProgress from '@/config/nprogress';
 import routes from './routes';
@@ -26,6 +26,7 @@ router.beforeEach((to, from, next) => {
 
 	// * 开启路由进度条
 	NProgress.start();
+
 	// * 在跳转路由之前，清除所有的请求
 	axiosCancel.removeAllPendingAxios();
 
@@ -39,7 +40,7 @@ router.beforeEach((to, from, next) => {
 	const dynamicRouter = authStore.dynamicRouter;
 
 	// * Static Router(静态路由，必须配置首页地址，否则不能进首页获取菜单、按钮权限等数据)，获取数据的时候会loading，所有配置首页地址也没问题
-	const staticRouter = ['/', '/home/index', '/403'];
+	const staticRouter = ['/', '/home/index', '/403', '/login'];
 
 	// * 所有可访问路由集合
 	const routerList = [...dynamicRouter, ...staticRouter];
