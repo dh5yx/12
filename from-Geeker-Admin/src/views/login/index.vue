@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 16:46:18
  * @LastEditors: dh
- * @LastEditTime: 2022-11-16 14:31:26
+ * @LastEditTime: 2022-11-29 10:40:43
 -->
 <template>
 	<div class="page-login">
@@ -54,6 +54,7 @@ import type { ElForm } from 'element-plus';
 const globalStore = useGlobalStore();
 const router = useRouter();
 
+// InstanceType 可以获取组件的属性和方法
 type FormInstance = InstanceType<typeof ElForm>;
 const loginFormRef: any = ref<FormInstance>();
 const loginForm = reactive<LoginType.ReqLoginForm>({

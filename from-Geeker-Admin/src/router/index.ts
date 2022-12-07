@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-20 16:46:10
  * @LastEditors: dh
- * @LastEditTime: 2022-11-17 15:10:41
+ * @LastEditTime: 2022-11-17 17:25:47
  */
 import NProgress from '@/config/nprogress';
 import routes from './routes';
@@ -23,6 +23,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
 	const globalStore = useGlobalStore();
 	const authStore = useAuthStore();
+
+	document.title = to.meta.title;
 
 	// * 开启路由进度条
 	NProgress.start();

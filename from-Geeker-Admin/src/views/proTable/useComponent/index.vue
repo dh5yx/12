@@ -86,6 +86,7 @@ const tableView = ref();
 
 const authStore = useAuthStore();
 
+// InstanceType 可以获取组件的属性和方法
 const editDrawerRef = ref<InstanceType<typeof EditDrawer> | null>(null);
 
 const BUTTONS = computed(() => authStore.authButtons.useHooks);

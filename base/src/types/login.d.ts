@@ -1,4 +1,4 @@
 declare interface LoginForm {
-	name: String;
-	age: Number;
+	name?: String;
+	age?: Number;
 }

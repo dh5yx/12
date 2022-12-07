@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 15:01:17
  * @LastEditors: dh
- * @LastEditTime: 2022-09-30 15:51:08
+ * @LastEditTime: 2022-11-29 10:40:11
 -->
 <template>
 	<el-dropdown trigger="click" @command="command">
@@ -30,6 +30,7 @@ import { useRouter } from 'vue-router';
 import { ElMessageBox, ElMessage } from 'element-plus';
 
 const router = useRouter();
+// InstanceType 可以获取组件的属性和方法
 const passwordRef = ref<InstanceType<typeof PasswordDialog> | null>(null);
 const userInfoRef = ref<InstanceType<typeof UserInfoDialog> | null>(null);
 
