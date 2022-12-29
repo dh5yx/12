@@ -172,7 +172,7 @@ export default pinia;
 
 // store/modules/* 定义模块化存储
 import { defineStore } from 'pinia';
-export const useCounterStore = defineStore({
+export const useUserStore = defineStore({
 	id: 'counter',
 	state: () => ({}),
 	getters: {},
@@ -186,6 +186,10 @@ export const useCounterStore = defineStore({
 // main.ts 使用pinia
 import Pinia from '@/store/index';
 app.use(Pinia);
+
+// .vue
+import { useUserStore } from '@/store/index';
+const userStore = useUserStore();
 ```
 
 ### 集成 vue-router4

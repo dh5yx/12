@@ -1,6 +1,12 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
-const service = axios.create(); // Request interceptors
+const service = axios.create({
+	baseURL: '/api',
+	// 指定请求超时的毫秒数
+	timeout: 1000,
+	// 表示跨域请求时是否需要使用凭证
+	withCredentials: false,
+});
 
 service.interceptors.request.use(
 	(config: AxiosRequestConfig) => {
@@ -8,7 +14,7 @@ service.interceptors.request.use(
 		return config;
 	},
 	(error: any) => {
-		Promise.reject(error);
+		return Promise.reject(error);
 	}
 ); // Response interceptors
 

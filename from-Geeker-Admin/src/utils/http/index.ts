@@ -3,7 +3,7 @@
  * @Author: dh
  * @Date: 2022-07-21 09:17:15
  * @LastEditors: dh
- * @LastEditTime: 2022-11-17 15:29:13
+ * @LastEditTime: 2022-12-29 09:53:33
  */
 import axios from 'axios';
 // import axiosRetry from 'axios-retry';
@@ -105,3 +105,10 @@ export default {
 
 	request: <T = any>(config: Object): Promise<AxiosResponseType<T>> => service.request(config),
 };
+// axios.request(config)
+// axios.get(url[, config])
+// axios.delete(url[, config])
+// axios.head(url[, config])
+// axios.post(url[, data[, config]])
+// axios.put(url[, data[, config]])
+// axios.patch(url[, data[, config]])
