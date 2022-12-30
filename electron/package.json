@@ -4,23 +4,23 @@
 	"version": "0.0.0",
 	"main": "dist/electron/index.js",
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development vite",
+		"dev": "chcp 65001 && cross-env NODE_ENV=development vite",
 		"build": "cross-env NODE_ENV=production vue-tsc --noEmit && vite build &&  electron-builder",
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"vite-plugin-electron": "^0.8.8",
 		"vue": "^3.2.37",
 		"vue-router": "^4.1.6"
 	},
 	"devDependencies": {
+		"@types/node": "^18.11.18",
 		"@vitejs/plugin-vue": "^3.1.0",
 		"cross-env": "^7.0.3",
-		"electron": "^22.0.0",
-		"electron-builder": "^23.6.0",
+		"electron": "^19.0.10",
+		"electron-builder": "^23.1.0",
 		"typescript": "^4.6.4",
 		"vite": "^3.1.0",
-		"vite-plugin-electron": "^0.10.1",
+		"vite-plugin-electron": "^0.8.3",
 		"vue-tsc": "^0.40.4"
 	},
 	"build": {
